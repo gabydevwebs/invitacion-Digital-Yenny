@@ -478,10 +478,8 @@ body {
 /* =========================
    IMAGEN DE MARIPOSA
 ========================= */
-
 .mariposa-intro {
     width: clamp(65px, 11vw, 125px);
-
     height: auto;
 
     object-fit: contain;
@@ -492,10 +490,11 @@ body {
         );
 
     display: block;
-
     pointer-events: none;
-}
 
+    /* FIX iPhone */
+    opacity: 0.999;
+}
 
 /* =========================
    ALETEO / FLOTACIÓN
