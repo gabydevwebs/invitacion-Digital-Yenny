@@ -492,7 +492,6 @@ body {
     display: block;
     pointer-events: none;
 
-    /* FIX iPhone */
     opacity: 0.999;
 }
 
@@ -504,8 +503,8 @@ body {
 
     0% {
         transform:
-            translateY(0)
-            rotate(0deg)
+            translateY(0.01px)
+            rotate(0.001deg)
             scale(1);
     }
 
@@ -532,8 +531,8 @@ body {
 
     100% {
         transform:
-            translateY(0)
-            rotate(0deg)
+            translateY(0.01px)
+            rotate(0.001deg)
             scale(1);
     }
 }
