@@ -1,6 +1,6 @@
-/* =========================
-   RESET
-========================= */
+ /* =========================
+    RESET
+ ========================= */
 
 * {
     margin: 0;
@@ -566,21 +566,23 @@ body {
     }
 
 
+    /* Centro un poco más compacto */
+
     .centro-porton {
-        width: 105px;
-        height: 105px;
-    }
-
-
-    .adorno-centro {
         width: 90px;
         height: 90px;
     }
 
 
+    .adorno-centro {
+        width: 78px;
+        height: 78px;
+    }
+
+
     .rombo-centro {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
     }
 
 
