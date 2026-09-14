@@ -241,3 +241,9 @@ function crearIntro() {
 
 
 crearIntro();
+
+setTimeout(() => {
+    const intro = document.getElementById("intro");
+
+    intro.classList.add("abriendo");
+}, 2500);

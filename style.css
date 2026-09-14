@@ -321,16 +321,23 @@ body {
 
 .intro.abriendo .hoja-izquierda {
     transform:
-        perspective(1500px)
-        rotateY(-75deg);
+        perspective(1800px)
+        rotateY(-75deg)
+        translateX(-35px);
+
+    transition:
+        transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
 }
 
 .intro.abriendo .hoja-derecha {
     transform:
-        perspective(1500px)
-        rotateY(75deg);
-}
+        perspective(1800px)
+        rotateY(75deg)
+        translateX(35px);
 
+    transition:
+        transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
+}
 .intro.abriendo .centro-porton {
     opacity: 0;
 
