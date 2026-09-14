@@ -26,6 +26,7 @@ body {
 
 .intro {
     position: fixed;
+
     inset: 0;
 
     width: 100%;
@@ -49,7 +50,8 @@ body {
 
     opacity: 1;
 
-    transition: opacity 1.2s ease;
+    transition:
+        opacity 1.2s ease;
 }
 
 
@@ -66,7 +68,8 @@ body {
     width: min(80vw, 900px);
     height: min(80vw, 900px);
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     background:
         radial-gradient(
@@ -97,7 +100,8 @@ body {
     width: min(96vw, 1000px);
     height: min(94vh, 900px);
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     z-index: 10;
 
@@ -106,7 +110,7 @@ body {
 
 
 /* =========================
-   HOJAS
+   HOJAS DEL PORTÓN
 ========================= */
 
 .hoja {
@@ -148,7 +152,7 @@ body {
 
 
 /* =========================
-   METAL
+   PORTÓN - METAL
 ========================= */
 
 .hierro {
@@ -214,7 +218,7 @@ body {
 
 
 /* =========================
-   DECORACIÓN CENTRAL
+   DECORACIÓN
 ========================= */
 
 .decoracion circle {
@@ -232,10 +236,11 @@ body {
 
 
 /* =========================
-   APERTURA PORTÓN
+   APERTURA DEL PORTÓN
 ========================= */
 
 .intro.abriendo .hoja-izquierda {
+
     transform:
         perspective(1800px)
         rotateY(-75deg)
@@ -248,6 +253,7 @@ body {
 }
 
 .intro.abriendo .hoja-derecha {
+
     transform:
         perspective(1800px)
         rotateY(75deg)
@@ -261,7 +267,7 @@ body {
 
 
 /* =========================
-   CENTRO PORTÓN
+   CENTRO DEL PORTÓN
 ========================= */
 
 .centro-porton {
@@ -273,7 +279,8 @@ body {
     width: clamp(70px, 9vw, 105px);
     height: clamp(70px, 9vw, 105px);
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
@@ -293,7 +300,8 @@ body {
 
     z-index: 25;
 
-    transition: opacity 0.7s ease;
+    transition:
+        opacity 0.7s ease;
 }
 
 .adorno-centro {
@@ -374,7 +382,8 @@ body {
     width: 1px;
     height: 12px;
 
-    background: rgba(255,255,255,0.8);
+    background:
+        rgba(255,255,255,0.8);
 
     transform:
         translate(-50%, -50%);
@@ -443,7 +452,8 @@ body {
 
 
 /* =========================
-   ALETEO
+   MARIPOSA
+   CAPA DE ALETEO
 ========================= */
 
 .mariposa-flotante {
@@ -466,7 +476,7 @@ body {
 
 
 /* =========================
-   IMAGEN
+   IMAGEN DE MARIPOSA
 ========================= */
 
 .mariposa-intro {
@@ -476,10 +486,6 @@ body {
 
     object-fit: contain;
 
-    display: block;
-
-    pointer-events: none;
-
     filter:
         drop-shadow(
             0 0 10px rgba(255,255,255,0.5)
@@ -487,6 +493,10 @@ body {
         drop-shadow(
             0 0 30px rgba(255,255,255,0.2)
         );
+
+    display: block;
+
+    pointer-events: none;
 }
 
 
@@ -537,24 +547,35 @@ body {
    MENSAJE
 ========================= */
 
-.mariposa-intro {
-    width: clamp(65px, 11vw, 125px);
+.mensaje-intro {
+    position: fixed;
 
-    height: auto;
+    left: 50%;
+    top: 60%;
 
-    object-fit: contain;
+    width: min(85vw, 650px);
 
-    display: block;
+    transform:
+        translate(-50%, -50%)
+        translateY(20px);
+
+    text-align: center;
+
+    z-index: 70;
+
+    opacity: 0;
 
     pointer-events: none;
 
-    filter:
-        drop-shadow(
-            0 0 12px rgba(255,255,255,0.45)
-        );
+    color: #f5f5f5;
 
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.25),
+        0 0 30px rgba(255,255,255,0.12);
+
+    transition:
+        opacity 1.8s ease,
+        transform 1.8s ease;
 }
 
 .mensaje-linea {
@@ -576,6 +597,7 @@ body {
 }
 
 .intro.mostrar-mensaje .mensaje-intro {
+
     opacity: 1;
 
     transform:
@@ -584,6 +606,7 @@ body {
 }
 
 .intro.ocultar-mensaje .mensaje-intro {
+
     opacity: 0;
 
     transform:
@@ -597,6 +620,7 @@ body {
 ========================= */
 
 .intro.transicion-final {
+
     opacity: 0;
 
     pointer-events: none;

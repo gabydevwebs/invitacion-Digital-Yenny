@@ -22,9 +22,13 @@ function crearIntro() {
             <div class="luz-central"></div>
 
 
-            <!-- PORTÓN -->
+            <!-- =========================
+                 PORTÓN
+            ========================= -->
 
             <div class="porton">
+
+                <!-- PUERTA IZQUIERDA -->
 
                 <svg
                     class="hoja hoja-izquierda"
@@ -107,6 +111,8 @@ function crearIntro() {
 
                 </svg>
 
+
+                <!-- PUERTA DERECHA -->
 
                 <svg
                     class="hoja hoja-derecha"
@@ -192,14 +198,20 @@ function crearIntro() {
             </div>
 
 
-            <!-- CENTRO -->
+            <!-- =========================
+                 CENTRO DEL PORTÓN
+            ========================= -->
 
             <div class="centro-porton">
+
                 <div class="adorno-centro"></div>
+
             </div>
 
 
-            <!-- BRILLITOS -->
+            <!-- =========================
+                 PARTÍCULAS
+            ========================= -->
 
             <div
                 class="particulas"
@@ -207,7 +219,9 @@ function crearIntro() {
             ></div>
 
 
-            <!-- MENSAJE -->
+            <!-- =========================
+                 MENSAJE
+            ========================= -->
 
             <div class="mensaje-intro">
 
@@ -222,7 +236,9 @@ function crearIntro() {
             </div>
 
 
-            <!-- MARIPOSA -->
+            <!-- =========================
+                 MARIPOSA
+            ========================= -->
 
             <div
                 class="mariposa-vuelo"
@@ -250,6 +266,10 @@ function crearIntro() {
 crearIntro();
 
 
+/* =========================
+   REFERENCIAS
+========================= */
+
 const intro =
     document.getElementById("intro");
 
@@ -264,19 +284,54 @@ const particulas =
 
 
 /* =========================
+   CARGA DE MARIPOSA
+========================= */
+
+/*
+    Evitamos mostrar la imagen
+    antes de que Safari haya
+    terminado de cargarla.
+
+    Esto intenta evitar el
+    rectángulo que aparece
+    solamente en la primera carga.
+*/
+
+mariposa.style.opacity = "0";
+
+if (mariposa.complete) {
+
+    mariposa.style.opacity = "1";
+
+} else {
+
+    mariposa.addEventListener(
+        "load",
+        () => {
+            mariposa.style.opacity = "1";
+        },
+        { once: true }
+    );
+
+}
+
+
+/* =========================
    ESPERAR
 ========================= */
 
 function esperar(ms) {
 
     return new Promise(resolve => {
+
         setTimeout(resolve, ms);
+
     });
 }
 
 
 /* =========================
-   BRILLITO
+   CREAR BRILLITO
 ========================= */
 
 function crearBrillito(x, y) {
@@ -287,11 +342,13 @@ function crearBrillito(x, y) {
     brillo.className =
         "brillito";
 
+
     const variacionX =
         (Math.random() - 0.5) * 24;
 
     const variacionY =
         (Math.random() - 0.5) * 24;
+
 
     brillo.style.left =
         `${x + variacionX}px`;
@@ -299,8 +356,10 @@ function crearBrillito(x, y) {
     brillo.style.top =
         `${y + variacionY}px`;
 
+
     const tamanio =
         2 + Math.random() * 4;
+
 
     brillo.style.width =
         `${tamanio}px`;
@@ -308,13 +367,18 @@ function crearBrillito(x, y) {
     brillo.style.height =
         `${tamanio}px`;
 
+
     brillo.style.animationDuration =
         `${1.2 + Math.random() * 1.2}s`;
 
+
     particulas.appendChild(brillo);
 
+
     setTimeout(() => {
+
         brillo.remove();
+
     }, 2600);
 }
 
@@ -334,13 +398,16 @@ function comenzarBrillos() {
             const rect =
                 mariposa.getBoundingClientRect();
 
+
             const x =
                 rect.left +
                 rect.width / 2;
 
+
             const y =
                 rect.top +
                 rect.height / 2;
+
 
             crearBrillito(x, y);
 
@@ -356,6 +423,7 @@ function comenzarBrillos() {
                     (Math.random() - 0.5) * 40
 
                 );
+
             }
 
         }, 130);
@@ -377,47 +445,44 @@ function detenerBrillos() {
 async function iniciarSecuencia() {
 
 
-    /*
-        1
-        PORTÓN CERRADO
-    */
+    /* =========================
+       1. PORTÓN CERRADO
+    ========================= */
 
     await esperar(3000);
 
 
-    /*
-        2
-        ABRIR PORTÓN
-    */
+    /* =========================
+       2. ABRIR PORTÓN
+    ========================= */
 
-    intro.classList.add("abriendo");
+    intro.classList.add(
+        "abriendo"
+    );
 
-
-    /*
-        Esperamos exactamente
-        la duración del portón.
-    */
 
     await esperar(2800);
 
 
-    /*
-        3
-        APARECE MENSAJE
-    */
+    /* =========================
+       3. MOSTRAR MENSAJE
+    ========================= */
 
     intro.classList.add(
         "mostrar-mensaje"
     );
 
 
-    /*
-        4
-        COMIENZA VUELO
-    */
+    /* =========================
+       4. COMENZAR BRILLITOS
+    ========================= */
 
     comenzarBrillos();
 
+
+    /* =========================
+       5. VUELO DE MARIPOSA
+    ========================= */
 
     const vuelo =
         mariposaVuelo.animate(
@@ -533,29 +598,23 @@ async function iniciarSecuencia() {
             ],
 
             {
+
                 duration: 9000,
 
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
 
                 fill: "forwards"
+
             }
         );
 
 
-    /*
-        Dejamos que el vuelo
-        avance antes de comenzar
-        el acercamiento.
-    */
+    /* =========================
+       6. MENSAJE DESAPARECE
+    ========================= */
 
     await esperar(7000);
-
-
-    /*
-        5
-        DESAPARECE EL MENSAJE
-    */
 
     intro.classList.add(
         "ocultar-mensaje"
@@ -563,15 +622,20 @@ async function iniciarSecuencia() {
 
 
     /*
-        6
-        ACERCAMIENTO FINAL
-       
-        IMPORTANTE:
-        no vamos de 1.65 → 15.
+        Esperamos a que termine
+        COMPLETAMENTE el vuelo.
 
-        Hacemos varias etapas mucho
-        más suaves.
+        Esto evita que el zoom
+        y el vuelo compitan por
+        el mismo transform.
     */
+
+    await vuelo.finished;
+
+
+    /* =========================
+       7. ACERCAMIENTO FINAL
+    ========================= */
 
     const acercamiento =
         mariposaVuelo.animate(
@@ -640,6 +704,7 @@ async function iniciarSecuencia() {
                     "cubic-bezier(0.7, 0, 0.12, 1)",
 
                 fill: "forwards"
+
             }
         );
 
@@ -647,23 +712,26 @@ async function iniciarSecuencia() {
     await acercamiento.finished;
 
 
-    /*
-        7
-        BRILLITOS
-    */
+    /* =========================
+       8. DETENER BRILLITOS
+    ========================= */
 
     detenerBrillos();
 
 
-    /*
-        8
-        TRANSICIÓN
-    */
+    /* =========================
+       9. TRANSICIÓN FINAL
+    ========================= */
 
     intro.classList.add(
         "transicion-final"
     );
+
 }
 
+
+/* =========================
+   INICIAR
+========================= */
 
 iniciarSecuencia();
