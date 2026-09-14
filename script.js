@@ -6,26 +6,25 @@ const evento = {
     alias: "yyyyyyyy"
 };
 
-
 const app = document.getElementById("app");
 
+
+/* =========================
+   CREAR INTRO
+========================= */
 
 function crearIntro() {
 
     app.innerHTML = `
+
         <section class="intro" id="intro">
 
-            <!-- Luz ambiental detrás del portón -->
             <div class="luz-central"></div>
 
 
-            <!-- =========================
-                 PORTÓN
-            ========================== -->
+            <!-- PORTÓN -->
 
             <div class="porton">
-
-                <!-- HOJA IZQUIERDA -->
 
                 <svg
                     class="hoja hoja-izquierda"
@@ -33,7 +32,6 @@ function crearIntro() {
                     preserveAspectRatio="xMidYMid meet"
                 >
 
-                    <!-- Marco exterior -->
                     <path
                         class="hierro grueso"
                         d="
@@ -45,8 +43,6 @@ function crearIntro() {
                         "
                     />
 
-
-                    <!-- Marco interior -->
                     <path
                         class="hierro medio"
                         d="
@@ -57,8 +53,6 @@ function crearIntro() {
                         "
                     />
 
-
-                    <!-- Barrotes -->
                     <g class="barrotes">
 
                         <line x1="45"  y1="215" x2="45"  y2="850"/>
@@ -73,8 +67,6 @@ function crearIntro() {
 
                     </g>
 
-
-                    <!-- Ornamentación -->
                     <g class="ornamento">
 
                         <path
@@ -99,8 +91,6 @@ function crearIntro() {
 
                     </g>
 
-
-                    <!-- Detalles decorativos -->
                     <g class="decoracion">
 
                         <circle cx="45"  cy="215" r="8"/>
@@ -118,16 +108,12 @@ function crearIntro() {
                 </svg>
 
 
-
-                <!-- HOJA DERECHA -->
-
                 <svg
                     class="hoja hoja-derecha"
                     viewBox="0 0 500 900"
                     preserveAspectRatio="xMidYMid meet"
                 >
 
-                    <!-- Marco exterior -->
                     <path
                         class="hierro grueso"
                         d="
@@ -139,8 +125,6 @@ function crearIntro() {
                         "
                     />
 
-
-                    <!-- Marco interior -->
                     <path
                         class="hierro medio"
                         d="
@@ -151,8 +135,6 @@ function crearIntro() {
                         "
                     />
 
-
-                    <!-- Barrotes -->
                     <g class="barrotes">
 
                         <line x1="55"  y1="155" x2="55"  y2="850"/>
@@ -167,8 +149,6 @@ function crearIntro() {
 
                     </g>
 
-
-                    <!-- Ornamentación -->
                     <g class="ornamento">
 
                         <path
@@ -193,8 +173,6 @@ function crearIntro() {
 
                     </g>
 
-
-                    <!-- Detalles decorativos -->
                     <g class="decoracion">
 
                         <circle cx="55"  cy="215" r="8"/>
@@ -214,26 +192,55 @@ function crearIntro() {
             </div>
 
 
-
-            <!-- =========================
-                 CENTRO DEL PORTÓN
-            ========================== -->
+            <!-- CENTRO -->
 
             <div class="centro-porton">
                 <div class="adorno-centro"></div>
             </div>
 
 
+            <!-- BRILLITOS -->
 
-            <!-- =========================
-                 MARIPOSA
-            ========================== -->
+            <div
+                class="particulas"
+                id="particulas"
+            ></div>
 
-            <img
-                class="mariposa-intro"
-                src="img/mariposa.png"
-                alt="Mariposa plateada"
+
+            <!-- MENSAJE -->
+
+            <div class="mensaje-intro">
+
+                <p class="mensaje-linea">
+                    Hay momentos que merecen
+                </p>
+
+                <p class="mensaje-linea">
+                    ser recordados para siempre...
+                </p>
+
+            </div>
+
+
+            <!-- MARIPOSA -->
+
+            <div
+                class="mariposa-vuelo"
+                id="mariposa-vuelo"
             >
+
+                <div class="mariposa-flotante">
+
+                    <img
+                        class="mariposa-intro"
+                        id="mariposa"
+                        src="img/mariposa.png"
+                        alt="Mariposa plateada"
+                    >
+
+                </div>
+
+            </div>
 
         </section>
     `;
@@ -242,8 +249,421 @@ function crearIntro() {
 
 crearIntro();
 
-setTimeout(() => {
-    const intro = document.getElementById("intro");
+
+const intro =
+    document.getElementById("intro");
+
+const mariposaVuelo =
+    document.getElementById("mariposa-vuelo");
+
+const mariposa =
+    document.getElementById("mariposa");
+
+const particulas =
+    document.getElementById("particulas");
+
+
+/* =========================
+   ESPERAR
+========================= */
+
+function esperar(ms) {
+
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
+
+/* =========================
+   BRILLITO
+========================= */
+
+function crearBrillito(x, y) {
+
+    const brillo =
+        document.createElement("span");
+
+    brillo.className =
+        "brillito";
+
+    const variacionX =
+        (Math.random() - 0.5) * 24;
+
+    const variacionY =
+        (Math.random() - 0.5) * 24;
+
+    brillo.style.left =
+        `${x + variacionX}px`;
+
+    brillo.style.top =
+        `${y + variacionY}px`;
+
+    const tamanio =
+        2 + Math.random() * 4;
+
+    brillo.style.width =
+        `${tamanio}px`;
+
+    brillo.style.height =
+        `${tamanio}px`;
+
+    brillo.style.animationDuration =
+        `${1.2 + Math.random() * 1.2}s`;
+
+    particulas.appendChild(brillo);
+
+    setTimeout(() => {
+        brillo.remove();
+    }, 2600);
+}
+
+
+/* =========================
+   BRILLITOS CONTINUOS
+========================= */
+
+let intervaloBrillos = null;
+
+
+function comenzarBrillos() {
+
+    intervaloBrillos =
+        setInterval(() => {
+
+            const rect =
+                mariposa.getBoundingClientRect();
+
+            const x =
+                rect.left +
+                rect.width / 2;
+
+            const y =
+                rect.top +
+                rect.height / 2;
+
+            crearBrillito(x, y);
+
+
+            if (Math.random() > 0.65) {
+
+                crearBrillito(
+
+                    x +
+                    (Math.random() - 0.5) * 40,
+
+                    y +
+                    (Math.random() - 0.5) * 40
+
+                );
+            }
+
+        }, 130);
+}
+
+
+function detenerBrillos() {
+
+    clearInterval(intervaloBrillos);
+
+    intervaloBrillos = null;
+}
+
+
+/* =========================
+   SECUENCIA PRINCIPAL
+========================= */
+
+async function iniciarSecuencia() {
+
+
+    /*
+        1
+        PORTÓN CERRADO
+    */
+
+    await esperar(3000);
+
+
+    /*
+        2
+        ABRIR PORTÓN
+    */
 
     intro.classList.add("abriendo");
-}, 2500);
+
+
+    /*
+        Esperamos exactamente
+        la duración del portón.
+    */
+
+    await esperar(2800);
+
+
+    /*
+        3
+        APARECE MENSAJE
+    */
+
+    intro.classList.add(
+        "mostrar-mensaje"
+    );
+
+
+    /*
+        4
+        COMIENZA VUELO
+    */
+
+    comenzarBrillos();
+
+
+    const vuelo =
+        mariposaVuelo.animate(
+
+            [
+
+                {
+                    left: "50%",
+                    top: "50%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(0deg) scale(1)"
+                },
+
+                {
+                    left: "65%",
+                    top: "39%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(9deg) scale(1.05)",
+
+                    offset: 0.10
+                },
+
+                {
+                    left: "77%",
+                    top: "28%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(16deg) scale(1.08)",
+
+                    offset: 0.20
+                },
+
+                {
+                    left: "63%",
+                    top: "24%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
+
+                    offset: 0.30
+                },
+
+                {
+                    left: "35%",
+                    top: "31%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
+
+                    offset: 0.42
+                },
+
+                {
+                    left: "21%",
+                    top: "46%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
+
+                    offset: 0.52
+                },
+
+                {
+                    left: "34%",
+                    top: "66%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(13deg) scale(1.23)",
+
+                    offset: 0.63
+                },
+
+                {
+                    left: "67%",
+                    top: "72%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(17deg) scale(1.28)",
+
+                    offset: 0.75
+                },
+
+                {
+                    left: "78%",
+                    top: "55%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
+
+                    offset: 0.84
+                },
+
+                {
+                    left: "65%",
+                    top: "43%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
+
+                    offset: 0.91
+                },
+
+                {
+                    left: "50%",
+                    top: "50%",
+
+                    transform:
+                        "translate(-50%, -50%) rotate(0deg) scale(1.65)"
+                }
+
+            ],
+
+            {
+                duration: 9000,
+
+                easing:
+                    "cubic-bezier(0.45, 0, 0.25, 1)",
+
+                fill: "forwards"
+            }
+        );
+
+
+    /*
+        Dejamos que el vuelo
+        avance antes de comenzar
+        el acercamiento.
+    */
+
+    await esperar(7000);
+
+
+    /*
+        5
+        DESAPARECE EL MENSAJE
+    */
+
+    intro.classList.add(
+        "ocultar-mensaje"
+    );
+
+
+    /*
+        6
+        ACERCAMIENTO FINAL
+       
+        IMPORTANTE:
+        no vamos de 1.65 → 15.
+
+        Hacemos varias etapas mucho
+        más suaves.
+    */
+
+    const acercamiento =
+        mariposaVuelo.animate(
+
+            [
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(1.65)"
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(2.0)",
+
+                    offset: 0.15
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(2.5)",
+
+                    offset: 0.30
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(3.2)",
+
+                    offset: 0.45
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(4.1)",
+
+                    offset: 0.60
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(5.2)",
+
+                    offset: 0.75
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(6.5)",
+
+                    offset: 0.88
+                },
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(8.0)"
+                }
+
+            ],
+
+            {
+
+                duration: 3000,
+
+                easing:
+                    "cubic-bezier(0.7, 0, 0.12, 1)",
+
+                fill: "forwards"
+            }
+        );
+
+
+    await acercamiento.finished;
+
+
+    /*
+        7
+        BRILLITOS
+    */
+
+    detenerBrillos();
+
+
+    /*
+        8
+        TRANSICIÓN
+    */
+
+    intro.classList.add(
+        "transicion-final"
+    );
+}
+
+
+iniciarSecuencia();
