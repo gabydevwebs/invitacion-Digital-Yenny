@@ -465,13 +465,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    animation:
-        aleteo-mariposa
-        1.7s
-        ease-in-out
-        infinite;
-
-    will-change: transform;
+    /* animation: aleteo-mariposa 1.7s ease-in-out infinite; */
 }
 
 
