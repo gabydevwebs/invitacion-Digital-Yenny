@@ -555,10 +555,8 @@ body {
 
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
+
 .mensaje-linea {
     font-family:
         Georgia,
