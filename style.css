@@ -464,18 +464,7 @@ body {
 
     align-items: center;
     justify-content: center;
-
-    animation:
-        aleteo-mariposa
-        1.7s
-        ease-in-out
-        infinite;
-
-    animation-delay: 0s;
-
-    will-change: transform;
 }
-
 
 /* =========================
    IMAGEN DE MARIPOSA
