@@ -1,15 +1,9 @@
 const evento = {
-
     nombre: "Yenny",
-
     fecha: "10 de Octubre de 2026",
-
     lugar: "Salón Quinta de los Tres Hermanos",
-
     dressCode: "Elegante Sport",
-
     alias: "yyyyyyyy"
-
 };
 
 const app = document.getElementById("app");
@@ -265,9 +259,7 @@ function crearIntro() {
             </div>
 
         </section>
-
     `;
-
 }
 
 
@@ -296,42 +288,30 @@ const particulas =
 ========================= */
 
 /*
- * Preparamos la imagen antes de
- * comenzar la secuencia.
- *
- * Esto intenta evitar que Safari
- * tenga que cargar/renderizar la
- * PNG justo cuando comienza
- * la animación.
- */
+    Evitamos mostrar la imagen
+    antes de que Safari haya
+    terminado de cargarla.
 
-const imagenPrevia = new Image();
+    Esto intenta evitar el
+    rectángulo que aparece
+    solamente en la primera carga.
+*/
 
-imagenPrevia.src =
-    "img/mariposa.png";
+mariposa.style.opacity = "0";
 
+if (mariposa.complete) {
 
-async function prepararMariposa() {
+    mariposa.style.opacity = "1";
 
-    if (imagenPrevia.complete) {
-        return;
-    }
+} else {
 
-    await new Promise(resolve => {
-
-        imagenPrevia.addEventListener(
-            "load",
-            resolve,
-            { once: true }
-        );
-
-        imagenPrevia.addEventListener(
-            "error",
-            resolve,
-            { once: true }
-        );
-
-    });
+    mariposa.addEventListener(
+        "load",
+        () => {
+            mariposa.style.opacity = "1";
+        },
+        { once: true }
+    );
 
 }
 
@@ -347,7 +327,6 @@ function esperar(ms) {
         setTimeout(resolve, ms);
 
     });
-
 }
 
 
@@ -393,9 +372,7 @@ function crearBrillito(x, y) {
         `${1.2 + Math.random() * 1.2}s`;
 
 
-    particulas.appendChild(
-        brillo
-    );
+    particulas.appendChild(brillo);
 
 
     setTimeout(() => {
@@ -403,7 +380,6 @@ function crearBrillito(x, y) {
         brillo.remove();
 
     }, 2600);
-
 }
 
 
@@ -433,10 +409,7 @@ function comenzarBrillos() {
                 rect.height / 2;
 
 
-            crearBrillito(
-                x,
-                y
-            );
+            crearBrillito(x, y);
 
 
             if (Math.random() > 0.65) {
@@ -454,18 +427,14 @@ function comenzarBrillos() {
             }
 
         }, 130);
-
 }
 
 
 function detenerBrillos() {
 
-    clearInterval(
-        intervaloBrillos
-    );
+    clearInterval(intervaloBrillos);
 
     intervaloBrillos = null;
-
 }
 
 
@@ -474,13 +443,6 @@ function detenerBrillos() {
 ========================= */
 
 async function iniciarSecuencia() {
-
-
-    /* =========================
-       PREPARAR MARIPOSA
-    ========================= */
-
-    await prepararMariposa();
 
 
     /* =========================
@@ -528,142 +490,109 @@ async function iniciarSecuencia() {
             [
 
                 {
-
                     left: "50%",
-
                     top: "50%",
 
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1)"
-
                 },
 
                 {
-
                     left: "65%",
-
                     top: "39%",
 
                     transform:
                         "translate(-50%, -50%) rotate(9deg) scale(1.05)",
 
                     offset: 0.10
-
                 },
 
                 {
-
                     left: "77%",
-
                     top: "28%",
 
                     transform:
                         "translate(-50%, -50%) rotate(16deg) scale(1.08)",
 
                     offset: 0.20
-
                 },
 
                 {
-
                     left: "63%",
-
                     top: "24%",
 
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
 
                     offset: 0.30
-
                 },
 
                 {
-
                     left: "35%",
-
                     top: "31%",
 
                     transform:
                         "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
 
                     offset: 0.42
-
                 },
 
                 {
-
                     left: "21%",
-
                     top: "46%",
 
                     transform:
                         "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
 
                     offset: 0.52
-
                 },
 
                 {
-
                     left: "34%",
-
                     top: "66%",
 
                     transform:
                         "translate(-50%, -50%) rotate(13deg) scale(1.23)",
 
                     offset: 0.63
-
                 },
 
                 {
-
                     left: "67%",
-
                     top: "72%",
 
                     transform:
                         "translate(-50%, -50%) rotate(17deg) scale(1.28)",
 
                     offset: 0.75
-
                 },
 
                 {
-
                     left: "78%",
-
                     top: "55%",
 
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
 
                     offset: 0.84
-
                 },
 
                 {
-
                     left: "65%",
-
                     top: "43%",
 
                     transform:
                         "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
 
                     offset: 0.91
-
                 },
 
                 {
-
                     left: "50%",
-
                     top: "50%",
 
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1.65)"
-
                 }
 
             ],
@@ -678,7 +607,6 @@ async function iniciarSecuencia() {
                 fill: "forwards"
 
             }
-
         );
 
 
@@ -688,20 +616,19 @@ async function iniciarSecuencia() {
 
     await esperar(7000);
 
-
     intro.classList.add(
         "ocultar-mensaje"
     );
 
 
     /*
-     * Esperamos a que termine
-     * COMPLETAMENTE el vuelo.
-     *
-     * Esto evita que el zoom
-     * y el vuelo compitan por
-     * el mismo transform.
-     */
+        Esperamos a que termine
+        COMPLETAMENTE el vuelo.
+
+        Esto evita que el zoom
+        y el vuelo compitan por
+        el mismo transform.
+    */
 
     await vuelo.finished;
 
@@ -716,71 +643,55 @@ async function iniciarSecuencia() {
             [
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(1.65)"
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
 
                     offset: 0.15
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
 
                     offset: 0.30
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
 
                     offset: 0.45
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
 
                     offset: 0.60
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
 
                     offset: 0.75
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
 
                     offset: 0.88
-
                 },
 
                 {
-
                     transform:
                         "translate(-50%, -50%) scale(8.0)"
-
                 }
 
             ],
@@ -795,7 +706,6 @@ async function iniciarSecuencia() {
                 fill: "forwards"
 
             }
-
         );
 
 

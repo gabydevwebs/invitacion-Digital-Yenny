@@ -465,15 +465,25 @@ body {
     align-items: center;
     justify-content: center;
 
-    /* animation: aleteo-mariposa 1.7s ease-in-out infinite; */
+    animation:
+        aleteo-mariposa
+        1.7s
+        ease-in-out
+        infinite;
+
+    animation-delay: 0s;
+
+    will-change: transform;
 }
 
 
 /* =========================
    IMAGEN DE MARIPOSA
 ========================= */
+
 .mariposa-intro {
     width: clamp(65px, 11vw, 125px);
+
     height: auto;
 
     object-fit: contain;
@@ -484,10 +494,12 @@ body {
         );
 
     display: block;
+
     pointer-events: none;
 
     opacity: 0.999;
 }
+
 
 /* =========================
    ALETEO / FLOTACIÓN
@@ -497,8 +509,8 @@ body {
 
     0% {
         transform:
-            translateY(0.01px)
-            rotate(0.001deg)
+            translateY(0)
+            rotate(0deg)
             scale(1);
     }
 
@@ -525,8 +537,53 @@ body {
 
     100% {
         transform:
-            translateY(0.01px)
-            rotate(0.001deg)
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   MOVIMIENTO INICIAL
+   ACOMPAÑA AL PORTÓN
+========================= */
+
+.intro.abriendo .mariposa-vuelo {
+    animation:
+        movimiento-inicial-mariposa
+        2.8s
+        cubic-bezier(0.65, 0, 0.2, 1)
+        forwards;
+}
+
+@keyframes movimiento-inicial-mariposa {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            translateY(0)
+            scale(1);
+    }
+
+    35% {
+        transform:
+            translate(-50%, -50%)
+            translateY(-7px)
+            scale(1.03);
+    }
+
+    65% {
+        transform:
+            translate(-50%, -50%)
+            translateY(5px)
+            scale(1.01);
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            translateY(-3px)
             scale(1);
     }
 }
