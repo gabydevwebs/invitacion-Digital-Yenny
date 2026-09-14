@@ -537,37 +537,28 @@ body {
    MENSAJE
 ========================= */
 
-.mensaje-intro {
-    position: fixed;
+.mariposa-intro {
+    width: clamp(65px, 11vw, 125px);
 
-    left: 50%;
-    top: 60%;
+    height: auto;
 
-    width: min(85vw, 650px);
+    object-fit: contain;
 
-    transform:
-        translate(-50%, -50%)
-        translateY(20px);
-
-    text-align: center;
-
-    z-index: 70;
-
-    opacity: 0;
+    display: block;
 
     pointer-events: none;
 
-    color: #f5f5f5;
+    filter:
+        drop-shadow(
+            0 0 12px rgba(255,255,255,0.45)
+        );
 
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.25),
-        0 0 30px rgba(255,255,255,0.12);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
-    transition:
-        opacity 1.8s ease,
-        transform 1.8s ease;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
-
 .mensaje-linea {
     font-family:
         Georgia,
