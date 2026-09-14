@@ -20,11 +20,422 @@ body {
         serif;
 }
 
+
+/* =========================
+   PÁGINA DE INVITACIÓN
+========================= */
+
+.pagina-invitacion {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at center,
+            #181818 0%,
+            #080808 48%,
+            #000 100%
+        );
+    color: #fff;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.pagina-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-invitacion {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+/* =========================
+   MARIPOSA DE FONDO
+========================= */
+
+.hero-mariposa {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(85vw, 520px);
+    transform:
+        translate(-50%, -50%);
+    opacity: 0;
+    filter:
+        blur(0.2px)
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,0.12)
+        );
+    pointer-events: none;
+}
+
+.hero-mariposa img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   CONTENIDO HERO
+========================= */
+
+.hero-contenido {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+}
+
+
+/* =========================
+   MIS XV
+========================= */
+
+.hero-superior {
+    margin-bottom: 14px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            13px,
+            2vw,
+            18px
+        );
+
+    font-weight: 400;
+
+    letter-spacing:
+        0.45em;
+
+    color: #d6d6d6;
+}
+
+
+/* =========================
+   YENNY
+========================= */
+
+.hero-contenido h1 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            62px,
+            13vw,
+            150px
+        );
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing:
+        0.08em;
+
+    color: #f4f4f4;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,255,255,0.12),
+        0 0 70px
+        rgba(255,255,255,0.08);
+}
+
+
+/* =========================
+   LÍNEA
+========================= */
+
+.hero-linea {
+    width:
+        clamp(
+            55px,
+            12vw,
+            110px
+        );
+
+    height: 1px;
+
+    margin:
+        25px 0 20px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #cfcfcf,
+            transparent
+        );
+
+    transform:
+        scaleX(0);
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+.hero-fecha {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            13px,
+            2vw,
+            18px
+        );
+
+    letter-spacing:
+        0.35em;
+
+    color: #c9c9c9;
+}
+
+
+/* =========================
+   INDICADOR SCROLL
+========================= */
+
+.indicador-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 35px;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 9px;
+
+    opacity: 0;
+}
+
+.indicador-scroll span {
+    width: 1px;
+    height: 32px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #d7d7d7
+        );
+
+    animation:
+        scroll-linea
+        2s
+        ease-in-out
+        infinite;
+}
+
+.indicador-scroll p {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.35em;
+
+    text-transform:
+        uppercase;
+
+    color: #aaa;
+
+    padding-left:
+        0.35em;
+}
+
+
+/* =========================
+   ANIMACIÓN DE ENTRADA
+========================= */
+
+.pagina-visible .hero-mariposa {
+    animation:
+        aparecer-mariposa
+        2.2s
+        cubic-bezier(
+            0.2,
+            0.7,
+            0.2,
+            1
+        )
+        forwards;
+}
+
+.pagina-visible .hero-contenido {
+    animation:
+        aparecer-contenido
+        1.5s
+        cubic-bezier(
+            0.2,
+            0.7,
+            0.2,
+            1
+        )
+        0.65s
+        forwards;
+}
+
+.pagina-visible .hero-linea {
+    animation:
+        aparecer-linea
+        1.2s
+        ease
+        1.15s
+        forwards;
+}
+
+.pagina-visible .indicador-scroll {
+    animation:
+        aparecer-scroll
+        1.2s
+        ease
+        1.9s
+        forwards;
+}
+
+
+@keyframes aparecer-mariposa {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.75);
+    }
+
+    100% {
+        opacity: 0.10;
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+}
+
+
+@keyframes aparecer-contenido {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes aparecer-linea {
+
+    0% {
+        transform:
+            scaleX(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform:
+            scaleX(1);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes aparecer-scroll {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+}
+
+
+@keyframes scroll-linea {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform:
+            scaleY(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            scaleY(1);
+    }
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
 .intro {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
+
     background:
         radial-gradient(
             circle at center,
@@ -32,9 +443,11 @@ body {
             #080808 48%,
             #000 100%
         );
+
     overflow: hidden;
     z-index: 9999;
     opacity: 1;
+
     transition:
         opacity 1.2s ease;
 }
@@ -43,12 +456,16 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
+
     width: 45vw;
     height: 45vw;
+
     max-width: 500px;
     max-height: 500px;
+
     transform:
         translate(-50%, -50%);
+
     background:
         radial-gradient(
             circle,
@@ -56,31 +473,48 @@ body {
             rgba(255,255,255,0.04) 30%,
             transparent 70%
         );
+
     filter: blur(20px);
+
     pointer-events: none;
 }
 
+
+/* =========================
+   PORTÓN
+========================= */
+
 .porton {
     position: absolute;
+
     left: 50%;
     top: 50%;
+
     width:
         min(96vw, 1000px);
+
     height:
         min(94vh, 900px);
+
     transform:
         translate(-50%, -50%);
+
     display: flex;
+
     overflow: visible;
+
     z-index: 20;
 }
 
 .hoja {
     width: 50%;
     height: 100%;
+
     overflow: visible;
+
     transform-style:
         preserve-3d;
+
     transition:
         transform 2.8s
         cubic-bezier(
@@ -93,33 +527,43 @@ body {
 
 .hierro {
     fill: none;
+
     stroke-linejoin:
         round;
+
     stroke-linecap:
         round;
 }
 
 .hierro.grueso {
     fill: #080808;
+
     stroke: #999;
+
     stroke-width: 6;
 }
 
 .hierro.medio {
     stroke: #999;
+
     stroke-width: 3;
 }
 
 .barrotes line {
     stroke: #bdbdbd;
+
     stroke-width: 4;
+
     stroke-linecap: round;
 }
 
 .ornamento path {
     fill: none;
+
     stroke: #cfcfcf;
+
     stroke-width: 4;
+
     stroke-linecap: round;
 }
 
@@ -127,12 +571,15 @@ body {
     fill: #d8d8d8;
 }
 
+
 .intro.abriendo
 .hoja-izquierda {
+
     transform:
         perspective(1800px)
         rotateY(-75deg)
         translateX(-35px);
+
     transition:
         transform 2.8s
         cubic-bezier(
@@ -143,12 +590,15 @@ body {
         );
 }
 
+
 .intro.abriendo
 .hoja-derecha {
+
     transform:
         perspective(1800px)
         rotateY(75deg)
         translateX(35px);
+
     transition:
         transform 2.8s
         cubic-bezier(
@@ -159,41 +609,57 @@ body {
         );
 }
 
+
 /* =========================
-   CENTRO DEL PORTÓN
+   CENTRO PORTÓN
 ========================= */
 
 .centro-porton {
     position: absolute;
+
     left: 50%;
     top: 50%;
+
     width: 86px;
     height: 86px;
+
     transform:
         translate(-50%, -50%);
+
     z-index: 40;
+
     transition:
         opacity 0.8s ease;
 }
 
 .adorno-centro {
     position: absolute;
+
     left: 50%;
     top: 50%;
+
     width: 72px;
     height: 72px;
+
     transform:
         translate(-50%, -50%);
+
     border-radius: 50%;
+
     background: #080808;
+
     border:
         2px solid #d8d8d8;
+
     box-shadow:
         0 0 16px
         rgba(255,255,255,0.35),
+
         inset 0 0 18px
         rgba(255,255,255,0.12);
+
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -201,10 +667,13 @@ body {
 .rombo-centro {
     width: 24px;
     height: 24px;
+
     border:
         2px solid #e2e2e2;
+
     transform:
         rotate(45deg);
+
     box-shadow:
         0 0 8px
         rgba(255,255,255,0.35);
@@ -215,50 +684,66 @@ body {
     opacity: 0;
 }
 
+
 /* =========================
    PARTÍCULAS
 ========================= */
 
 .particulas {
     position: absolute;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 70;
 }
 
 .brillito {
     position: fixed;
+
     border-radius: 50%;
+
     background: #fff;
+
     box-shadow:
         0 0 8px
         rgba(255,255,255,0.9);
+
     pointer-events: none;
+
     animation:
         desaparecer-brillo
         ease-out
         forwards;
 }
 
+
 @keyframes desaparecer-brillo {
+
     0% {
         opacity: 0;
+
         transform:
             scale(0.3);
     }
 
     20% {
         opacity: 1;
+
         transform:
             scale(1);
     }
 
     100% {
         opacity: 0;
+
         transform:
             scale(0);
     }
+
 }
+
 
 /* =========================
    MENSAJE
@@ -266,17 +751,25 @@ body {
 
 .mensaje-intro {
     position: absolute;
+
     left: 50%;
     top: 50%;
+
     width:
         min(90vw, 700px);
+
     transform:
         translate(-50%, -50%)
         translateY(30px);
+
     text-align: center;
+
     z-index: 80;
+
     opacity: 0;
+
     pointer-events: none;
+
     transition:
         opacity 1.5s ease,
         transform 1.5s ease;
@@ -284,50 +777,69 @@ body {
 
 .mensaje-linea {
     color: #f4f4f4;
+
     font-size:
         clamp(
             21px,
             3vw,
             34px
         );
+
     line-height: 1.5;
+
     font-weight: 400;
-    letter-spacing: 0.04em;
+
+    letter-spacing:
+        0.04em;
+
     text-shadow:
         0 0 18px
         rgba(255,255,255,0.18);
 }
 
+
 .intro.mostrar-mensaje
 .mensaje-intro {
+
     opacity: 1;
+
     transform:
         translate(-50%, -50%)
         translateY(0);
 }
 
+
 .intro.ocultar-mensaje
 .mensaje-intro {
+
     opacity: 0;
+
     transform:
         translate(-50%, -50%)
         translateY(-20px);
 }
 
+
 /* =========================
-   MARIPOSA
+   MARIPOSA INTRO
 ========================= */
 
 .mariposa-vuelo {
     position: fixed;
+
     left: 50%;
     top: 50%;
+
     width: 90px;
     height: 90px;
+
     transform:
         translate(-50%, -50%);
+
     z-index: 100;
+
     pointer-events: none;
+
     will-change:
         left,
         top,
@@ -337,7 +849,9 @@ body {
 .mariposa-flotante {
     width: 100%;
     height: 100%;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -349,28 +863,39 @@ body {
             9vw,
             105px
         );
+
     height: auto;
+
     object-fit: contain;
+
     filter:
         drop-shadow(
             0 0 10px
             rgba(255,255,255,0.5)
         );
+
     display: block;
+
     pointer-events: none;
+
     opacity: 0.999;
 }
+
 
 /* =========================
    TRANSICIÓN FINAL
 ========================= */
 
 .intro.transicion-final {
+
     opacity: 0;
+
     pointer-events: none;
+
     transition:
         opacity 1.2s ease;
 }
+
 
 /* =========================
    MOBILE
@@ -379,48 +904,110 @@ body {
 @media (max-width: 600px) {
 
     .porton {
+
         width: 100vw;
+
         height: auto;
+
         aspect-ratio:
             1000 / 900;
     }
 
+
     .mensaje-intro {
+
         width: 88vw;
     }
 
+
     .mensaje-linea {
+
         font-size: 20px;
     }
 
+
     .centro-porton {
+
         width: 74px;
         height: 74px;
     }
 
+
     .adorno-centro {
+
         width: 62px;
         height: 62px;
     }
 
+
     .rombo-centro {
+
         width: 21px;
         height: 21px;
     }
 
+
     .mariposa-vuelo {
+
         width: 90px;
         height: 90px;
     }
 
+
     .mariposa-intro {
+
         width: 58px;
     }
 
-    /* Partículas más controladas en iPhone */
+
     .brillito {
+
         box-shadow:
             0 0 5px
             rgba(255,255,255,0.75);
     }
+
+
+    /* HERO MOBILE */
+
+    .hero-mariposa {
+
+        width: 90vw;
+    }
+
+
+    .hero-contenido h1 {
+
+        font-size:
+            clamp(
+                58px,
+                18vw,
+                100px
+            );
+    }
+
+
+    .hero-superior {
+
+        font-size: 12px;
+
+        letter-spacing:
+            0.38em;
+    }
+
+
+    .hero-fecha {
+
+        font-size: 12px;
+
+        letter-spacing:
+            0.28em;
+    }
+
+
+    .indicador-scroll {
+
+        bottom: 28px;
+    }
+
 }

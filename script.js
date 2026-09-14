@@ -10,12 +10,59 @@ const app = document.getElementById("app");
 
 
 /* =========================
-   CREAR INTRO
+   CREAR INTRO + PÁGINA
 ========================= */
 
 function crearIntro() {
 
     app.innerHTML = `
+
+        <!-- =========================
+             PÁGINA DE LA INVITACIÓN
+        ========================= -->
+
+        <main class="pagina-invitacion" id="pagina-invitacion">
+
+            <section class="hero-invitacion">
+
+                <div class="hero-mariposa">
+                    <img
+                        src="img/mariposa.png"
+                        alt=""
+                    >
+                </div>
+
+                <div class="hero-contenido">
+
+                    <p class="hero-superior">
+                        MIS XV
+                    </p>
+
+                    <h1>
+                        YENNY
+                    </h1>
+
+                    <div class="hero-linea"></div>
+
+                    <p class="hero-fecha">
+                        10 · 10 · 2026
+                    </p>
+
+                </div>
+
+                <div class="indicador-scroll">
+                    <span></span>
+                    <p>Deslizá</p>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             INTRO
+        ========================= -->
 
         <section class="intro" id="intro">
 
@@ -28,10 +75,7 @@ function crearIntro() {
 
             <div class="porton">
 
-
-                <!-- =========================
-                     PUERTA IZQUIERDA
-                ========================= -->
+                <!-- PUERTA IZQUIERDA -->
 
                 <svg
                     class="hoja hoja-izquierda"
@@ -60,74 +104,19 @@ function crearIntro() {
                         "
                     />
 
-
                     <g class="barrotes">
 
-                        <line
-                            x1="45"
-                            y1="215"
-                            x2="45"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="95"
-                            y1="180"
-                            x2="95"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="145"
-                            y1="150"
-                            x2="145"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="195"
-                            y1="120"
-                            x2="195"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="245"
-                            y1="100"
-                            x2="245"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="295"
-                            y1="90"
-                            x2="295"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="345"
-                            y1="95"
-                            x2="345"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="395"
-                            y1="115"
-                            x2="395"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="445"
-                            y1="155"
-                            x2="445"
-                            y2="850"
-                        />
+                        <line x1="45"  y1="215" x2="45"  y2="850"/>
+                        <line x1="95"  y1="180" x2="95"  y2="850"/>
+                        <line x1="145" y1="150" x2="145" y2="850"/>
+                        <line x1="195" y1="120" x2="195" y2="850"/>
+                        <line x1="245" y1="100" x2="245" y2="850"/>
+                        <line x1="295" y1="90"  x2="295" y2="850"/>
+                        <line x1="345" y1="95" x2="345" y2="850"/>
+                        <line x1="395" y1="115" x2="395" y2="850"/>
+                        <line x1="445" y1="155" x2="445" y2="850"/>
 
                     </g>
-
 
                     <g class="ornamento">
 
@@ -153,71 +142,24 @@ function crearIntro() {
 
                     </g>
 
-
                     <g class="decoracion">
 
-                        <circle
-                            cx="45"
-                            cy="215"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="95"
-                            cy="180"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="145"
-                            cy="150"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="195"
-                            cy="120"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="245"
-                            cy="100"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="295"
-                            cy="90"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="345"
-                            cy="95"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="395"
-                            cy="115"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="445"
-                            cy="155"
-                            r="8"
-                        />
+                        <circle cx="45"  cy="215" r="8"/>
+                        <circle cx="95"  cy="180" r="8"/>
+                        <circle cx="145" cy="150" r="8"/>
+                        <circle cx="195" cy="120" r="8"/>
+                        <circle cx="245" cy="100" r="8"/>
+                        <circle cx="295" cy="90"  r="8"/>
+                        <circle cx="345" cy="95"  r="8"/>
+                        <circle cx="395" cy="115" r="8"/>
+                        <circle cx="445" cy="155" r="8"/>
 
                     </g>
 
                 </svg>
 
 
-                <!-- =========================
-                     PUERTA DERECHA
-                ========================= -->
+                <!-- PUERTA DERECHA -->
 
                 <svg
                     class="hoja hoja-derecha"
@@ -246,74 +188,19 @@ function crearIntro() {
                         "
                     />
 
-
                     <g class="barrotes">
 
-                        <line
-                            x1="55"
-                            y1="155"
-                            x2="55"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="105"
-                            y1="115"
-                            x2="105"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="155"
-                            y1="95"
-                            x2="155"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="205"
-                            y1="90"
-                            x2="205"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="255"
-                            y1="100"
-                            x2="255"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="305"
-                            y1="120"
-                            x2="305"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="355"
-                            y1="150"
-                            x2="355"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="405"
-                            y1="180"
-                            x2="405"
-                            y2="850"
-                        />
-
-                        <line
-                            x1="455"
-                            y1="215"
-                            x2="455"
-                            y2="850"
-                        />
+                        <line x1="55"  y1="155" x2="55"  y2="850"/>
+                        <line x1="105" y1="115" x2="105" y2="850"/>
+                        <line x1="155" y1="95"  x2="155" y2="850"/>
+                        <line x1="205" y1="90"  x2="205" y2="850"/>
+                        <line x1="255" y1="100" x2="255" y2="850"/>
+                        <line x1="305" y1="120" x2="305" y2="850"/>
+                        <line x1="355" y1="150" x2="355" y2="850"/>
+                        <line x1="405" y1="180" x2="405" y2="850"/>
+                        <line x1="455" y1="215" x2="455" y2="850"/>
 
                     </g>
-
 
                     <g class="ornamento">
 
@@ -339,67 +226,17 @@ function crearIntro() {
 
                     </g>
 
-
-                    <!--
-                        BOLITAS ALINEADAS CON
-                        LA PUNTA DE CADA BARROTE
-                    -->
-
                     <g class="decoracion">
 
-                        <circle
-                            cx="55"
-                            cy="155"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="105"
-                            cy="115"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="155"
-                            cy="95"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="205"
-                            cy="90"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="255"
-                            cy="100"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="305"
-                            cy="120"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="355"
-                            cy="150"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="405"
-                            cy="180"
-                            r="8"
-                        />
-
-                        <circle
-                            cx="455"
-                            cy="215"
-                            r="8"
-                        />
+                        <circle cx="55"  cy="155" r="8"/>
+                        <circle cx="105" cy="115" r="8"/>
+                        <circle cx="155" cy="95"  r="8"/>
+                        <circle cx="205" cy="90"  r="8"/>
+                        <circle cx="255" cy="100" r="8"/>
+                        <circle cx="305" cy="120" r="8"/>
+                        <circle cx="355" cy="150" r="8"/>
+                        <circle cx="405" cy="180" r="8"/>
+                        <circle cx="455" cy="215" r="8"/>
 
                     </g>
 
@@ -495,6 +332,9 @@ const mariposa =
 const particulas =
     document.getElementById("particulas");
 
+const pagina =
+    document.getElementById("pagina-invitacion");
+
 
 /* =========================
    CARGA DE MARIPOSA
@@ -515,6 +355,7 @@ if (mariposa.complete) {
         },
         { once: true }
     );
+
 }
 
 
@@ -525,8 +366,11 @@ if (mariposa.complete) {
 function esperar(ms) {
 
     return new Promise(resolve => {
+
         setTimeout(resolve, ms);
+
     });
+
 }
 
 
@@ -569,8 +413,11 @@ function crearBrillito(x, y) {
     particulas.appendChild(brillo);
 
     setTimeout(() => {
+
         brillo.remove();
+
     }, 2600);
+
 }
 
 
@@ -603,13 +450,14 @@ function comenzarBrillos() {
                 crearBrillito(
                     x +
                     (Math.random() - 0.5) * 40,
-
                     y +
                     (Math.random() - 0.5) * 40
                 );
+
             }
 
         }, 130);
+
 }
 
 
@@ -618,6 +466,7 @@ function detenerBrillos() {
     clearInterval(intervaloBrillos);
 
     intervaloBrillos = null;
+
 }
 
 
@@ -626,6 +475,7 @@ function detenerBrillos() {
 ========================= */
 
 async function iniciarSecuencia() {
+
 
     /* =========================
        1. PORTÓN CERRADO
@@ -652,7 +502,9 @@ async function iniciarSecuencia() {
 
     const vuelo =
         mariposaVuelo.animate(
+
             [
+
                 {
                     left: "50%",
                     top: "50%",
@@ -738,15 +590,16 @@ async function iniciarSecuencia() {
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1.65)"
                 }
+
             ],
+
             {
                 duration: 9000,
-
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
-
                 fill: "forwards"
             }
+
         );
 
 
@@ -803,7 +656,9 @@ async function iniciarSecuencia() {
 
     const acercamiento =
         mariposaVuelo.animate(
+
             [
+
                 {
                     transform:
                         "translate(-50%, -50%) scale(1.65)"
@@ -812,42 +667,36 @@ async function iniciarSecuencia() {
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
-
                     offset: 0.15
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
-
                     offset: 0.30
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
-
                     offset: 0.45
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
-
                     offset: 0.60
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
-
                     offset: 0.75
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
-
                     offset: 0.88
                 },
 
@@ -855,15 +704,16 @@ async function iniciarSecuencia() {
                     transform:
                         "translate(-50%, -50%) scale(8.0)"
                 }
+
             ],
+
             {
                 duration: 3000,
-
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
-
                 fill: "forwards"
             }
+
         );
 
     await acercamiento.finished;
@@ -876,6 +726,18 @@ async function iniciarSecuencia() {
     intro.classList.add(
         "transicion-final"
     );
+
+
+    /* =========================
+       12. APARECER PÁGINA
+    ========================= */
+
+    await esperar(250);
+
+    pagina.classList.add(
+        "pagina-visible"
+    );
+
 }
 
 
