@@ -270,7 +270,6 @@ body {
 /* =========================
    MARIPOSA
 ========================= */
-
 .mariposa-intro {
     position: absolute;
 
@@ -296,7 +295,6 @@ body {
     animation:
         respiracion 3s ease-in-out infinite;
 }
-
 
 /* Respiración suave */
 
