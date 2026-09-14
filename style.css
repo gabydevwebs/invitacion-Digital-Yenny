@@ -12,11 +12,16 @@ html,
 body {
     width: 100%;
     min-height: 100%;
+    background: #000;
 }
 
 body {
-    background: #020202;
-    overflow: hidden;
+    overflow-x: hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 }
 
 
@@ -30,23 +35,19 @@ body {
     inset: 0;
 
     width: 100%;
-    height: 100svh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
+    height: 100%;
 
     background:
         radial-gradient(
-            ellipse at center,
-            #181818 0%,
+            circle at center,
+            #171717 0%,
             #080808 48%,
-            #010101 100%
+            #000 100%
         );
 
-    z-index: 100;
+    overflow: hidden;
+
+    z-index: 9999;
 
     opacity: 1;
 
@@ -65,8 +66,11 @@ body {
     left: 50%;
     top: 50%;
 
-    width: min(80vw, 900px);
-    height: min(80vw, 900px);
+    width: 45vw;
+    height: 45vw;
+
+    max-width: 500px;
+    max-height: 500px;
 
     transform:
         translate(-50%, -50%);
@@ -74,14 +78,12 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,0.09),
-            rgba(255,255,255,0.02) 45%,
+            rgba(255,255,255,0.10) 0%,
+            rgba(255,255,255,0.04) 30%,
             transparent 70%
         );
 
-    filter: blur(30px);
-
-    z-index: 1;
+    filter: blur(20px);
 
     pointer-events: none;
 }
@@ -97,85 +99,73 @@ body {
     left: 50%;
     top: 50%;
 
-    width: min(96vw, 1000px);
-    height: min(94vh, 900px);
+    width:
+        min(96vw, 1000px);
+
+    height:
+        min(94vh, 900px);
 
     transform:
         translate(-50%, -50%);
 
-    z-index: 10;
+    display: flex;
 
-    pointer-events: none;
+    overflow: visible;
+
+    z-index: 20;
 }
 
 
 /* =========================
-   HOJAS DEL PORTÓN
+   HOJAS
 ========================= */
 
 .hoja {
-    position: absolute;
-
-    top: 0;
-
     width: 50%;
     height: 100%;
 
     overflow: visible;
 
-    transform:
-        perspective(1800px)
-        rotateY(0deg)
-        translateX(0);
-
-    transform-origin: center center;
-
-    transform-style: preserve-3d;
-
-    backface-visibility: hidden;
-
-    will-change: transform;
+    transform-style:
+        preserve-3d;
 
     transition:
-        transform
-        2.8s
-        cubic-bezier(0.65, 0, 0.2, 1);
-}
-
-.hoja-izquierda {
-    left: 0;
-}
-
-.hoja-derecha {
-    right: 0;
+        transform 2.8s
+        cubic-bezier(
+            0.65,
+            0,
+            0.2,
+            1
+        );
 }
 
 
 /* =========================
-   PORTÓN - METAL
+   HIERRO
 ========================= */
 
 .hierro {
+    fill: none;
+
+    stroke-linejoin:
+        round;
+
+    stroke-linecap:
+        round;
+}
+
+.hierro.grueso {
     fill: #080808;
 
-    stroke: #777;
+    stroke: #999;
 
-    stroke-width: 8;
-
-    paint-order: stroke fill;
-
-    filter:
-        drop-shadow(
-            0 0 4px rgba(255,255,255,0.18)
-        );
+    stroke-width: 6;
 }
 
 .hierro.medio {
-    fill: none;
+    stroke: #999;
 
-    stroke: #3e3e3e;
-
-    stroke-width: 5;
+    stroke-width: 3;
 }
 
 
@@ -184,16 +174,11 @@ body {
 ========================= */
 
 .barrotes line {
-    stroke: #606060;
+    stroke: #bdbdbd;
 
-    stroke-width: 6;
+    stroke-width: 4;
 
     stroke-linecap: round;
-
-    filter:
-        drop-shadow(
-            0 0 3px rgba(255,255,255,0.18)
-        );
 }
 
 
@@ -204,42 +189,24 @@ body {
 .ornamento path {
     fill: none;
 
-    stroke: #707070;
-
-    stroke-width: 7;
-
-    stroke-linecap: round;
-
-    filter:
-        drop-shadow(
-            0 0 4px rgba(255,255,255,0.15)
-        );
-}
-
-
-/* =========================
-   DECORACIÓN
-========================= */
-
-.decoracion circle {
-    fill: #191919;
-
-    stroke: #888;
+    stroke: #cfcfcf;
 
     stroke-width: 4;
 
-    filter:
-        drop-shadow(
-            0 0 4px rgba(255,255,255,0.18)
-        );
+    stroke-linecap: round;
+}
+
+.decoracion circle {
+    fill: #d8d8d8;
 }
 
 
 /* =========================
-   APERTURA DEL PORTÓN
+   APERTURA
 ========================= */
 
-.intro.abriendo .hoja-izquierda {
+.intro.abriendo
+.hoja-izquierda {
 
     transform:
         perspective(1800px)
@@ -247,12 +214,17 @@ body {
         translateX(-35px);
 
     transition:
-        transform
-        2.8s
-        cubic-bezier(0.65, 0, 0.2, 1);
+        transform 2.8s
+        cubic-bezier(
+            0.65,
+            0,
+            0.2,
+            1
+        );
 }
 
-.intro.abriendo .hoja-derecha {
+.intro.abriendo
+.hoja-derecha {
 
     transform:
         perspective(1800px)
@@ -260,9 +232,13 @@ body {
         translateX(35px);
 
     transition:
-        transform
-        2.8s
-        cubic-bezier(0.65, 0, 0.2, 1);
+        transform 2.8s
+        cubic-bezier(
+            0.65,
+            0,
+            0.2,
+            1
+        );
 }
 
 
@@ -276,33 +252,22 @@ body {
     left: 50%;
     top: 50%;
 
-    width: clamp(70px, 9vw, 105px);
-    height: clamp(70px, 9vw, 105px);
+    width: 110px;
+    height: 110px;
 
     transform:
         translate(-50%, -50%);
 
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #242424 0%,
-            #090909 65%,
-            #020202 100%
-        );
-
-    border: 3px solid #888;
-
-    box-shadow:
-        0 0 20px rgba(255,255,255,0.12),
-        inset 0 0 20px #000;
-
-    z-index: 25;
+    z-index: 40;
 
     transition:
-        opacity 0.7s ease;
+        opacity 0.8s ease;
 }
+
+
+/* =========================
+   CÍRCULO CENTRAL
+========================= */
 
 .adorno-centro {
     position: absolute;
@@ -310,20 +275,60 @@ body {
     left: 50%;
     top: 50%;
 
-    width: 45%;
-    height: 45%;
+    width: 94px;
+    height: 94px;
 
     transform:
-        translate(-50%, -50%)
-        rotate(45deg);
+        translate(-50%, -50%);
 
-    border: 2px solid #999;
+    border-radius: 50%;
+
+    background: #080808;
+
+    border:
+        2px solid #d8d8d8;
 
     box-shadow:
-        0 0 8px rgba(255,255,255,0.15);
+        0 0 16px
+        rgba(255,255,255,0.35),
+
+        inset 0 0 18px
+        rgba(255,255,255,0.12);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.intro.abriendo .centro-porton {
+
+/* =========================
+   ROMBO CENTRAL
+========================= */
+
+.rombo-centro {
+    width: 28px;
+    height: 28px;
+
+    border:
+        2px solid #e2e2e2;
+
+    transform:
+        rotate(45deg);
+
+    box-shadow:
+        0 0 8px
+        rgba(255,255,255,0.35);
+}
+
+
+/* =========================
+   OCULTAR CENTRO AL ABRIR
+========================= */
+
+.intro.abriendo
+.centro-porton {
+
     opacity: 0;
 }
 
@@ -333,99 +338,133 @@ body {
 ========================= */
 
 .particulas {
-    position: fixed;
+    position: absolute;
 
     inset: 0;
 
-    width: 100%;
-    height: 100%;
-
     pointer-events: none;
 
-    overflow: hidden;
-
-    z-index: 90;
+    z-index: 70;
 }
 
 .brillito {
-    position: absolute;
-
-    width: 4px;
-    height: 4px;
+    position: fixed;
 
     border-radius: 50%;
 
-    background: white;
+    background: #fff;
 
     box-shadow:
-        0 0 5px rgba(255,255,255,0.9),
-        0 0 12px rgba(255,255,255,0.55);
+        0 0 8px
+        rgba(255,255,255,0.9);
 
     pointer-events: none;
 
     animation:
-        desaparecer-brillito
-        1.8s
+        desaparecer-brillo
         ease-out
         forwards;
 }
 
-.brillito::before,
-.brillito::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 1px;
-    height: 12px;
-
-    background:
-        rgba(255,255,255,0.8);
-
-    transform:
-        translate(-50%, -50%);
-}
-
-.brillito::after {
-    transform:
-        translate(-50%, -50%)
-        rotate(90deg);
-}
-
-@keyframes desaparecer-brillito {
+@keyframes desaparecer-brillo {
 
     0% {
         opacity: 0;
 
         transform:
-            scale(0.2)
-            rotate(0deg);
+            scale(0.3);
     }
 
     20% {
         opacity: 1;
 
         transform:
-            scale(1)
-            rotate(20deg);
+            scale(1);
     }
 
     100% {
         opacity: 0;
 
         transform:
-            scale(0.25)
-            rotate(80deg);
+            scale(0);
     }
 }
 
 
 /* =========================
+   MENSAJE
+========================= */
+
+.mensaje-intro {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width:
+        min(90vw, 700px);
+
+    transform:
+        translate(-50%, -50%)
+        translateY(30px);
+
+    text-align: center;
+
+    z-index: 80;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.mensaje-linea {
+    color: #f4f4f4;
+
+    font-size:
+        clamp(
+            21px,
+            3vw,
+            34px
+        );
+
+    line-height: 1.5;
+
+    font-weight: 400;
+
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 0 18px
+        rgba(255,255,255,0.18);
+}
+
+.intro.mostrar-mensaje
+.mensaje-intro {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(0);
+}
+
+.intro.ocultar-mensaje
+.mensaje-intro {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(-20px);
+}
+
+
+/* =========================
    MARIPOSA
-   CONTENEDOR DE VUELO
 ========================= */
 
 .mariposa-vuelo {
@@ -434,8 +473,8 @@ body {
     left: 50%;
     top: 50%;
 
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 
     transform:
         translate(-50%, -50%);
@@ -450,12 +489,6 @@ body {
         transform;
 }
 
-
-/* =========================
-   MARIPOSA
-   CAPA DE ALETEO
-========================= */
-
 .mariposa-flotante {
     width: 100%;
     height: 100%;
@@ -466,177 +499,29 @@ body {
     justify-content: center;
 }
 
-/* =========================
-   IMAGEN DE MARIPOSA
-========================= */
-
 .mariposa-intro {
-    width: clamp(65px, 11vw, 125px);
+    width:
+        clamp(
+            55px,
+            9vw,
+            105px
+        );
+
     height: auto;
+
     object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,255,255,0.5)
+        );
+
     display: block;
-    pointer-events: none;
-    filter: none;
-    opacity: 1;
-}
-
-/* =========================
-   ALETEO / FLOTACIÓN
-========================= */
-
-@keyframes aleteo-mariposa {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg)
-            scale(1);
-    }
-
-    20% {
-        transform:
-            translateY(-5px)
-            rotate(-3deg)
-            scale(1.025);
-    }
-
-    45% {
-        transform:
-            translateY(1px)
-            rotate(2deg)
-            scale(0.98);
-    }
-
-    70% {
-        transform:
-            translateY(-4px)
-            rotate(-2deg)
-            scale(1.02);
-    }
-
-    100% {
-        transform:
-            translateY(0)
-            rotate(0deg)
-            scale(1);
-    }
-}
-
-
-/* =========================
-   MOVIMIENTO INICIAL
-   ACOMPAÑA AL PORTÓN
-========================= */
-
-.intro.abriendo .mariposa-vuelo {
-    animation:
-        movimiento-inicial-mariposa
-        2.8s
-        cubic-bezier(0.65, 0, 0.2, 1)
-        forwards;
-}
-
-@keyframes movimiento-inicial-mariposa {
-
-    0% {
-        transform:
-            translate(-50%, -50%)
-            translateY(0)
-            scale(1);
-    }
-
-    35% {
-        transform:
-            translate(-50%, -50%)
-            translateY(-7px)
-            scale(1.03);
-    }
-
-    65% {
-        transform:
-            translate(-50%, -50%)
-            translateY(5px)
-            scale(1.01);
-    }
-
-    100% {
-        transform:
-            translate(-50%, -50%)
-            translateY(-3px)
-            scale(1);
-    }
-}
-
-
-/* =========================
-   MENSAJE
-========================= */
-
-.mensaje-intro {
-    position: fixed;
-
-    left: 50%;
-    top: 60%;
-
-    width: min(85vw, 650px);
-
-    transform:
-        translate(-50%, -50%)
-        translateY(20px);
-
-    text-align: center;
-
-    z-index: 70;
-
-    opacity: 0;
 
     pointer-events: none;
 
-    color: #f5f5f5;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.25),
-        0 0 30px rgba(255,255,255,0.12);
-
-    transition:
-        opacity 1.8s ease,
-        transform 1.8s ease;
-}
-
-.mensaje-linea {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(20px, 4vw, 34px);
-
-    font-weight: 400;
-
-    letter-spacing: 0.08em;
-
-    line-height: 1.6;
-
-    margin: 0;
-}
-
-.intro.mostrar-mensaje .mensaje-intro {
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(0);
-}
-
-.intro.ocultar-mensaje .mensaje-intro {
-
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(-20px);
+    opacity: 0.999;
 }
 
 
@@ -649,6 +534,9 @@ body {
     opacity: 0;
 
     pointer-events: none;
+
+    transition:
+        opacity 1.2s ease;
 }
 
 
@@ -663,119 +551,46 @@ body {
 
         height: auto;
 
-        aspect-ratio: 1000 / 900;
+        aspect-ratio:
+            1000 / 900;
     }
 
-    .hoja {
-        height: 100%;
-    }
-
-    .barrotes line {
-        stroke-width: 7;
-    }
-
-    .hierro {
-        stroke-width: 8;
-    }
-
-    .mariposa-vuelo {
-        width: 78px;
-        height: 78px;
-    }
-
-    .mariposa-intro {
-        width: 78px;
-    }
-
-    .centro-porton {
-        width: 78px;
-        height: 78px;
-    }
 
     .mensaje-intro {
-        width: 84vw;
-
-        top: 60%;
+        width: 88vw;
     }
+
 
     .mensaje-linea {
-        font-size: 21px;
-
-        line-height: 1.55;
-
-        letter-spacing: 0.06em;
-    }
-}
-
-
-/* =========================
-   MOBILE PEQUEÑO
-========================= */
-
-@media (max-width: 380px) {
-
-    .mariposa-vuelo {
-        width: 70px;
-        height: 70px;
+        font-size: 20px;
     }
 
-    .mariposa-intro {
-        width: 70px;
-    }
 
     .centro-porton {
-        width: 70px;
-        height: 70px;
+        width: 105px;
+        height: 105px;
     }
 
-    .mensaje-linea {
-        font-size: 19px;
+
+    .adorno-centro {
+        width: 90px;
+        height: 90px;
     }
-}
 
 
-/* =========================
-   TABLET
-========================= */
-
-@media (min-width: 601px) and (max-width: 1024px) {
-
-    .porton {
-        width: 92vw;
-
-        height: 92svh;
+    .rombo-centro {
+        width: 26px;
+        height: 26px;
     }
+
 
     .mariposa-vuelo {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
+
 
     .mariposa-intro {
-        width: 100px;
-    }
-}
-
-
-/* =========================
-   REDUCIR MOVIMIENTO
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hoja {
-        transition: none;
-    }
-
-    .mariposa-flotante {
-        animation: none;
-    }
-
-    .mensaje-intro {
-        transition: none;
-    }
-
-    .brillito {
-        animation: none;
+        width: 58px;
     }
 }

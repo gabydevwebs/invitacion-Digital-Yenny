@@ -8,7 +8,6 @@ const evento = {
 
 const app = document.getElementById("app");
 
-
 /* =========================
    CREAR INTRO
 ========================= */
@@ -20,7 +19,6 @@ function crearIntro() {
         <section class="intro" id="intro">
 
             <div class="luz-central"></div>
-
 
             <!-- =========================
                  PORTÓN
@@ -145,8 +143,8 @@ function crearIntro() {
 
                         <line x1="55"  y1="155" x2="55"  y2="850"/>
                         <line x1="105" y1="115" x2="105" y2="850"/>
-                        <line x1="155" y1="95"  x2="155" y2="850"/>
-                        <line x1="205" y1="90"  x2="205" y2="850"/>
+                        <line x1="155" y1="95"  x2="155"  y2="850"/>
+                        <line x1="205" y1="90"  x2="205"  y2="850"/>
                         <line x1="255" y1="100" x2="255" y2="850"/>
                         <line x1="305" y1="120" x2="305" y2="850"/>
                         <line x1="355" y1="150" x2="355" y2="850"/>
@@ -204,7 +202,11 @@ function crearIntro() {
 
             <div class="centro-porton">
 
-                <div class="adorno-centro"></div>
+                <div class="adorno-centro">
+
+                    <div class="rombo-centro"></div>
+
+                </div>
 
             </div>
 
@@ -262,7 +264,6 @@ function crearIntro() {
     `;
 }
 
-
 crearIntro();
 
 
@@ -287,16 +288,6 @@ const particulas =
    CARGA DE MARIPOSA
 ========================= */
 
-/*
-    Evitamos mostrar la imagen
-    antes de que Safari haya
-    terminado de cargarla.
-
-    Esto intenta evitar el
-    rectángulo que aparece
-    solamente en la primera carga.
-*/
-
 mariposa.style.opacity = "0";
 
 if (mariposa.complete) {
@@ -312,7 +303,6 @@ if (mariposa.complete) {
         },
         { once: true }
     );
-
 }
 
 
@@ -323,9 +313,7 @@ if (mariposa.complete) {
 function esperar(ms) {
 
     return new Promise(resolve => {
-
         setTimeout(resolve, ms);
-
     });
 }
 
@@ -342,13 +330,11 @@ function crearBrillito(x, y) {
     brillo.className =
         "brillito";
 
-
     const variacionX =
         (Math.random() - 0.5) * 24;
 
     const variacionY =
         (Math.random() - 0.5) * 24;
-
 
     brillo.style.left =
         `${x + variacionX}px`;
@@ -356,10 +342,8 @@ function crearBrillito(x, y) {
     brillo.style.top =
         `${y + variacionY}px`;
 
-
     const tamanio =
         2 + Math.random() * 4;
-
 
     brillo.style.width =
         `${tamanio}px`;
@@ -367,18 +351,13 @@ function crearBrillito(x, y) {
     brillo.style.height =
         `${tamanio}px`;
 
-
     brillo.style.animationDuration =
         `${1.2 + Math.random() * 1.2}s`;
 
-
     particulas.appendChild(brillo);
 
-
     setTimeout(() => {
-
         brillo.remove();
-
     }, 2600);
 }
 
@@ -389,7 +368,6 @@ function crearBrillito(x, y) {
 
 let intervaloBrillos = null;
 
-
 function comenzarBrillos() {
 
     intervaloBrillos =
@@ -398,32 +376,25 @@ function comenzarBrillos() {
             const rect =
                 mariposa.getBoundingClientRect();
 
-
             const x =
                 rect.left +
                 rect.width / 2;
-
 
             const y =
                 rect.top +
                 rect.height / 2;
 
-
             crearBrillito(x, y);
-
 
             if (Math.random() > 0.65) {
 
                 crearBrillito(
-
                     x +
                     (Math.random() - 0.5) * 40,
 
                     y +
                     (Math.random() - 0.5) * 40
-
                 );
-
             }
 
         }, 130);
@@ -444,7 +415,6 @@ function detenerBrillos() {
 
 async function iniciarSecuencia() {
 
-
     /* =========================
        1. PORTÓN CERRADO
     ========================= */
@@ -454,6 +424,7 @@ async function iniciarSecuencia() {
 
     /* =========================
        2. ABRIR PORTÓN
+       + VUELO AL MISMO TIEMPO
     ========================= */
 
     intro.classList.add(
@@ -461,11 +432,120 @@ async function iniciarSecuencia() {
     );
 
 
+    /* =========================
+       3. VUELO
+    ========================= */
+
+    comenzarBrillos();
+
+    const vuelo =
+        mariposaVuelo.animate(
+            [
+                {
+                    left: "50%",
+                    top: "50%",
+                    transform:
+                        "translate(-50%, -50%) rotate(0deg) scale(1)"
+                },
+
+                {
+                    left: "65%",
+                    top: "39%",
+                    transform:
+                        "translate(-50%, -50%) rotate(9deg) scale(1.05)",
+                    offset: 0.10
+                },
+
+                {
+                    left: "77%",
+                    top: "28%",
+                    transform:
+                        "translate(-50%, -50%) rotate(16deg) scale(1.08)",
+                    offset: 0.20
+                },
+
+                {
+                    left: "63%",
+                    top: "24%",
+                    transform:
+                        "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
+                    offset: 0.30
+                },
+
+                {
+                    left: "35%",
+                    top: "31%",
+                    transform:
+                        "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
+                    offset: 0.42
+                },
+
+                {
+                    left: "21%",
+                    top: "46%",
+                    transform:
+                        "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
+                    offset: 0.52
+                },
+
+                {
+                    left: "34%",
+                    top: "66%",
+                    transform:
+                        "translate(-50%, -50%) rotate(13deg) scale(1.23)",
+                    offset: 0.63
+                },
+
+                {
+                    left: "67%",
+                    top: "72%",
+                    transform:
+                        "translate(-50%, -50%) rotate(17deg) scale(1.28)",
+                    offset: 0.75
+                },
+
+                {
+                    left: "78%",
+                    top: "55%",
+                    transform:
+                        "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
+                    offset: 0.84
+                },
+
+                {
+                    left: "65%",
+                    top: "43%",
+                    transform:
+                        "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
+                    offset: 0.91
+                },
+
+                {
+                    left: "50%",
+                    top: "50%",
+                    transform:
+                        "translate(-50%, -50%) rotate(0deg) scale(1.65)"
+                }
+            ],
+            {
+                duration: 9000,
+                easing:
+                    "cubic-bezier(0.45, 0, 0.25, 1)",
+                fill: "forwards"
+            }
+        );
+
+
+    /* =========================
+       4. ESPERAR APERTURA
+       DEL PORTÓN
+    ========================= */
+
     await esperar(2800);
 
 
     /* =========================
-       3. MOSTRAR MENSAJE
+       5. MOSTRAR MENSAJE
     ========================= */
 
     intro.classList.add(
@@ -474,174 +554,42 @@ async function iniciarSecuencia() {
 
 
     /* =========================
-       4. COMENZAR BRILLITOS
+       6. DEJAR FRASE
     ========================= */
 
-    comenzarBrillos();
+    await esperar(4200);
 
 
     /* =========================
-       5. VUELO DE MARIPOSA
+       7. OCULTAR MENSAJE
     ========================= */
-
-    const vuelo =
-        mariposaVuelo.animate(
-
-            [
-
-                {
-                    left: "50%",
-                    top: "50%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(0deg) scale(1)"
-                },
-
-                {
-                    left: "65%",
-                    top: "39%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(9deg) scale(1.05)",
-
-                    offset: 0.10
-                },
-
-                {
-                    left: "77%",
-                    top: "28%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(16deg) scale(1.08)",
-
-                    offset: 0.20
-                },
-
-                {
-                    left: "63%",
-                    top: "24%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
-
-                    offset: 0.30
-                },
-
-                {
-                    left: "35%",
-                    top: "31%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
-
-                    offset: 0.42
-                },
-
-                {
-                    left: "21%",
-                    top: "46%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
-
-                    offset: 0.52
-                },
-
-                {
-                    left: "34%",
-                    top: "66%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(13deg) scale(1.23)",
-
-                    offset: 0.63
-                },
-
-                {
-                    left: "67%",
-                    top: "72%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(17deg) scale(1.28)",
-
-                    offset: 0.75
-                },
-
-                {
-                    left: "78%",
-                    top: "55%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
-
-                    offset: 0.84
-                },
-
-                {
-                    left: "65%",
-                    top: "43%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
-
-                    offset: 0.91
-                },
-
-                {
-                    left: "50%",
-                    top: "50%",
-
-                    transform:
-                        "translate(-50%, -50%) rotate(0deg) scale(1.65)"
-                }
-
-            ],
-
-            {
-
-                duration: 9000,
-
-                easing:
-                    "cubic-bezier(0.45, 0, 0.25, 1)",
-
-                fill: "forwards"
-
-            }
-        );
-
-
-    /* =========================
-       6. MENSAJE DESAPARECE
-    ========================= */
-
-    await esperar(7000);
 
     intro.classList.add(
         "ocultar-mensaje"
     );
 
 
-    /*
-        Esperamos a que termine
-        COMPLETAMENTE el vuelo.
-
-        Esto evita que el zoom
-        y el vuelo compitan por
-        el mismo transform.
-    */
+    /* =========================
+       8. ESPERAR FIN DEL VUELO
+    ========================= */
 
     await vuelo.finished;
 
 
     /* =========================
-       7. ACERCAMIENTO FINAL
+       9. DETENER BRILLITOS
+    ========================= */
+
+    detenerBrillos();
+
+
+    /* =========================
+       10. ACERCAMIENTO FINAL
     ========================= */
 
     const acercamiento =
         mariposaVuelo.animate(
-
             [
-
                 {
                     transform:
                         "translate(-50%, -50%) scale(1.65)"
@@ -650,42 +598,36 @@ async function iniciarSecuencia() {
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
-
                     offset: 0.15
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
-
                     offset: 0.30
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
-
                     offset: 0.45
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
-
                     offset: 0.60
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
-
                     offset: 0.75
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
-
                     offset: 0.88
                 },
 
@@ -693,40 +635,25 @@ async function iniciarSecuencia() {
                     transform:
                         "translate(-50%, -50%) scale(8.0)"
                 }
-
             ],
-
             {
-
                 duration: 3000,
-
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
-
                 fill: "forwards"
-
             }
         );
-
 
     await acercamiento.finished;
 
 
     /* =========================
-       8. DETENER BRILLITOS
-    ========================= */
-
-    detenerBrillos();
-
-
-    /* =========================
-       9. TRANSICIÓN FINAL
+       11. TRANSICIÓN FINAL
     ========================= */
 
     intro.classList.add(
         "transicion-final"
     );
-
 }
 
 
