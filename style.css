@@ -472,23 +472,13 @@ body {
 
 .mariposa-intro {
     width: clamp(65px, 11vw, 125px);
-
     height: auto;
-
     object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 0 10px rgba(255,255,255,0.5)
-        );
-
     display: block;
-
     pointer-events: none;
-
-    opacity: 0.999;
+    filter: none;
+    opacity: 1;
 }
-
 
 /* =========================
    ALETEO / FLOTACIÓN
