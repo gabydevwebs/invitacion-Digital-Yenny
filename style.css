@@ -1,0 +1,429 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #020202;
+    overflow: hidden;
+}
+
+
+/* =========================
+   ESCENA PRINCIPAL
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #181818 0%,
+            #080808 48%,
+            #010101 100%
+        );
+
+    z-index: 100;
+}
+
+
+/* =========================
+   LUZ CENTRAL
+========================= */
+
+.luz-central {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(80vw, 900px);
+    height: min(80vw, 900px);
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.02) 45%,
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   PORTÓN
+========================= */
+
+.porton {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(96vw, 1000px);
+    height: min(94vh, 900px);
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+}
+
+
+/* =========================
+   HOJAS DEL PORTÓN
+========================= */
+
+.hoja {
+    position: absolute;
+
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: visible;
+
+    transition:
+        transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+
+    transform-origin: center center;
+}
+
+.hoja-izquierda {
+    left: 0;
+}
+
+.hoja-derecha {
+    right: 0;
+}
+
+
+/* =========================
+   HIERRO
+========================= */
+
+.hierro {
+    fill: #080808;
+
+    stroke: #777;
+
+    stroke-width: 8;
+
+    paint-order: stroke fill;
+
+    filter:
+        drop-shadow(
+            0 0 4px rgba(255,255,255,0.18)
+        );
+}
+
+.hierro.medio {
+    fill: none;
+
+    stroke: #3e3e3e;
+
+    stroke-width: 5;
+}
+
+
+/* =========================
+   BARROTES
+========================= */
+
+.barrotes line {
+    stroke: #606060;
+
+    stroke-width: 6;
+
+    stroke-linecap: round;
+
+    filter:
+        drop-shadow(
+            0 0 3px rgba(255,255,255,0.18)
+        );
+}
+
+
+/* =========================
+   ORNAMENTOS
+========================= */
+
+.ornamento path {
+    fill: none;
+
+    stroke: #707070;
+
+    stroke-width: 7;
+
+    stroke-linecap: round;
+
+    filter:
+        drop-shadow(
+            0 0 4px rgba(255,255,255,0.15)
+        );
+}
+
+
+/* =========================
+   DETALLES DECORATIVOS
+========================= */
+
+.decoracion circle {
+    fill: #191919;
+
+    stroke: #888;
+
+    stroke-width: 4;
+
+    filter:
+        drop-shadow(
+            0 0 4px rgba(255,255,255,0.18)
+        );
+}
+
+
+/* =========================
+   CENTRO DEL PORTÓN
+========================= */
+
+.centro-porton {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: clamp(70px, 9vw, 105px);
+    height: clamp(70px, 9vw, 105px);
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #242424 0%,
+            #090909 65%,
+            #020202 100%
+        );
+
+    border: 3px solid #888;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.12),
+        inset 0 0 20px #000;
+
+    z-index: 25;
+}
+
+
+/* Adorno central */
+
+.adorno-centro {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 45%;
+    height: 45%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+    border: 2px solid #999;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.15);
+}
+
+
+/* =========================
+   MARIPOSA
+========================= */
+
+.mariposa-intro {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: clamp(65px, 11vw, 125px);
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain;
+
+    z-index: 40;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(255,255,255,0.5)
+        )
+        drop-shadow(
+            0 0 30px rgba(255,255,255,0.2)
+        );
+
+    animation:
+        respiracion 3s ease-in-out infinite;
+}
+
+
+/* Respiración suave */
+
+@keyframes respiracion {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -52%)
+            scale(1.04);
+    }
+}
+
+
+/* =========================
+   APERTURA DEL PORTÓN
+========================= */
+
+.intro.abriendo .hoja-izquierda {
+    transform:
+        perspective(1500px)
+        rotateY(-75deg);
+}
+
+.intro.abriendo .hoja-derecha {
+    transform:
+        perspective(1500px)
+        rotateY(75deg);
+}
+
+.intro.abriendo .centro-porton {
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+@media (max-width: 600px) {
+
+    .porton {
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 1000 / 900;
+    }
+
+    .hoja {
+        height: 100%;
+    }
+
+    .barrotes line {
+        stroke-width: 7;
+    }
+
+    .hierro {
+        stroke-width: 8;
+    }
+
+    .mariposa-intro {
+        width: 78px;
+    }
+
+    .centro-porton {
+        width: 78px;
+        height: 78px;
+    }
+}
+/* =========================
+   CELULARES MUY CHICOS
+========================= */
+
+@media (max-width: 380px) {
+
+    .porton {
+        width: 100vw;
+        height: 90svh;
+    }
+
+    .mariposa-intro {
+        width: 70px;
+    }
+
+    .centro-porton {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .porton {
+        width: 92vw;
+        height: 92svh;
+    }
+
+    .mariposa-intro {
+        width: 100px;
+    }
+}
+
+
+/* =========================
+   REDUCIR ANIMACIONES
+   SI EL DISPOSITIVO LO PIDE
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hoja {
+        transition: none;
+    }
+
+    .mariposa-intro {
+        animation: none;
+    }
+}
