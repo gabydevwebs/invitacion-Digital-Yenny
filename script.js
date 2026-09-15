@@ -884,7 +884,7 @@ function reproducirMusica() {
 
 
     musicaFondo.volume =
-        0.20;
+        0.03;
 
 
     const reproduccion =
