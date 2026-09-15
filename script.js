@@ -866,30 +866,22 @@ const musicaFondo =
 let musicaIniciada =
     false;
 
-
 function reproducirMusica() {
 
     if (!musicaFondo) {
         return;
     }
 
-
     if (musicaIniciada) {
         return;
     }
 
+    musicaFondo.currentTime = 0;
 
-    musicaFondo.currentTime =
-        0;
-
-
-    musicaFondo.volume =
-        0.03;
-
+    musicaFondo.volume = 0.01;
 
     const reproduccion =
         musicaFondo.play();
-
 
     if (
         reproduccion !==
@@ -900,8 +892,51 @@ function reproducirMusica() {
             .then(
                 () => {
 
-                    musicaIniciada =
-                        true;
+                    musicaIniciada = true;
+
+                    const volumenFinal = 0.14;
+                    const duracionFade = 3000;
+                    const tiempoInicio = performance.now();
+
+                    function subirVolumen(
+                        tiempoActual
+                    ) {
+
+                        const tiempoTranscurrido =
+                            tiempoActual -
+                            tiempoInicio;
+
+                        const progreso =
+                            Math.min(
+                                tiempoTranscurrido /
+                                duracionFade,
+                                1
+                            );
+
+                        musicaFondo.volume =
+                            0.01 +
+                            (
+                                volumenFinal -
+                                0.01
+                            ) *
+                            progreso;
+
+                        if (
+                            progreso <
+                            1
+                        ) {
+
+                            requestAnimationFrame(
+                                subirVolumen
+                            );
+
+                        }
+
+                    }
+
+                    requestAnimationFrame(
+                        subirVolumen
+                    );
 
                 }
             )
