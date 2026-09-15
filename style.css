@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  background: #000;
+  background: #0d1118;
 }
 
 body {
@@ -19,176 +19,77 @@ body {
 /* =========================
    MARIPOSAS DECORATIVAS FIJAS
 ========================= */
+
 body::before,
 body::after {
-    content: "";
-    position: fixed;
-    top: 24px;
-    width: 48px;
-    height: 48px;
-
-    background-image: url("img/mariposa.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    opacity: 0;
-
-    filter:
-        drop-shadow(
-            0 0 8px
-            rgba(255,255,255,0.22)
-        );
-
-    pointer-events: none;
-    z-index: 9000;
-
-    transform: translateY(-18px);
-
-    transition:
-        opacity 1.1s cubic-bezier(0.45, 0, 0.25, 1),
-        transform 1.1s cubic-bezier(0.45, 0, 0.25, 1);
+  content: "";
+  position: fixed;
+  top: 24px;
+  width: 48px;
+  height: 48px;
+  background-image: url("img/mariposa.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(255, 255, 255, 0.22)
+    );
+  pointer-events: none;
+  z-index: 9000;
+  transform: translateY(-18px);
+  transition:
+    opacity 1.1s cubic-bezier(0.45, 0, 0.25, 1),
+    transform 1.1s cubic-bezier(0.45, 0, 0.25, 1);
 }
-
 
 body::before {
-    left: 18px;
+  left: 18px;
 }
-
 
 body::after {
-    right: 18px;
-    transform:
-        translateY(-18px)
-        scaleX(-1);
+  right: 18px;
+  transform:
+    translateY(-18px)
+    scaleX(-1);
 }
-
-
-/* =========================
-   ENTRA CON JENNY
-========================= */
 
 body.mariposas-hero::before,
 body.mariposas-hero::after {
-    opacity: 0.72;
-    transform: translateY(0);
+  opacity: 0.72;
+  transform: translateY(0);
 }
-
 
 body.mariposas-hero::after {
-    transform:
-        translateY(0)
-        scaleX(-1);
+  transform:
+    translateY(0)
+    scaleX(-1);
 }
-
-
-/* =========================
-   SALE JUNTO CON JENNY
-========================= */
 
 body.mariposas-saliendo::before,
 body.mariposas-saliendo::after {
-    opacity: 0;
-    transform: translateY(-18px);
+  opacity: 0;
+  transform: translateY(-18px);
 }
-
 
 body.mariposas-saliendo::after {
-    transform:
-        translateY(-18px)
-        scaleX(-1);
+  transform:
+    translateY(-18px)
+    scaleX(-1);
 }
-
-
-/* =========================
-   VUELVEN CON LA INFORMACIÓN
-========================= */
 
 body.mariposas-evento::before,
 body.mariposas-evento::after {
-    opacity: 0.72;
-    transform: translateY(0);
+  opacity: 0.72;
+  transform: translateY(0);
 }
-
 
 body.mariposas-evento::after {
-    transform:
-        translateY(0)
-        scaleX(-1);
-}
-
-
-@media (max-width: 600px) {
-
-    body::before,
-    body::after {
-        top: 18px;
-        width: 38px;
-        height: 38px;
-
-        transform:
-            translateY(-14px);
-    }
-
-
-    body::before {
-        left: 12px;
-    }
-
-
-    body::after {
-        right: 12px;
-
-        transform:
-            translateY(-14px)
-            scaleX(-1);
-    }
-
-
-    body.mariposas-hero::before,
-    body.mariposas-hero::after {
-        opacity: 0.68;
-        transform:
-            translateY(0);
-    }
-
-
-    body.mariposas-hero::after {
-        transform:
-            translateY(0)
-            scaleX(-1);
-    }
-
-
-    body.mariposas-saliendo::before,
-    body.mariposas-saliendo::after {
-        opacity: 0;
-        transform:
-            translateY(-14px);
-    }
-
-
-    body.mariposas-saliendo::after {
-        transform:
-            translateY(-14px)
-            scaleX(-1);
-    }
-
-
-    body.mariposas-evento::before,
-    body.mariposas-evento::after {
-        opacity: 0.68;
-        transform:
-            translateY(0);
-    }
-
-
-    body.mariposas-evento::after {
-        transform:
-            translateY(0)
-            scaleX(-1);
-    }
-
+  transform:
+    translateY(0)
+    scaleX(-1);
 }
 
 /* =========================
@@ -199,12 +100,14 @@ body.mariposas-evento::after {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(
-    circle at center,
-    #181818 0%,
-    #080808 48%,
-    #000 100%
-  );
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      #354253 0%,
+      #252f3c 32%,
+      #171e28 67%,
+      #0d1219 100%
+    );
   color: #fff;
   overflow: hidden;
   opacity: 0;
@@ -235,21 +138,19 @@ body.mariposas-evento::after {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: radial-gradient(
-    circle at center,
-    #181818 0%,
-    #080808 48%,
-    #000 100%
-  );
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #3c4a5b 0%,
+      #293542 32%,
+      #1a232e 67%,
+      #10161e 100%
+    );
   z-index: 5;
   transition:
     opacity 1.4s cubic-bezier(0.65, 0, 0.2, 1),
     transform 1.4s cubic-bezier(0.65, 0, 0.2, 1);
 }
-
-/* =========================
-   MARIPOSA HERO
-========================= */
 
 .hero-mariposa {
   position: absolute;
@@ -258,7 +159,12 @@ body.mariposas-evento::after {
   width: min(85vw, 520px);
   transform: translate(-50%, -50%);
   opacity: 0;
-  filter: blur(0.2px) drop-shadow(0 0 30px rgba(255, 255, 255, 0.12));
+  filter:
+    blur(0.2px)
+    drop-shadow(
+      0 0 30px
+      rgba(255, 255, 255, 0.12)
+    );
   pointer-events: none;
   transition: opacity 1.4s ease;
 }
@@ -284,22 +190,14 @@ body.mariposas-evento::after {
   transform: translateY(35px);
 }
 
-/* =========================
-   MIS XV
-========================= */
-
 .hero-superior {
   margin-bottom: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 2vw, 18px);
   font-weight: 400;
   letter-spacing: 0.45em;
-  color: #d6d6d6;
+  color: #e4e9ee;
 }
-
-/* =========================
-   JENNY
-========================= */
 
 .hero-contenido h1 {
   font-family: Georgia, "Times New Roman", serif;
@@ -307,61 +205,72 @@ body.mariposas-evento::after {
   line-height: 0.95;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: #f4f4f4;
+  color: #f5f7fa;
   text-shadow:
     0 0 25px rgba(255, 255, 255, 0.12),
     0 0 70px rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   LÍNEA HERO
-========================= */
-
 .hero-linea {
   width: clamp(55px, 12vw, 110px);
   height: 1px;
   margin: 25px 0 20px;
-  background: linear-gradient(to right, transparent, #cfcfcf, transparent);
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #dce2e8,
+      transparent
+    );
   transform: scaleX(0);
 }
-
-/* =========================
-   FECHA HERO
-========================= */
 
 .hero-fecha {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 2vw, 18px);
   letter-spacing: 0.35em;
-  color: #c9c9c9;
+  color: #d9e0e7;
 }
 
-/* =========================
-   ENTRADA HERO
-========================= */
-
 .pagina-visible .hero-mariposa {
-  animation: aparecer-mariposa 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation:
+    aparecer-mariposa
+    2.2s
+    cubic-bezier(0.2, 0.7, 0.2, 1)
+    forwards;
 }
 
 .pagina-visible .hero-contenido {
-  animation: aparecer-contenido 1.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s
+  animation:
+    aparecer-contenido
+    1.5s
+    cubic-bezier(0.2, 0.7, 0.2, 1)
+    0.65s
     forwards;
 }
 
 .pagina-visible .hero-linea {
-  animation: aparecer-linea 1.2s ease 1.15s forwards;
+  animation:
+    aparecer-linea
+    1.2s
+    ease
+    1.15s
+    forwards;
 }
 
 @keyframes aparecer-mariposa {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.75);
+    transform:
+      translate(-50%, -50%)
+      scale(0.75);
   }
 
   100% {
     opacity: 0.1;
-    transform: translate(-50%, -50%) scale(1);
+    transform:
+      translate(-50%, -50%)
+      scale(1);
   }
 }
 
@@ -393,9 +302,12 @@ body.mariposas-evento::after {
    TRANSICIÓN HERO → EVENTO
 ========================= */
 
-.pagina-invitacion.pasar-a-evento .hero-invitacion {
+.pagina-invitacion.pasar-a-evento
+  .hero-invitacion {
   opacity: 0;
-  transform: scale(1.035) translateY(-25px);
+  transform:
+    scale(1.035)
+    translateY(-25px);
   pointer-events: none;
 }
 
@@ -412,14 +324,18 @@ body.mariposas-evento::after {
   align-items: flex-start;
   justify-content: center;
   overflow: visible;
-  background: radial-gradient(
-    circle at center,
-    #151515 0%,
-    #070707 52%,
-    #000 100%
-  );
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      #344150 0%,
+      #26313e 30%,
+      #18212c 63%,
+      #0d131b 100%
+    );
   opacity: 0;
-  transform: scale(0.985) translateY(25px);
+  transform:
+    scale(0.985)
+    translateY(25px);
   pointer-events: none;
   transition:
     opacity 1.5s cubic-bezier(0.2, 0.7, 0.2, 1),
@@ -429,7 +345,9 @@ body.mariposas-evento::after {
 
 .seccion-evento.evento-activo {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform:
+    scale(1)
+    translateY(0);
   pointer-events: auto;
 }
 
@@ -443,7 +361,7 @@ body.mariposas-evento::after {
   top: 50%;
   width: min(100vw, 650px);
   transform: translate(-50%, -50%);
-  opacity: 0.035;
+  opacity: 0.045;
   filter: blur(0.5px);
   pointer-events: none;
 }
@@ -475,9 +393,9 @@ body.mariposas-evento::after {
 
 .evento-etiqueta {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(11px, 1.8vw, 15px);
-  letter-spacing: 0.45em;
-  color: #bdbdbd;
+  font-size: clamp(12px, 1.8vw, 16px);
+  letter-spacing: 0.42em;
+  color: #d1d9e1;
   margin-bottom: 10px;
 }
 
@@ -491,7 +409,7 @@ body.mariposas-evento::after {
   font-weight: 400;
   font-style: italic;
   line-height: 1;
-  color: #f2f2f2;
+  color: #f1f4f7;
   letter-spacing: 0.015em;
 }
 
@@ -503,7 +421,13 @@ body.mariposas-evento::after {
   width: clamp(60px, 12vw, 100px);
   height: 1px;
   margin: 28px 0 25px;
-  background: linear-gradient(to right, transparent, #cfcfcf, transparent);
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #c9d0d7,
+      transparent
+    );
 }
 
 /* =========================
@@ -518,24 +442,20 @@ body.mariposas-evento::after {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(17px, 3vw, 24px);
   letter-spacing: 0.18em;
-  color: #e4e4e4;
+  color: #e7ebef;
 }
 
 .evento-separador {
-  color: #777;
+  color: #9da7b1;
   font-size: 16px;
 }
-
-/* =========================
-   DÍA
-========================= */
 
 .evento-dia-semana {
   margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.5em;
-  color: #999;
+  color: #b7c0c9;
 }
 
 /* =========================
@@ -553,9 +473,9 @@ body.mariposas-evento::after {
 
 .detalle-etiqueta {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.45em;
-  color: #858585;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: #c0c8d0;
 }
 
 .detalle-valor {
@@ -563,7 +483,7 @@ body.mariposas-evento::after {
   font-size: clamp(12px, 2vw, 15px);
   line-height: 1.5;
   letter-spacing: 0.12em;
-  color: #dedede;
+  color: #e7ebef;
 }
 
 /* =========================
@@ -589,14 +509,14 @@ body.mariposas-evento::after {
   display: block;
   width: 24px;
   height: 1px;
-  background: #777;
+  background: #87919c;
 }
 
 .evento-decoracion i {
   display: block;
   width: 5px;
   height: 5px;
-  border: 1px solid #aaa;
+  border: 1px solid #b9c1c9;
   transform: rotate(45deg);
 }
 
@@ -626,12 +546,13 @@ body.mariposas-evento::after {
   inset: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at center,
-    #171717 0%,
-    #080808 48%,
-    #000 100%
-  );
+  background:
+    radial-gradient(
+      circle at center,
+      #171717 0%,
+      #080808 48%,
+      #000 100%
+    );
   overflow: hidden;
   z-index: 9999;
   opacity: 1;
@@ -647,12 +568,13 @@ body.mariposas-evento::after {
   max-width: 500px;
   max-height: 500px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.04) 30%,
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.04) 30%,
+      transparent 70%
+    );
   filter: blur(20px);
   pointer-events: none;
 }
@@ -678,7 +600,9 @@ body.mariposas-evento::after {
   height: 100%;
   overflow: visible;
   transform-style: preserve-3d;
-  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
+  transition:
+    transform 2.8s
+    cubic-bezier(0.65, 0, 0.2, 1);
 }
 
 .hierro {
@@ -716,13 +640,17 @@ body.mariposas-evento::after {
 }
 
 .intro.abriendo .hoja-izquierda {
-  transform: perspective(1800px) rotateY(-75deg) translateX(-35px);
-  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
+  transform:
+    perspective(1800px)
+    rotateY(-75deg)
+    translateX(-35px);
 }
 
 .intro.abriendo .hoja-derecha {
-  transform: perspective(1800px) rotateY(75deg) translateX(35px);
-  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
+  transform:
+    perspective(1800px)
+    rotateY(75deg)
+    translateX(35px);
 }
 
 /* =========================
@@ -763,7 +691,9 @@ body.mariposas-evento::after {
   height: 24px;
   border: 2px solid #e2e2e2;
   transform: rotate(45deg);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 0 8px
+    rgba(255, 255, 255, 0.35);
 }
 
 .intro.abriendo .centro-porton {
@@ -785,9 +715,14 @@ body.mariposas-evento::after {
   position: fixed;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 8px
+    rgba(255, 255, 255, 0.9);
   pointer-events: none;
-  animation: desaparecer-brillo ease-out forwards;
+  animation:
+    desaparecer-brillo
+    ease-out
+    forwards;
 }
 
 @keyframes desaparecer-brillo {
@@ -816,7 +751,9 @@ body.mariposas-evento::after {
   left: 50%;
   top: 50%;
   width: min(90vw, 700px);
-  transform: translate(-50%, -50%) translateY(30px);
+  transform:
+    translate(-50%, -50%)
+    translateY(30px);
   text-align: center;
   z-index: 80;
   opacity: 0;
@@ -832,17 +769,23 @@ body.mariposas-evento::after {
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.04em;
-  text-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+  text-shadow:
+    0 0 18px
+    rgba(255, 255, 255, 0.18);
 }
 
 .intro.mostrar-mensaje .mensaje-intro {
   opacity: 1;
-  transform: translate(-50%, -50%) translateY(0);
+  transform:
+    translate(-50%, -50%)
+    translateY(0);
 }
 
 .intro.ocultar-mensaje .mensaje-intro {
   opacity: 0;
-  transform: translate(-50%, -50%) translateY(-20px);
+  transform:
+    translate(-50%, -50%)
+    translateY(-20px);
 }
 
 /* =========================
@@ -873,7 +816,11 @@ body.mariposas-evento::after {
   width: clamp(55px, 9vw, 105px);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(255, 255, 255, 0.5)
+    );
   display: block;
   pointer-events: none;
   opacity: 0.999;
@@ -886,6 +833,7 @@ body.mariposas-evento::after {
 .intro.transicion-final {
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
   transition: opacity 1.2s ease;
 }
 
@@ -902,9 +850,9 @@ body.mariposas-evento::after {
 .temporizador-titulo {
   margin-bottom: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.5em;
-  color: #858585;
+  color: #c0c8d0;
 }
 
 .temporizador-valores {
@@ -925,7 +873,7 @@ body.mariposas-evento::after {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(25px, 6vw, 42px);
   font-weight: 300;
-  color: #eeeeee;
+  color: #edf1f5;
   letter-spacing: 0.05em;
   line-height: 1;
 }
@@ -933,13 +881,13 @@ body.mariposas-evento::after {
 .temporizador-label {
   margin-top: 8px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.25em;
-  color: #777777;
+  color: #aeb7c0;
 }
 
 .temporizador-separador {
-  color: #777777;
+  color: #9ca6b0;
   font-size: 22px;
   line-height: 1;
   margin-top: 3px;
@@ -956,12 +904,12 @@ body.mariposas-evento::after {
   margin-top: 4px;
   min-width: 165px;
   padding: 11px 22px;
-  border: 1px solid #777;
-  color: #dedede;
+  border: 1px solid #8995a0;
+  color: #edf1f5;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.28em;
+  font-size: 10px;
+  letter-spacing: 0.25em;
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -969,9 +917,9 @@ body.mariposas-evento::after {
 }
 
 .boton-ubicacion:hover {
-  background: #eeeeee;
-  color: #080808;
-  border-color: #eeeeee;
+  background: #edf1f5;
+  color: #18212b;
+  border-color: #edf1f5;
 }
 
 /* =========================
@@ -989,9 +937,9 @@ body.mariposas-evento::after {
 
 .datos-regalo-titulo {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.45em;
-  color: #858585;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  color: #c0c8d0;
   margin-bottom: 16px;
 }
 
@@ -999,7 +947,7 @@ body.mariposas-evento::after {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(15px, 3vw, 20px);
   letter-spacing: 0.18em;
-  color: #eeeeee;
+  color: #edf1f5;
   margin-bottom: 16px;
 }
 
@@ -1010,12 +958,12 @@ body.mariposas-evento::after {
 .boton-copiar {
   min-width: 165px;
   padding: 11px 22px;
-  border: 1px solid #777;
+  border: 1px solid #8995a0;
   background: transparent;
-  color: #dedede;
+  color: #edf1f5;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.28em;
+  font-size: 10px;
+  letter-spacing: 0.25em;
   cursor: pointer;
   transition:
     background 0.3s ease,
@@ -1024,9 +972,9 @@ body.mariposas-evento::after {
 }
 
 .boton-copiar:hover {
-  background: #eeeeee;
-  color: #080808;
-  border-color: #eeeeee;
+  background: #edf1f5;
+  color: #18212b;
+  border-color: #edf1f5;
 }
 
 /* =========================
@@ -1045,18 +993,18 @@ body.mariposas-evento::after {
 .confirmar-titulo {
   width: min(100%, 320px);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.6;
-  letter-spacing: 0.28em;
-  color: #858585;
+  letter-spacing: 0.26em;
+  color: #c0c8d0;
   margin-bottom: 13px;
 }
 
 .confirmar-destinatario {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
-  color: #dedede;
+  color: #edf1f5;
   margin-bottom: 16px;
 }
 
@@ -1070,13 +1018,13 @@ body.mariposas-evento::after {
   justify-content: center;
   min-width: 205px;
   padding: 11px 22px;
-  border: 1px solid #777;
+  border: 1px solid #8995a0;
   background: transparent;
-  color: #dedede;
+  color: #edf1f5;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.24em;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -1084,9 +1032,9 @@ body.mariposas-evento::after {
 }
 
 .boton-whatsapp:hover {
-  background: #eeeeee;
-  color: #080808;
-  border-color: #eeeeee;
+  background: #edf1f5;
+  color: #18212b;
+  border-color: #edf1f5;
 }
 
 /* =========================
@@ -1105,12 +1053,10 @@ body.mariposas-evento::after {
   position: relative;
   margin-bottom: 28px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.5em;
-  color: #a7a7a7;
+  font-size: 11px;
+  letter-spacing: 0.48em;
+  color: #c4ccd4;
 }
-
-/* Pequeña línea decorativa debajo de MOMENTOS */
 
 .galeria-etiqueta::after {
   content: "";
@@ -1118,7 +1064,13 @@ body.mariposas-evento::after {
   width: 32px;
   height: 1px;
   margin: 13px auto 0;
-  background: linear-gradient(to right, transparent, #999, transparent);
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #aeb7c0,
+      transparent
+    );
 }
 
 /* =========================
@@ -1153,7 +1105,7 @@ body.mariposas-evento::after {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #666;
+  background: #78838e;
   opacity: 0.65;
   transition:
     width 0.35s ease,
@@ -1164,7 +1116,7 @@ body.mariposas-evento::after {
 .indicador-foto.indicador-activo {
   width: 7px;
   height: 7px;
-  background: #e5e5e5;
+  background: #e8edf1;
   opacity: 1;
 }
 
@@ -1194,13 +1146,13 @@ body.mariposas-evento::after {
   object-fit: cover;
   flex-shrink: 0;
   scroll-snap-align: center;
-  border: 1px solid rgba(210, 210, 210, 0.55);
+  border: 1px solid rgba(220, 225, 230, 0.6);
   border-radius: 14px;
-  background: #111;
+  background: #1c2530;
   box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(255, 255, 255, 0.035),
-    0 0 30px rgba(255, 255, 255, 0.035);
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 30px rgba(255, 255, 255, 0.04);
   transition:
     transform 0.5s ease,
     border-color 0.5s ease,
@@ -1214,10 +1166,10 @@ body.mariposas-evento::after {
 @media (hover: hover) and (pointer: fine) {
   .galeria-pista img:hover {
     transform: scale(1.015);
-    border-color: rgba(235, 235, 235, 0.85);
+    border-color: rgba(245, 248, 250, 0.9);
     box-shadow:
-      0 22px 60px rgba(0, 0, 0, 0.75),
-      0 0 35px rgba(255, 255, 255, 0.07);
+      0 22px 60px rgba(0, 0, 0, 0.65),
+      0 0 35px rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -1226,7 +1178,6 @@ body.mariposas-evento::after {
 ========================= */
 
 @media (max-width: 600px) {
-  /* MARIPOSAS DECORATIVAS */
 
   body::before,
   body::after {
@@ -1283,7 +1234,9 @@ body.mariposas-evento::after {
   }
 
   .brillito {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 0 5px
+      rgba(255, 255, 255, 0.75);
   }
 
   /* HERO */
@@ -1321,6 +1274,11 @@ body.mariposas-evento::after {
     margin-top: 38px;
   }
 
+  .detalle-etiqueta {
+    font-size: 10px;
+    letter-spacing: 0.38em;
+  }
+
   .detalle-valor {
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -1340,6 +1298,10 @@ body.mariposas-evento::after {
     margin-top: 42px;
   }
 
+  .temporizador-titulo {
+    font-size: 9px;
+  }
+
   .temporizador-valores {
     gap: 6px;
   }
@@ -1353,7 +1315,7 @@ body.mariposas-evento::after {
   }
 
   .temporizador-label {
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .temporizador-separador {
@@ -1366,7 +1328,7 @@ body.mariposas-evento::after {
   .boton-ubicacion {
     min-width: 155px;
     padding: 10px 20px;
-    font-size: 8px;
+    font-size: 9px;
   }
 
   /* ALIAS */
@@ -1376,7 +1338,8 @@ body.mariposas-evento::after {
   }
 
   .datos-regalo-titulo {
-    font-size: 8px;
+    font-size: 9px;
+    letter-spacing: 0.4em;
   }
 
   .datos-regalo-alias {
@@ -1386,7 +1349,7 @@ body.mariposas-evento::after {
   .boton-copiar {
     min-width: 155px;
     padding: 10px 20px;
-    font-size: 8px;
+    font-size: 9px;
   }
 
   /* WHATSAPP */
@@ -1397,19 +1360,19 @@ body.mariposas-evento::after {
 
   .confirmar-titulo {
     width: min(100%, 300px);
-    font-size: 8px;
+    font-size: 9px;
     line-height: 1.6;
-    letter-spacing: 0.26em;
+    letter-spacing: 0.24em;
   }
 
   .confirmar-destinatario {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .boton-whatsapp {
     min-width: 195px;
     padding: 10px 20px;
-    font-size: 8px;
+    font-size: 9px;
   }
 
   /* GALERÍA */
@@ -1420,8 +1383,8 @@ body.mariposas-evento::after {
 
   .galeria-etiqueta {
     margin-bottom: 24px;
-    font-size: 8px;
-    letter-spacing: 0.45em;
+    font-size: 9px;
+    letter-spacing: 0.43em;
   }
 
   .galeria-etiqueta::after {
@@ -1440,8 +1403,8 @@ body.mariposas-evento::after {
     max-height: 520px;
     border-radius: 12px;
     box-shadow:
-      0 16px 42px rgba(0, 0, 0, 0.7),
-      0 0 25px rgba(255, 255, 255, 0.035);
+      0 16px 42px rgba(0, 0, 0, 0.6),
+      0 0 25px rgba(255, 255, 255, 0.04);
   }
 
   .galeria-indicadores {
