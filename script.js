@@ -1,9 +1,15 @@
 const evento = {
+
     nombre: "Yenny",
+
     fecha: "10 de Octubre de 2026",
+
     lugar: "Salón Quinta de los Tres Hermanos",
+
     dressCode: "Elegante Sport",
+
     alias: "yyyyyyyy"
+
 };
 
 const app = document.getElementById("app");
@@ -21,16 +27,26 @@ function crearIntro() {
              PÁGINA DE LA INVITACIÓN
         ========================= -->
 
-        <main class="pagina-invitacion" id="pagina-invitacion">
+        <main
+            class="pagina-invitacion"
+            id="pagina-invitacion"
+        >
+
+            <!-- =========================
+                 HERO
+            ========================= -->
 
             <section class="hero-invitacion">
 
                 <div class="hero-mariposa">
+
                     <img
                         src="img/mariposa.png"
                         alt=""
                     >
+
                 </div>
+
 
                 <div class="hero-contenido">
 
@@ -50,9 +66,119 @@ function crearIntro() {
 
                 </div>
 
+
                 <div class="indicador-scroll">
+
                     <span></span>
-                    <p>Deslizá</p>
+
+                    <p>
+                        Deslizá
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SEGUNDA SECCIÓN
+            ========================= -->
+
+            <section class="seccion-evento">
+
+                <div class="evento-fondo-mariposa">
+
+                    <img
+                        src="img/mariposa.png"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="evento-contenido">
+
+
+                    <p class="evento-etiqueta reveal-evento">
+                        UNA NOCHE
+                    </p>
+
+
+                    <h2 class="evento-titulo reveal-evento">
+                        para recordar
+                    </h2>
+
+
+                    <div class="evento-linea reveal-evento"></div>
+
+
+                    <div class="evento-fecha reveal-evento">
+
+                        <span class="evento-dia">
+                            10
+                        </span>
+
+                        <span class="evento-separador">
+                            ·
+                        </span>
+
+                        <span>
+                            10
+                        </span>
+
+                        <span class="evento-separador">
+                            ·
+                        </span>
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+
+                    <p class="evento-dia-semana reveal-evento">
+                        SÁBADO
+                    </p>
+
+
+                    <div class="evento-detalle reveal-evento">
+
+                        <span class="detalle-etiqueta">
+                            LUGAR
+                        </span>
+
+                        <span class="detalle-valor">
+                            SALÓN QUINTA DE LOS TRES HERMANOS
+                        </span>
+
+                    </div>
+
+
+                    <div class="evento-detalle evento-dress reveal-evento">
+
+                        <span class="detalle-etiqueta">
+                            DRESS CODE
+                        </span>
+
+                        <span class="detalle-valor">
+                            ELEGANTE SPORT
+                        </span>
+
+                    </div>
+
+
+                    <div class="evento-decoracion reveal-evento">
+
+                        <span></span>
+
+                        <i></i>
+
+                        <span></span>
+
+                    </div>
+
+
                 </div>
 
             </section>
@@ -60,13 +186,18 @@ function crearIntro() {
         </main>
 
 
+
         <!-- =========================
              INTRO
         ========================= -->
 
-        <section class="intro" id="intro">
+        <section
+            class="intro"
+            id="intro"
+        >
 
             <div class="luz-central"></div>
+
 
 
             <!-- =========================
@@ -74,6 +205,7 @@ function crearIntro() {
             ========================= -->
 
             <div class="porton">
+
 
                 <!-- PUERTA IZQUIERDA -->
 
@@ -104,6 +236,7 @@ function crearIntro() {
                         "
                     />
 
+
                     <g class="barrotes">
 
                         <line x1="45"  y1="215" x2="45"  y2="850"/>
@@ -112,11 +245,12 @@ function crearIntro() {
                         <line x1="195" y1="120" x2="195" y2="850"/>
                         <line x1="245" y1="100" x2="245" y2="850"/>
                         <line x1="295" y1="90"  x2="295" y2="850"/>
-                        <line x1="345" y1="95" x2="345" y2="850"/>
+                        <line x1="345" y1="95"  x2="345" y2="850"/>
                         <line x1="395" y1="115" x2="395" y2="850"/>
                         <line x1="445" y1="155" x2="445" y2="850"/>
 
                     </g>
+
 
                     <g class="ornamento">
 
@@ -142,6 +276,7 @@ function crearIntro() {
 
                     </g>
 
+
                     <g class="decoracion">
 
                         <circle cx="45"  cy="215" r="8"/>
@@ -157,6 +292,7 @@ function crearIntro() {
                     </g>
 
                 </svg>
+
 
 
                 <!-- PUERTA DERECHA -->
@@ -188,6 +324,7 @@ function crearIntro() {
                         "
                     />
 
+
                     <g class="barrotes">
 
                         <line x1="55"  y1="155" x2="55"  y2="850"/>
@@ -201,6 +338,7 @@ function crearIntro() {
                         <line x1="455" y1="215" x2="455" y2="850"/>
 
                     </g>
+
 
                     <g class="ornamento">
 
@@ -226,6 +364,7 @@ function crearIntro() {
 
                     </g>
 
+
                     <g class="decoracion">
 
                         <circle cx="55"  cy="155" r="8"/>
@@ -245,6 +384,7 @@ function crearIntro() {
             </div>
 
 
+
             <!-- =========================
                  CENTRO DEL PORTÓN
             ========================= -->
@@ -260,6 +400,7 @@ function crearIntro() {
             </div>
 
 
+
             <!-- =========================
                  PARTÍCULAS
             ========================= -->
@@ -268,6 +409,7 @@ function crearIntro() {
                 class="particulas"
                 id="particulas"
             ></div>
+
 
 
             <!-- =========================
@@ -285,6 +427,7 @@ function crearIntro() {
                 </p>
 
             </div>
+
 
 
             <!-- =========================
@@ -310,10 +453,13 @@ function crearIntro() {
             </div>
 
         </section>
+
     `;
+
 }
 
 crearIntro();
+
 
 
 /* =========================
@@ -336,6 +482,59 @@ const pagina =
     document.getElementById("pagina-invitacion");
 
 
+
+/* =========================
+   ANIMACIÓN SEGUNDA SECCIÓN
+========================= */
+
+const elementosEvento =
+    document.querySelectorAll(
+        ".reveal-evento"
+    );
+
+const observerEvento =
+    new IntersectionObserver(
+        (entradas) => {
+
+            entradas.forEach(
+                (entrada) => {
+
+                    if (
+                        entrada.isIntersecting
+                    ) {
+
+                        entrada.target.classList.add(
+                            "evento-visible"
+                        );
+
+                        observerEvento.unobserve(
+                            entrada.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+elementosEvento.forEach(
+    (elemento) => {
+
+        observerEvento.observe(
+            elemento
+        );
+
+    }
+);
+
+
+
 /* =========================
    CARGA DE MARIPOSA
 ========================= */
@@ -351,12 +550,17 @@ if (mariposa.complete) {
     mariposa.addEventListener(
         "load",
         () => {
+
             mariposa.style.opacity = "1";
+
         },
-        { once: true }
+        {
+            once: true
+        }
     );
 
 }
+
 
 
 /* =========================
@@ -365,13 +569,19 @@ if (mariposa.complete) {
 
 function esperar(ms) {
 
-    return new Promise(resolve => {
+    return new Promise(
+        resolve => {
 
-        setTimeout(resolve, ms);
+            setTimeout(
+                resolve,
+                ms
+            );
 
-    });
+        }
+    );
 
 }
+
 
 
 /* =========================
@@ -386,11 +596,13 @@ function crearBrillito(x, y) {
     brillo.className =
         "brillito";
 
+
     const variacionX =
         (Math.random() - 0.5) * 24;
 
     const variacionY =
         (Math.random() - 0.5) * 24;
+
 
     brillo.style.left =
         `${x + variacionX}px`;
@@ -398,8 +610,10 @@ function crearBrillito(x, y) {
     brillo.style.top =
         `${y + variacionY}px`;
 
+
     const tamanio =
         2 + Math.random() * 4;
+
 
     brillo.style.width =
         `${tamanio}px`;
@@ -407,18 +621,27 @@ function crearBrillito(x, y) {
     brillo.style.height =
         `${tamanio}px`;
 
+
     brillo.style.animationDuration =
         `${1.2 + Math.random() * 1.2}s`;
 
-    particulas.appendChild(brillo);
 
-    setTimeout(() => {
+    particulas.appendChild(
+        brillo
+    );
 
-        brillo.remove();
 
-    }, 2600);
+    setTimeout(
+        () => {
+
+            brillo.remove();
+
+        },
+        2600
+    );
 
 }
+
 
 
 /* =========================
@@ -427,47 +650,67 @@ function crearBrillito(x, y) {
 
 let intervaloBrillos = null;
 
+
 function comenzarBrillos() {
 
     intervaloBrillos =
-        setInterval(() => {
+        setInterval(
+            () => {
 
-            const rect =
-                mariposa.getBoundingClientRect();
+                const rect =
+                    mariposa.getBoundingClientRect();
 
-            const x =
-                rect.left +
-                rect.width / 2;
 
-            const y =
-                rect.top +
-                rect.height / 2;
+                const x =
+                    rect.left +
+                    rect.width / 2;
 
-            crearBrillito(x, y);
 
-            if (Math.random() > 0.65) {
+                const y =
+                    rect.top +
+                    rect.height / 2;
+
 
                 crearBrillito(
-                    x +
-                    (Math.random() - 0.5) * 40,
-                    y +
-                    (Math.random() - 0.5) * 40
+                    x,
+                    y
                 );
 
-            }
 
-        }, 130);
+                if (
+                    Math.random() > 0.65
+                ) {
+
+                    crearBrillito(
+
+                        x +
+                        (Math.random() - 0.5) * 40,
+
+                        y +
+                        (Math.random() - 0.5) * 40
+
+                    );
+
+                }
+
+            },
+            130
+        );
 
 }
+
 
 
 function detenerBrillos() {
 
-    clearInterval(intervaloBrillos);
+    clearInterval(
+        intervaloBrillos
+    );
 
     intervaloBrillos = null;
 
 }
+
 
 
 /* =========================
@@ -477,11 +720,13 @@ function detenerBrillos() {
 async function iniciarSecuencia() {
 
 
+
     /* =========================
        1. PORTÓN CERRADO
     ========================= */
 
     await esperar(3000);
+
 
 
     /* =========================
@@ -494,11 +739,13 @@ async function iniciarSecuencia() {
     );
 
 
+
     /* =========================
        3. VUELO
     ========================= */
 
     comenzarBrillos();
+
 
     const vuelo =
         mariposaVuelo.animate(
@@ -507,86 +754,127 @@ async function iniciarSecuencia() {
 
                 {
                     left: "50%",
+
                     top: "50%",
+
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1)"
                 },
 
+
                 {
                     left: "65%",
+
                     top: "39%",
+
                     transform:
                         "translate(-50%, -50%) rotate(9deg) scale(1.05)",
+
                     offset: 0.10
                 },
 
+
                 {
                     left: "77%",
+
                     top: "28%",
+
                     transform:
                         "translate(-50%, -50%) rotate(16deg) scale(1.08)",
+
                     offset: 0.20
                 },
 
+
                 {
                     left: "63%",
+
                     top: "24%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
+
                     offset: 0.30
                 },
 
+
                 {
                     left: "35%",
+
                     top: "31%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
+
                     offset: 0.42
                 },
 
+
                 {
                     left: "21%",
+
                     top: "46%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
+
                     offset: 0.52
                 },
 
+
                 {
                     left: "34%",
+
                     top: "66%",
+
                     transform:
                         "translate(-50%, -50%) rotate(13deg) scale(1.23)",
+
                     offset: 0.63
                 },
 
+
                 {
                     left: "67%",
+
                     top: "72%",
+
                     transform:
                         "translate(-50%, -50%) rotate(17deg) scale(1.28)",
+
                     offset: 0.75
                 },
 
+
                 {
                     left: "78%",
+
                     top: "55%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
+
                     offset: 0.84
                 },
 
+
                 {
                     left: "65%",
+
                     top: "43%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
+
                     offset: 0.91
                 },
 
+
                 {
                     left: "50%",
+
                     top: "50%",
+
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1.65)"
                 }
@@ -594,13 +882,18 @@ async function iniciarSecuencia() {
             ],
 
             {
+
                 duration: 9000,
+
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
+
                 fill: "forwards"
+
             }
 
         );
+
 
 
     /* =========================
@@ -609,6 +902,7 @@ async function iniciarSecuencia() {
     ========================= */
 
     await esperar(2800);
+
 
 
     /* =========================
@@ -620,11 +914,13 @@ async function iniciarSecuencia() {
     );
 
 
+
     /* =========================
        6. DEJAR FRASE
     ========================= */
 
     await esperar(4200);
+
 
 
     /* =========================
@@ -636,6 +932,7 @@ async function iniciarSecuencia() {
     );
 
 
+
     /* =========================
        8. ESPERAR FIN DEL VUELO
     ========================= */
@@ -643,11 +940,13 @@ async function iniciarSecuencia() {
     await vuelo.finished;
 
 
+
     /* =========================
        9. DETENER BRILLITOS
     ========================= */
 
     detenerBrillos();
+
 
 
     /* =========================
@@ -664,41 +963,54 @@ async function iniciarSecuencia() {
                         "translate(-50%, -50%) scale(1.65)"
                 },
 
+
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
+
                     offset: 0.15
                 },
+
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
+
                     offset: 0.30
                 },
+
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
+
                     offset: 0.45
                 },
+
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
+
                     offset: 0.60
                 },
+
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
+
                     offset: 0.75
                 },
+
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
+
                     offset: 0.88
                 },
+
 
                 {
                     transform:
@@ -708,15 +1020,21 @@ async function iniciarSecuencia() {
             ],
 
             {
+
                 duration: 3000,
+
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
+
                 fill: "forwards"
+
             }
 
         );
 
+
     await acercamiento.finished;
+
 
 
     /* =========================
@@ -728,17 +1046,20 @@ async function iniciarSecuencia() {
     );
 
 
+
     /* =========================
        12. APARECER PÁGINA
     ========================= */
 
     await esperar(250);
 
+
     pagina.classList.add(
         "pagina-visible"
     );
 
 }
+
 
 
 /* =========================
