@@ -27,8 +27,10 @@ body {
 
 .pagina-invitacion {
     position: relative;
+
     width: 100%;
     min-height: 100vh;
+
     background:
         radial-gradient(
             circle at center,
@@ -36,10 +38,16 @@ body {
             #080808 48%,
             #000 100%
         );
+
     color: #fff;
+
     overflow: hidden;
+
     opacity: 0;
     visibility: hidden;
+
+    transition:
+        opacity 1.2s ease;
 }
 
 .pagina-visible {
@@ -49,43 +57,72 @@ body {
 
 
 /* =========================
-   HERO
+   HERO YENNY
 ========================= */
 
 .hero-invitacion {
     position: relative;
-    min-height: 100vh;
+
     width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #181818 0%,
+            #080808 48%,
+            #000 100%
+        );
+
+    z-index: 5;
+
+    transition:
+        opacity 1.4s cubic-bezier(0.65, 0, 0.2, 1),
+        transform 1.4s cubic-bezier(0.65, 0, 0.2, 1);
 }
 
 
 /* =========================
-   MARIPOSA DE FONDO
+   MARIPOSA HERO
 ========================= */
 
 .hero-mariposa {
     position: absolute;
+
     left: 50%;
     top: 50%;
-    width: min(85vw, 520px);
+
+    width:
+        min(85vw, 520px);
+
     transform:
         translate(-50%, -50%);
+
     opacity: 0;
+
     filter:
         blur(0.2px)
         drop-shadow(
             0 0 30px
             rgba(255,255,255,0.12)
         );
+
     pointer-events: none;
+
+    transition:
+        opacity 1.4s ease;
 }
 
 .hero-mariposa img {
     display: block;
+
     width: 100%;
     height: auto;
 }
@@ -97,10 +134,15 @@ body {
 
 .hero-contenido {
     position: relative;
+
     z-index: 5;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
 
     opacity: 0;
@@ -167,13 +209,14 @@ body {
     text-shadow:
         0 0 25px
         rgba(255,255,255,0.12),
+
         0 0 70px
         rgba(255,255,255,0.08);
 }
 
 
 /* =========================
-   LÍNEA
+   LÍNEA HERO
 ========================= */
 
 .hero-linea {
@@ -203,7 +246,7 @@ body {
 
 
 /* =========================
-   FECHA
+   FECHA HERO
 ========================= */
 
 .hero-fecha {
@@ -227,67 +270,7 @@ body {
 
 
 /* =========================
-   INDICADOR SCROLL
-========================= */
-
-.indicador-scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 35px;
-
-    transform:
-        translateX(-50%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 9px;
-
-    opacity: 0;
-}
-
-.indicador-scroll span {
-    width: 1px;
-    height: 32px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            #d7d7d7
-        );
-
-    animation:
-        scroll-linea
-        2s
-        ease-in-out
-        infinite;
-}
-
-.indicador-scroll p {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.35em;
-
-    text-transform:
-        uppercase;
-
-    color: #aaa;
-
-    padding-left:
-        0.35em;
-}
-
-
-/* =========================
-   ANIMACIÓN DE ENTRADA
+   ENTRADA HERO
 ========================= */
 
 .pagina-visible .hero-mariposa {
@@ -326,19 +309,12 @@ body {
         forwards;
 }
 
-.pagina-visible .indicador-scroll {
-    animation:
-        aparecer-scroll
-        1.2s
-        ease
-        1.9s
-        forwards;
-}
-
 
 @keyframes aparecer-mariposa {
+
     0% {
         opacity: 0;
+
         transform:
             translate(-50%, -50%)
             scale(0.75);
@@ -346,73 +322,474 @@ body {
 
     100% {
         opacity: 0.10;
+
         transform:
             translate(-50%, -50%)
             scale(1);
     }
+
 }
 
 
 @keyframes aparecer-contenido {
+
     0% {
         opacity: 0;
+
         transform:
             translateY(35px);
     }
 
     100% {
         opacity: 1;
+
         transform:
             translateY(0);
     }
+
 }
 
 
 @keyframes aparecer-linea {
+
     0% {
         transform:
             scaleX(0);
+
         opacity: 0;
     }
 
     100% {
         transform:
             scaleX(1);
+
         opacity: 1;
     }
+
 }
 
 
-@keyframes aparecer-scroll {
-    0% {
-        opacity: 0;
-        transform:
-            translateX(-50%)
-            translateY(10px);
-    }
+/* =========================
+   TRANSICIÓN HERO → EVENTO
+========================= */
 
-    100% {
-        opacity: 1;
-        transform:
-            translateX(-50%)
-            translateY(0);
-    }
+.pagina-invitacion.pasar-a-evento
+.hero-invitacion {
+
+    opacity: 0;
+
+    transform:
+        scale(1.035)
+        translateY(-25px);
+
+    pointer-events: none;
 }
 
 
-@keyframes scroll-linea {
-    0%,
-    100% {
-        opacity: 0.3;
-        transform:
-            scaleY(0.7);
-    }
+/* =========================
+   SECCIÓN EVENTO
+========================= */
 
-    50% {
-        opacity: 1;
-        transform:
-            scaleY(1);
-    }
+.seccion-evento {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #070707 52%,
+            #000 100%
+        );
+
+    opacity: 0;
+
+    transform:
+        scale(0.985)
+        translateY(25px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+        transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    z-index: 4;
+}
+
+
+.seccion-evento.evento-activo {
+
+    opacity: 1;
+
+    transform:
+        scale(1)
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   MARIPOSA DE FONDO
+========================= */
+
+.evento-fondo-mariposa {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width:
+        min(100vw, 650px);
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0.035;
+
+    filter:
+        blur(0.5px);
+
+    pointer-events: none;
+}
+
+.evento-fondo-mariposa img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   CONTENIDO EVENTO
+========================= */
+
+.evento-contenido {
+
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(88vw, 620px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        40px 20px;
+}
+
+
+/* =========================
+   ETIQUETA
+========================= */
+
+.evento-etiqueta {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            11px,
+            1.8vw,
+            15px
+        );
+
+    letter-spacing:
+        0.45em;
+
+    color: #bdbdbd;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.evento-titulo {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            8vw,
+            78px
+        );
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1;
+
+    color: #f2f2f2;
+
+    letter-spacing:
+        0.015em;
+}
+
+
+/* =========================
+   LÍNEA
+========================= */
+
+.evento-linea {
+
+    width:
+        clamp(
+            60px,
+            12vw,
+            100px
+        );
+
+    height: 1px;
+
+    margin:
+        28px 0 25px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #cfcfcf,
+            transparent
+        );
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+.evento-fecha {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            17px,
+            3vw,
+            24px
+        );
+
+    letter-spacing:
+        0.18em;
+
+    color: #e4e4e4;
+}
+
+
+.evento-separador {
+
+    color: #777;
+
+    font-size:
+        16px;
+}
+
+
+/* =========================
+   DÍA
+========================= */
+
+.evento-dia-semana {
+
+    margin-top: 12px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        0.5em;
+
+    color: #999;
+}
+
+
+/* =========================
+   DETALLES
+========================= */
+
+.evento-detalle {
+
+    width:
+        min(100%, 440px);
+
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.detalle-etiqueta {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.45em;
+
+    color: #858585;
+}
+
+
+.detalle-valor {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            12px,
+            2vw,
+            15px
+        );
+
+    line-height: 1.5;
+
+    letter-spacing:
+        0.12em;
+
+    color: #dedede;
+}
+
+
+/* =========================
+   DRESS CODE
+========================= */
+
+.evento-dress {
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   DECORACIÓN
+========================= */
+
+.evento-decoracion {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 45px;
+}
+
+
+.evento-decoracion span {
+
+    display: block;
+
+    width: 24px;
+
+    height: 1px;
+
+    background: #777;
+}
+
+
+.evento-decoracion i {
+
+    display: block;
+
+    width: 5px;
+    height: 5px;
+
+    border:
+        1px solid #aaa;
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* =========================
+   REVEAL DATOS
+========================= */
+
+.reveal-evento {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+.reveal-evento.evento-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
 
@@ -421,8 +798,11 @@ body {
 ========================= */
 
 .intro {
+
     position: fixed;
+
     inset: 0;
+
     width: 100%;
     height: 100%;
 
@@ -435,15 +815,20 @@ body {
         );
 
     overflow: hidden;
+
     z-index: 9999;
+
     opacity: 1;
 
     transition:
         opacity 1.2s ease;
 }
 
+
 .luz-central {
+
     position: absolute;
+
     left: 50%;
     top: 50%;
 
@@ -464,7 +849,8 @@ body {
             transparent 70%
         );
 
-    filter: blur(20px);
+    filter:
+        blur(20px);
 
     pointer-events: none;
 }
@@ -475,6 +861,7 @@ body {
 ========================= */
 
 .porton {
+
     position: absolute;
 
     left: 50%;
@@ -496,7 +883,9 @@ body {
     z-index: 20;
 }
 
+
 .hoja {
+
     width: 50%;
     height: 100%;
 
@@ -515,7 +904,9 @@ body {
         );
 }
 
+
 .hierro {
+
     fill: none;
 
     stroke-linejoin:
@@ -525,7 +916,9 @@ body {
         round;
 }
 
+
 .hierro.grueso {
+
     fill: #080808;
 
     stroke: #999;
@@ -533,13 +926,17 @@ body {
     stroke-width: 6;
 }
 
+
 .hierro.medio {
+
     stroke: #999;
 
     stroke-width: 3;
 }
 
+
 .barrotes line {
+
     stroke: #bdbdbd;
 
     stroke-width: 4;
@@ -547,7 +944,9 @@ body {
     stroke-linecap: round;
 }
 
+
 .ornamento path {
+
     fill: none;
 
     stroke: #cfcfcf;
@@ -557,13 +956,16 @@ body {
     stroke-linecap: round;
 }
 
+
 .decoracion circle {
+
     fill: #d8d8d8;
 }
 
 
 .intro.abriendo
 .hoja-izquierda {
+
     transform:
         perspective(1800px)
         rotateY(-75deg)
@@ -582,6 +984,7 @@ body {
 
 .intro.abriendo
 .hoja-derecha {
+
     transform:
         perspective(1800px)
         rotateY(75deg)
@@ -603,6 +1006,7 @@ body {
 ========================= */
 
 .centro-porton {
+
     position: absolute;
 
     left: 50%;
@@ -620,7 +1024,9 @@ body {
         opacity 0.8s ease;
 }
 
+
 .adorno-centro {
+
     position: absolute;
 
     left: 50%;
@@ -652,7 +1058,9 @@ body {
     justify-content: center;
 }
 
+
 .rombo-centro {
+
     width: 24px;
     height: 24px;
 
@@ -667,8 +1075,10 @@ body {
         rgba(255,255,255,0.35);
 }
 
+
 .intro.abriendo
 .centro-porton {
+
     opacity: 0;
 }
 
@@ -678,6 +1088,7 @@ body {
 ========================= */
 
 .particulas {
+
     position: absolute;
 
     inset: 0;
@@ -687,7 +1098,9 @@ body {
     z-index: 70;
 }
 
+
 .brillito {
+
     position: fixed;
 
     border-radius: 50%;
@@ -708,7 +1121,9 @@ body {
 
 
 @keyframes desaparecer-brillo {
+
     0% {
+
         opacity: 0;
 
         transform:
@@ -716,6 +1131,7 @@ body {
     }
 
     20% {
+
         opacity: 1;
 
         transform:
@@ -723,11 +1139,13 @@ body {
     }
 
     100% {
+
         opacity: 0;
 
         transform:
             scale(0);
     }
+
 }
 
 
@@ -736,6 +1154,7 @@ body {
 ========================= */
 
 .mensaje-intro {
+
     position: absolute;
 
     left: 50%;
@@ -761,7 +1180,9 @@ body {
         transform 1.5s ease;
 }
 
+
 .mensaje-linea {
+
     color: #f4f4f4;
 
     font-size:
@@ -786,6 +1207,7 @@ body {
 
 .intro.mostrar-mensaje
 .mensaje-intro {
+
     opacity: 1;
 
     transform:
@@ -796,6 +1218,7 @@ body {
 
 .intro.ocultar-mensaje
 .mensaje-intro {
+
     opacity: 0;
 
     transform:
@@ -809,6 +1232,7 @@ body {
 ========================= */
 
 .mariposa-vuelo {
+
     position: fixed;
 
     left: 50%;
@@ -830,7 +1254,9 @@ body {
         transform;
 }
 
+
 .mariposa-flotante {
+
     width: 100%;
     height: 100%;
 
@@ -840,7 +1266,9 @@ body {
     justify-content: center;
 }
 
+
 .mariposa-intro {
+
     width:
         clamp(
             55px,
@@ -871,416 +1299,13 @@ body {
 ========================= */
 
 .intro.transicion-final {
+
     opacity: 0;
 
     pointer-events: none;
 
     transition:
         opacity 1.2s ease;
-}
-
-
-/* ==================================================
-   SEGUNDA SECCIÓN · EVENTO
-================================================== */
-
-.seccion-evento {
-    position: relative;
-
-    min-height: 100vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding:
-        100px 24px
-        120px;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            #151515 0%,
-            #080808 45%,
-            #000 100%
-        );
-}
-
-
-/* =========================
-   MARIPOSA DE FONDO
-========================= */
-
-.evento-fondo-mariposa {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: min(105vw, 650px);
-
-    transform:
-        translate(-50%, -50%);
-
-    opacity: 0.035;
-
-    pointer-events: none;
-}
-
-.evento-fondo-mariposa img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* =========================
-   CONTENIDO
-========================= */
-
-.evento-contenido {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    max-width: 600px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-}
-
-
-/* =========================
-   ETIQUETA
-========================= */
-
-.evento-etiqueta {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing:
-        0.55em;
-
-    padding-left:
-        0.55em;
-
-    color: #a8a8a8;
-
-    margin-bottom: 13px;
-}
-
-
-/* =========================
-   TÍTULO
-========================= */
-
-.evento-titulo {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(
-            39px,
-            10vw,
-            72px
-        );
-
-    line-height: 1;
-
-    font-weight: 400;
-
-    font-style: italic;
-
-    color: #f1f1f1;
-
-    letter-spacing:
-        0.01em;
-
-    text-shadow:
-        0 0 30px
-        rgba(255,255,255,0.08);
-}
-
-
-/* =========================
-   LÍNEA
-========================= */
-
-.evento-linea {
-    width: 65px;
-    height: 1px;
-
-    margin:
-        27px 0 31px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #bfbfbf,
-            transparent
-        );
-}
-
-
-/* =========================
-   FECHA
-========================= */
-
-.evento-fecha {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 11px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            27px,
-            7vw,
-            43px
-        );
-
-    font-weight: 300;
-
-    letter-spacing:
-        0.12em;
-
-    color: #eeeeee;
-}
-
-.evento-dia {
-    color: #fff;
-}
-
-.evento-separador {
-    color: #777;
-
-    font-size: 20px;
-}
-
-
-/* =========================
-   SÁBADO
-========================= */
-
-.evento-dia-semana {
-    margin-top: 14px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing:
-        0.6em;
-
-    padding-left:
-        0.6em;
-
-    color: #8f8f8f;
-}
-
-
-/* =========================
-   DETALLES
-========================= */
-
-.evento-detalle {
-    width: min(100%, 420px);
-
-    margin-top: 65px;
-
-    padding-top: 22px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.16);
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.evento-dress {
-    margin-top: 28px;
-}
-
-.detalle-etiqueta {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.5em;
-
-    padding-left:
-        0.5em;
-
-    color: #777;
-}
-
-.detalle-valor {
-    max-width: 360px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            12px,
-            2.5vw,
-            15px
-        );
-
-    line-height: 1.6;
-
-    letter-spacing:
-        0.14em;
-
-    color: #d5d5d5;
-}
-
-
-/* =========================
-   DECORACIÓN FINAL
-========================= */
-
-.evento-decoracion {
-    margin-top: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.evento-decoracion span {
-    width: 30px;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #777
-        );
-}
-
-.evento-decoracion span:last-child {
-    background:
-        linear-gradient(
-            to left,
-            transparent,
-            #777
-        );
-}
-
-.evento-decoracion i {
-    width: 7px;
-    height: 7px;
-
-    border:
-        1px solid
-        #bdbdbd;
-
-    transform:
-        rotate(45deg);
-}
-
-
-/* ==================================================
-   REVEAL DE LA SEGUNDA SECCIÓN
-================================================== */
-
-.reveal-evento {
-    opacity: 0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity 1s ease,
-        transform 1s
-        cubic-bezier(
-            0.2,
-            0.7,
-            0.2,
-            1
-        );
-}
-
-.evento-visible {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* DELAYS */
-
-.evento-etiqueta.evento-visible {
-    transition-delay: 0.05s;
-}
-
-.evento-titulo.evento-visible {
-    transition-delay: 0.15s;
-}
-
-.evento-linea.evento-visible {
-    transition-delay: 0.25s;
-}
-
-.evento-fecha.evento-visible {
-    transition-delay: 0.35s;
-}
-
-.evento-dia-semana.evento-visible {
-    transition-delay: 0.45s;
-}
-
-.evento-detalle:nth-of-type(1).evento-visible {
-    transition-delay: 0.55s;
-}
-
-.evento-dress.evento-visible {
-    transition-delay: 0.7s;
-}
-
-.evento-decoracion.evento-visible {
-    transition-delay: 0.85s;
 }
 
 
@@ -1291,6 +1316,7 @@ body {
 @media (max-width: 600px) {
 
     .porton {
+
         width: 100vw;
 
         height: auto;
@@ -1301,45 +1327,53 @@ body {
 
 
     .mensaje-intro {
+
         width: 88vw;
     }
 
 
     .mensaje-linea {
+
         font-size: 20px;
     }
 
 
     .centro-porton {
+
         width: 74px;
         height: 74px;
     }
 
 
     .adorno-centro {
+
         width: 62px;
         height: 62px;
     }
 
 
     .rombo-centro {
+
         width: 21px;
         height: 21px;
     }
 
 
     .mariposa-vuelo {
+
         width: 90px;
         height: 90px;
     }
 
 
     .mariposa-intro {
+
         width: 58px;
     }
 
 
     .brillito {
+
         box-shadow:
             0 0 5px
             rgba(255,255,255,0.75);
@@ -1349,11 +1383,13 @@ body {
     /* HERO MOBILE */
 
     .hero-mariposa {
+
         width: 90vw;
     }
 
 
     .hero-contenido h1 {
+
         font-size:
             clamp(
                 58px,
@@ -1364,6 +1400,7 @@ body {
 
 
     .hero-superior {
+
         font-size: 12px;
 
         letter-spacing:
@@ -1372,6 +1409,7 @@ body {
 
 
     .hero-fecha {
+
         font-size: 12px;
 
         letter-spacing:
@@ -1379,81 +1417,210 @@ body {
     }
 
 
-    .indicador-scroll {
-        bottom: 28px;
-    }
+    /* EVENTO MOBILE */
 
+    .evento-contenido {
 
-    /* =========================
-       EVENTO MOBILE
-    ========================= */
-
-    .seccion-evento {
-        min-height: 100svh;
+        width: 92vw;
 
         padding:
-            90px 22px
-            110px;
-    }
-
-
-    .evento-fondo-mariposa {
-        width: 120vw;
-
-        opacity: 0.03;
+            30px 15px;
     }
 
 
     .evento-titulo {
-        font-size:
-            clamp(
-                38px,
-                11vw,
-                60px
-            );
-    }
 
-
-    .evento-linea {
-        margin:
-            25px 0 29px;
-    }
-
-
-    .evento-fecha {
-        font-size: 29px;
-
-        gap: 9px;
-    }
-
-
-    .evento-dia-semana {
-        margin-top: 13px;
+        font-size: 42px;
     }
 
 
     .evento-detalle {
-        margin-top: 58px;
-    }
 
-
-    .evento-dress {
-        margin-top: 27px;
+        margin-top: 38px;
     }
 
 
     .detalle-valor {
+
         font-size: 11px;
 
         letter-spacing:
-            0.12em;
+            0.10em;
+    }
 
-        max-width: 320px;
+
+    .evento-dress {
+
+        margin-top: 26px;
     }
 
 
     .evento-decoracion {
-        margin-top: 48px;
+
+        margin-top: 38px;
+    }
+
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.temporizador {
+
+    width:
+        min(100%, 500px);
+
+    margin-top: 50px;
+
+    text-align: center;
+}
+
+
+.temporizador-titulo {
+
+    margin-bottom: 20px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing:
+        0.5em;
+
+    color: #858585;
+}
+
+
+.temporizador-valores {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.temporizador-unidad {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 55px;
+}
+
+
+.temporizador-numero {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            25px,
+            6vw,
+            42px
+        );
+
+    font-weight: 300;
+
+    color: #eeeeee;
+
+    letter-spacing:
+        0.05em;
+
+    line-height: 1;
+}
+
+
+.temporizador-label {
+
+    margin-top: 8px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.25em;
+
+    color: #777777;
+}
+
+
+.temporizador-separador {
+
+    color: #777777;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   CUENTA REGRESIVA MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .temporizador {
+
+        margin-top: 42px;
+
+    }
+
+
+    .temporizador-valores {
+
+        gap: 6px;
+
+    }
+
+
+    .temporizador-unidad {
+
+        min-width: 48px;
+
+    }
+
+
+    .temporizador-numero {
+
+        font-size: 27px;
+
+    }
+
+
+    .temporizador-label {
+
+        font-size: 7px;
+
+    }
+
+
+    .temporizador-separador {
+
+        font-size: 18px;
+
+        margin-top: 2px;
+
     }
 
 }

@@ -66,17 +66,6 @@ function crearIntro() {
 
                 </div>
 
-
-                <div class="indicador-scroll">
-
-                    <span></span>
-
-                    <p>
-                        Deslizá
-                    </p>
-
-                </div>
-
             </section>
 
 
@@ -114,7 +103,7 @@ function crearIntro() {
 
                     <div class="evento-fecha reveal-evento">
 
-                        <span class="evento-dia">
+                        <span>
                             10
                         </span>
 
@@ -168,6 +157,104 @@ function crearIntro() {
                     </div>
 
 
+                    <!-- =========================
+                         CUENTA REGRESIVA
+                    ========================= -->
+
+                    <div class="temporizador reveal-evento">
+
+                        <p class="temporizador-titulo">
+                            FALTAN
+                        </p>
+
+
+                        <div class="temporizador-valores">
+
+
+                            <div class="temporizador-unidad">
+
+                                <span
+                                    id="dias"
+                                    class="temporizador-numero"
+                                >
+                                    00
+                                </span>
+
+                                <span class="temporizador-label">
+                                    DÍAS
+                                </span>
+
+                            </div>
+
+
+                            <span class="temporizador-separador">
+                                :
+                            </span>
+
+
+                            <div class="temporizador-unidad">
+
+                                <span
+                                    id="horas"
+                                    class="temporizador-numero"
+                                >
+                                    00
+                                </span>
+
+                                <span class="temporizador-label">
+                                    HORAS
+                                </span>
+
+                            </div>
+
+
+                            <span class="temporizador-separador">
+                                :
+                            </span>
+
+
+                            <div class="temporizador-unidad">
+
+                                <span
+                                    id="minutos"
+                                    class="temporizador-numero"
+                                >
+                                    00
+                                </span>
+
+                                <span class="temporizador-label">
+                                    MIN
+                                </span>
+
+                            </div>
+
+
+                            <span class="temporizador-separador">
+                                :
+                            </span>
+
+
+                            <div class="temporizador-unidad">
+
+                                <span
+                                    id="segundos"
+                                    class="temporizador-numero"
+                                >
+                                    00
+                                </span>
+
+                                <span class="temporizador-label">
+                                    SEG
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
                     <div class="evento-decoracion reveal-evento">
 
                         <span></span>
@@ -186,7 +273,6 @@ function crearIntro() {
         </main>
 
 
-
         <!-- =========================
              INTRO
         ========================= -->
@@ -197,7 +283,6 @@ function crearIntro() {
         >
 
             <div class="luz-central"></div>
-
 
 
             <!-- =========================
@@ -239,13 +324,13 @@ function crearIntro() {
 
                     <g class="barrotes">
 
-                        <line x1="45"  y1="215" x2="45"  y2="850"/>
-                        <line x1="95"  y1="180" x2="95"  y2="850"/>
+                        <line x1="45" y1="215" x2="45" y2="850"/>
+                        <line x1="95" y1="180" x2="95" y2="850"/>
                         <line x1="145" y1="150" x2="145" y2="850"/>
                         <line x1="195" y1="120" x2="195" y2="850"/>
                         <line x1="245" y1="100" x2="245" y2="850"/>
-                        <line x1="295" y1="90"  x2="295" y2="850"/>
-                        <line x1="345" y1="95"  x2="345" y2="850"/>
+                        <line x1="295" y1="90" x2="295" y2="850"/>
+                        <line x1="345" y1="95" x2="345" y2="850"/>
                         <line x1="395" y1="115" x2="395" y2="850"/>
                         <line x1="445" y1="155" x2="445" y2="850"/>
 
@@ -279,20 +364,19 @@ function crearIntro() {
 
                     <g class="decoracion">
 
-                        <circle cx="45"  cy="215" r="8"/>
-                        <circle cx="95"  cy="180" r="8"/>
+                        <circle cx="45" cy="215" r="8"/>
+                        <circle cx="95" cy="180" r="8"/>
                         <circle cx="145" cy="150" r="8"/>
                         <circle cx="195" cy="120" r="8"/>
                         <circle cx="245" cy="100" r="8"/>
-                        <circle cx="295" cy="90"  r="8"/>
-                        <circle cx="345" cy="95"  r="8"/>
+                        <circle cx="295" cy="90" r="8"/>
+                        <circle cx="345" cy="95" r="8"/>
                         <circle cx="395" cy="115" r="8"/>
                         <circle cx="445" cy="155" r="8"/>
 
                     </g>
 
                 </svg>
-
 
 
                 <!-- PUERTA DERECHA -->
@@ -327,10 +411,10 @@ function crearIntro() {
 
                     <g class="barrotes">
 
-                        <line x1="55"  y1="155" x2="55"  y2="850"/>
+                        <line x1="55" y1="155" x2="55" y2="850"/>
                         <line x1="105" y1="115" x2="105" y2="850"/>
-                        <line x1="155" y1="95"  x2="155" y2="850"/>
-                        <line x1="205" y1="90"  x2="205" y2="850"/>
+                        <line x1="155" y1="95" x2="155" y2="850"/>
+                        <line x1="205" y1="90" x2="205" y2="850"/>
                         <line x1="255" y1="100" x2="255" y2="850"/>
                         <line x1="305" y1="120" x2="305" y2="850"/>
                         <line x1="355" y1="150" x2="355" y2="850"/>
@@ -367,10 +451,10 @@ function crearIntro() {
 
                     <g class="decoracion">
 
-                        <circle cx="55"  cy="155" r="8"/>
+                        <circle cx="55" cy="155" r="8"/>
                         <circle cx="105" cy="115" r="8"/>
-                        <circle cx="155" cy="95"  r="8"/>
-                        <circle cx="205" cy="90"  r="8"/>
+                        <circle cx="155" cy="95" r="8"/>
+                        <circle cx="205" cy="90" r="8"/>
                         <circle cx="255" cy="100" r="8"/>
                         <circle cx="305" cy="120" r="8"/>
                         <circle cx="355" cy="150" r="8"/>
@@ -382,7 +466,6 @@ function crearIntro() {
                 </svg>
 
             </div>
-
 
 
             <!-- =========================
@@ -400,7 +483,6 @@ function crearIntro() {
             </div>
 
 
-
             <!-- =========================
                  PARTÍCULAS
             ========================= -->
@@ -409,7 +491,6 @@ function crearIntro() {
                 class="particulas"
                 id="particulas"
             ></div>
-
 
 
             <!-- =========================
@@ -427,7 +508,6 @@ function crearIntro() {
                 </p>
 
             </div>
-
 
 
             <!-- =========================
@@ -461,7 +541,6 @@ function crearIntro() {
 crearIntro();
 
 
-
 /* =========================
    REFERENCIAS
 ========================= */
@@ -481,58 +560,31 @@ const particulas =
 const pagina =
     document.getElementById("pagina-invitacion");
 
+const hero =
+    document.querySelector(".hero-invitacion");
+
+const seccionEvento =
+    document.querySelector(".seccion-evento");
+
+const elementosEvento =
+    document.querySelectorAll(".reveal-evento");
 
 
 /* =========================
-   ANIMACIÓN SEGUNDA SECCIÓN
+   REFERENCIAS CUENTA REGRESIVA
 ========================= */
 
-const elementosEvento =
-    document.querySelectorAll(
-        ".reveal-evento"
-    );
+const dias =
+    document.getElementById("dias");
 
-const observerEvento =
-    new IntersectionObserver(
-        (entradas) => {
+const horas =
+    document.getElementById("horas");
 
-            entradas.forEach(
-                (entrada) => {
+const minutos =
+    document.getElementById("minutos");
 
-                    if (
-                        entrada.isIntersecting
-                    ) {
-
-                        entrada.target.classList.add(
-                            "evento-visible"
-                        );
-
-                        observerEvento.unobserve(
-                            entrada.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-
-elementosEvento.forEach(
-    (elemento) => {
-
-        observerEvento.observe(
-            elemento
-        );
-
-    }
-);
-
+const segundos =
+    document.getElementById("segundos");
 
 
 /* =========================
@@ -562,7 +614,6 @@ if (mariposa.complete) {
 }
 
 
-
 /* =========================
    ESPERAR
 ========================= */
@@ -582,6 +633,98 @@ function esperar(ms) {
 
 }
 
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+const fechaEvento =
+    new Date("2026-10-10T21:00:00");
+
+
+function actualizarTemporizador() {
+
+    const ahora =
+        new Date();
+
+    const diferencia =
+        fechaEvento - ahora;
+
+
+    if (diferencia <= 0) {
+
+        dias.textContent = "00";
+
+        horas.textContent = "00";
+
+        minutos.textContent = "00";
+
+        segundos.textContent = "00";
+
+        return;
+
+    }
+
+
+    const cantidadDias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const cantidadHoras =
+        Math.floor(
+            (
+                diferencia %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
+
+
+    const cantidadMinutos =
+        Math.floor(
+            (
+                diferencia %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+
+    const cantidadSegundos =
+        Math.floor(
+            (
+                diferencia %
+                (1000 * 60)
+            ) /
+            1000
+        );
+
+
+    dias.textContent =
+        String(cantidadDias).padStart(2, "0");
+
+    horas.textContent =
+        String(cantidadHoras).padStart(2, "0");
+
+    minutos.textContent =
+        String(cantidadMinutos).padStart(2, "0");
+
+    segundos.textContent =
+        String(cantidadSegundos).padStart(2, "0");
+
+}
+
+
+actualizarTemporizador();
+
+
+setInterval(
+    actualizarTemporizador,
+    1000
+);
 
 
 /* =========================
@@ -643,7 +786,6 @@ function crearBrillito(x, y) {
 }
 
 
-
 /* =========================
    BRILLITOS CONTINUOS
 ========================= */
@@ -682,13 +824,11 @@ function comenzarBrillos() {
                 ) {
 
                     crearBrillito(
-
                         x +
                         (Math.random() - 0.5) * 40,
 
                         y +
                         (Math.random() - 0.5) * 40
-
                     );
 
                 }
@@ -698,7 +838,6 @@ function comenzarBrillos() {
         );
 
 }
-
 
 
 function detenerBrillos() {
@@ -712,13 +851,11 @@ function detenerBrillos() {
 }
 
 
-
 /* =========================
    SECUENCIA PRINCIPAL
 ========================= */
 
 async function iniciarSecuencia() {
-
 
 
     /* =========================
@@ -728,16 +865,14 @@ async function iniciarSecuencia() {
     await esperar(3000);
 
 
-
     /* =========================
        2. ABRIR PORTÓN
-       + VUELO AL MISMO TIEMPO
+          + VUELO AL MISMO TIEMPO
     ========================= */
 
     intro.classList.add(
         "abriendo"
     );
-
 
 
     /* =========================
@@ -749,138 +884,95 @@ async function iniciarSecuencia() {
 
     const vuelo =
         mariposaVuelo.animate(
-
             [
 
                 {
                     left: "50%",
-
                     top: "50%",
-
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1)"
                 },
 
-
                 {
                     left: "65%",
-
                     top: "39%",
-
                     transform:
                         "translate(-50%, -50%) rotate(9deg) scale(1.05)",
-
                     offset: 0.10
                 },
 
-
                 {
                     left: "77%",
-
                     top: "28%",
-
                     transform:
                         "translate(-50%, -50%) rotate(16deg) scale(1.08)",
-
                     offset: 0.20
                 },
 
-
                 {
                     left: "63%",
-
                     top: "24%",
-
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
-
                     offset: 0.30
                 },
 
-
                 {
                     left: "35%",
-
                     top: "31%",
-
                     transform:
                         "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
-
                     offset: 0.42
                 },
 
-
                 {
                     left: "21%",
-
                     top: "46%",
-
                     transform:
                         "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
-
                     offset: 0.52
                 },
 
-
                 {
                     left: "34%",
-
                     top: "66%",
-
                     transform:
                         "translate(-50%, -50%) rotate(13deg) scale(1.23)",
-
                     offset: 0.63
                 },
 
-
                 {
                     left: "67%",
-
                     top: "72%",
-
                     transform:
                         "translate(-50%, -50%) rotate(17deg) scale(1.28)",
-
                     offset: 0.75
                 },
 
-
                 {
                     left: "78%",
-
                     top: "55%",
-
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
-
                     offset: 0.84
                 },
 
-
                 {
                     left: "65%",
-
                     top: "43%",
-
                     transform:
                         "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
-
                     offset: 0.91
                 },
 
-
                 {
                     left: "50%",
-
                     top: "50%",
-
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1.65)"
                 }
 
             ],
-
             {
 
                 duration: 9000,
@@ -891,18 +983,14 @@ async function iniciarSecuencia() {
                 fill: "forwards"
 
             }
-
         );
-
 
 
     /* =========================
        4. ESPERAR APERTURA
-       DEL PORTÓN
     ========================= */
 
     await esperar(2800);
-
 
 
     /* =========================
@@ -914,13 +1002,11 @@ async function iniciarSecuencia() {
     );
 
 
-
     /* =========================
        6. DEJAR FRASE
     ========================= */
 
     await esperar(4200);
-
 
 
     /* =========================
@@ -932,13 +1018,11 @@ async function iniciarSecuencia() {
     );
 
 
-
     /* =========================
        8. ESPERAR FIN DEL VUELO
     ========================= */
 
     await vuelo.finished;
-
 
 
     /* =========================
@@ -948,14 +1032,12 @@ async function iniciarSecuencia() {
     detenerBrillos();
 
 
-
     /* =========================
        10. ACERCAMIENTO FINAL
     ========================= */
 
     const acercamiento =
         mariposaVuelo.animate(
-
             [
 
                 {
@@ -963,54 +1045,41 @@ async function iniciarSecuencia() {
                         "translate(-50%, -50%) scale(1.65)"
                 },
 
-
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
-
                     offset: 0.15
                 },
-
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
-
                     offset: 0.30
                 },
-
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
-
                     offset: 0.45
                 },
-
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
-
                     offset: 0.60
                 },
-
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
-
                     offset: 0.75
                 },
-
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
-
                     offset: 0.88
                 },
-
 
                 {
                     transform:
@@ -1018,7 +1087,6 @@ async function iniciarSecuencia() {
                 }
 
             ],
-
             {
 
                 duration: 3000,
@@ -1029,12 +1097,10 @@ async function iniciarSecuencia() {
                 fill: "forwards"
 
             }
-
         );
 
 
     await acercamiento.finished;
-
 
 
     /* =========================
@@ -1046,20 +1112,68 @@ async function iniciarSecuencia() {
     );
 
 
-
     /* =========================
        12. APARECER PÁGINA
     ========================= */
 
     await esperar(250);
 
-
     pagina.classList.add(
         "pagina-visible"
     );
 
-}
 
+    /* =========================
+       13. MOSTRAR YENNY
+    ========================= */
+
+    await esperar(2500);
+
+
+    /* =========================
+       14. TRANSICIÓN
+           HERO → DATOS
+    ========================= */
+
+    pagina.classList.add(
+        "pasar-a-evento"
+    );
+
+
+    /* =========================
+       15. ESPERAR TRANSICIÓN
+    ========================= */
+
+    await esperar(1400);
+
+
+    /* =========================
+       16. ACTIVAR DATOS
+    ========================= */
+
+    seccionEvento.classList.add(
+        "evento-activo"
+    );
+
+
+    elementosEvento.forEach(
+        (elemento, indice) => {
+
+            setTimeout(
+                () => {
+
+                    elemento.classList.add(
+                        "evento-visible"
+                    );
+
+                },
+                indice * 120
+            );
+
+        }
+    );
+
+}
 
 
 /* =========================
