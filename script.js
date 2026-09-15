@@ -22,6 +22,8 @@ const evento = {
 
 const app = document.getElementById("app");
 
+document.body.style.overflow = "hidden";
+
 
 /* =========================
    CREAR INTRO + PÁGINA
@@ -318,7 +320,7 @@ function crearIntro() {
 
 
                         <p class="datos-regalo-titulo">
-                            DATOS PARA REGALO
+                            MI ALIAS: 
                         </p>
 
 
@@ -1395,6 +1397,13 @@ async function iniciarSecuencia() {
     seccionEvento.classList.add(
         "evento-activo"
     );
+
+
+    /* =========================
+       17. HABILITAR SCROLL
+    ========================= */
+
+    document.body.style.overflowY = "auto";
 
 
     elementosEvento.forEach(
