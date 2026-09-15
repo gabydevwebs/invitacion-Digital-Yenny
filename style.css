@@ -1,23 +1,36 @@
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html,
 body {
+
     width: 100%;
+
     min-height: 100%;
+
     background: #000;
+
 }
 
+
 body {
+
     overflow-x: hidden;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
+
 }
 
 
@@ -26,9 +39,11 @@ body {
 ========================= */
 
 .pagina-invitacion {
+
     position: relative;
 
     width: 100%;
+
     min-height: 100vh;
 
     background:
@@ -41,34 +56,45 @@ body {
 
     color: #fff;
 
-    overflow: hidden;
+    overflow: visible;
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
         opacity 1.2s ease;
+
 }
 
+
 .pagina-visible {
+
     opacity: 1;
+
     visibility: visible;
+
 }
 
 
 /* =========================
-   HERO YENNY
+   HERO JENNY
 ========================= */
 
 .hero-invitacion {
+
     position: relative;
 
     width: 100%;
+
     height: 100vh;
+
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -85,7 +111,9 @@ body {
 
     transition:
         opacity 1.4s cubic-bezier(0.65, 0, 0.2, 1),
+
         transform 1.4s cubic-bezier(0.65, 0, 0.2, 1);
+
 }
 
 
@@ -94,9 +122,11 @@ body {
 ========================= */
 
 .hero-mariposa {
+
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width:
@@ -118,13 +148,18 @@ body {
 
     transition:
         opacity 1.4s ease;
+
 }
 
+
 .hero-mariposa img {
+
     display: block;
 
     width: 100%;
+
     height: auto;
+
 }
 
 
@@ -133,6 +168,7 @@ body {
 ========================= */
 
 .hero-contenido {
+
     position: relative;
 
     z-index: 5;
@@ -149,6 +185,7 @@ body {
 
     transform:
         translateY(35px);
+
 }
 
 
@@ -157,6 +194,7 @@ body {
 ========================= */
 
 .hero-superior {
+
     margin-bottom: 14px;
 
     font-family:
@@ -177,14 +215,16 @@ body {
         0.45em;
 
     color: #d6d6d6;
+
 }
 
 
 /* =========================
-   YENNY
+   JENNY
 ========================= */
 
 .hero-contenido h1 {
+
     font-family:
         Georgia,
         "Times New Roman",
@@ -212,6 +252,7 @@ body {
 
         0 0 70px
         rgba(255,255,255,0.08);
+
 }
 
 
@@ -220,6 +261,7 @@ body {
 ========================= */
 
 .hero-linea {
+
     width:
         clamp(
             55px,
@@ -242,6 +284,7 @@ body {
 
     transform:
         scaleX(0);
+
 }
 
 
@@ -250,6 +293,7 @@ body {
 ========================= */
 
 .hero-fecha {
+
     font-family:
         Arial,
         Helvetica,
@@ -266,6 +310,7 @@ body {
         0.35em;
 
     color: #c9c9c9;
+
 }
 
 
@@ -274,6 +319,7 @@ body {
 ========================= */
 
 .pagina-visible .hero-mariposa {
+
     animation:
         aparecer-mariposa
         2.2s
@@ -284,9 +330,12 @@ body {
             1
         )
         forwards;
+
 }
 
+
 .pagina-visible .hero-contenido {
+
     animation:
         aparecer-contenido
         1.5s
@@ -298,34 +347,42 @@ body {
         )
         0.65s
         forwards;
+
 }
 
+
 .pagina-visible .hero-linea {
+
     animation:
         aparecer-linea
         1.2s
         ease
         1.15s
         forwards;
+
 }
 
 
 @keyframes aparecer-mariposa {
 
     0% {
+
         opacity: 0;
 
         transform:
             translate(-50%, -50%)
             scale(0.75);
+
     }
 
     100% {
+
         opacity: 0.10;
 
         transform:
             translate(-50%, -50%)
             scale(1);
+
     }
 
 }
@@ -334,17 +391,21 @@ body {
 @keyframes aparecer-contenido {
 
     0% {
+
         opacity: 0;
 
         transform:
             translateY(35px);
+
     }
 
     100% {
+
         opacity: 1;
 
         transform:
             translateY(0);
+
     }
 
 }
@@ -353,17 +414,21 @@ body {
 @keyframes aparecer-linea {
 
     0% {
+
         transform:
             scaleX(0);
 
         opacity: 0;
+
     }
 
     100% {
+
         transform:
             scaleX(1);
 
         opacity: 1;
+
     }
 
 }
@@ -383,6 +448,7 @@ body {
         translateY(-25px);
 
     pointer-events: none;
+
 }
 
 
@@ -392,21 +458,21 @@ body {
 
 .seccion-evento {
 
-    position: absolute;
-
-    inset: 0;
+    position: relative;
 
     width: 100%;
-    height: 100vh;
 
     min-height: 100vh;
 
+    margin-top: -100vh;
+
     display: flex;
 
-    align-items: center;
+    align-items: flex-start;
+
     justify-content: center;
 
-    overflow: hidden;
+    overflow: visible;
 
     background:
         radial-gradient(
@@ -426,9 +492,11 @@ body {
 
     transition:
         opacity 1.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+
         transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 
     z-index: 4;
+
 }
 
 
@@ -441,6 +509,7 @@ body {
         translateY(0);
 
     pointer-events: auto;
+
 }
 
 
@@ -450,9 +519,10 @@ body {
 
 .evento-fondo-mariposa {
 
-    position: absolute;
+    position: fixed;
 
     left: 50%;
+
     top: 50%;
 
     width:
@@ -467,14 +537,18 @@ body {
         blur(0.5px);
 
     pointer-events: none;
+
 }
+
 
 .evento-fondo-mariposa img {
 
     display: block;
 
     width: 100%;
+
     height: auto;
+
 }
 
 
@@ -500,7 +574,8 @@ body {
     text-align: center;
 
     padding:
-        40px 20px;
+        13vh 20px 70px;
+
 }
 
 
@@ -528,6 +603,7 @@ body {
     color: #bdbdbd;
 
     margin-bottom: 10px;
+
 }
 
 
@@ -559,6 +635,7 @@ body {
 
     letter-spacing:
         0.015em;
+
 }
 
 
@@ -587,6 +664,7 @@ body {
             #cfcfcf,
             transparent
         );
+
 }
 
 
@@ -599,6 +677,7 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
@@ -619,6 +698,7 @@ body {
         0.18em;
 
     color: #e4e4e4;
+
 }
 
 
@@ -628,6 +708,7 @@ body {
 
     font-size:
         16px;
+
 }
 
 
@@ -644,13 +725,13 @@ body {
         Helvetica,
         sans-serif;
 
-    font-size:
-        10px;
+    font-size: 10px;
 
     letter-spacing:
         0.5em;
 
     color: #999;
+
 }
 
 
@@ -672,6 +753,7 @@ body {
     align-items: center;
 
     gap: 9px;
+
 }
 
 
@@ -688,6 +770,7 @@ body {
         0.45em;
 
     color: #858585;
+
 }
 
 
@@ -711,6 +794,7 @@ body {
         0.12em;
 
     color: #dedede;
+
 }
 
 
@@ -721,6 +805,7 @@ body {
 .evento-dress {
 
     margin-top: 30px;
+
 }
 
 
@@ -737,6 +822,7 @@ body {
     gap: 8px;
 
     margin-top: 45px;
+
 }
 
 
@@ -749,6 +835,7 @@ body {
     height: 1px;
 
     background: #777;
+
 }
 
 
@@ -757,6 +844,7 @@ body {
     display: block;
 
     width: 5px;
+
     height: 5px;
 
     border:
@@ -764,6 +852,7 @@ body {
 
     transform:
         rotate(45deg);
+
 }
 
 
@@ -780,7 +869,9 @@ body {
 
     transition:
         opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+
         transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+
 }
 
 
@@ -790,6 +881,7 @@ body {
 
     transform:
         translateY(0);
+
 }
 
 
@@ -804,6 +896,7 @@ body {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     background:
@@ -822,6 +915,7 @@ body {
 
     transition:
         opacity 1.2s ease;
+
 }
 
 
@@ -830,12 +924,15 @@ body {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width: 45vw;
+
     height: 45vw;
 
     max-width: 500px;
+
     max-height: 500px;
 
     transform:
@@ -853,6 +950,7 @@ body {
         blur(20px);
 
     pointer-events: none;
+
 }
 
 
@@ -865,6 +963,7 @@ body {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width:
@@ -881,12 +980,14 @@ body {
     overflow: visible;
 
     z-index: 20;
+
 }
 
 
 .hoja {
 
     width: 50%;
+
     height: 100%;
 
     overflow: visible;
@@ -902,6 +1003,7 @@ body {
             0.2,
             1
         );
+
 }
 
 
@@ -914,6 +1016,7 @@ body {
 
     stroke-linecap:
         round;
+
 }
 
 
@@ -924,6 +1027,7 @@ body {
     stroke: #999;
 
     stroke-width: 6;
+
 }
 
 
@@ -932,6 +1036,7 @@ body {
     stroke: #999;
 
     stroke-width: 3;
+
 }
 
 
@@ -942,6 +1047,7 @@ body {
     stroke-width: 4;
 
     stroke-linecap: round;
+
 }
 
 
@@ -954,12 +1060,14 @@ body {
     stroke-width: 4;
 
     stroke-linecap: round;
+
 }
 
 
 .decoracion circle {
 
     fill: #d8d8d8;
+
 }
 
 
@@ -979,6 +1087,7 @@ body {
             0.2,
             1
         );
+
 }
 
 
@@ -998,6 +1107,7 @@ body {
             0.2,
             1
         );
+
 }
 
 
@@ -1010,9 +1120,11 @@ body {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width: 86px;
+
     height: 86px;
 
     transform:
@@ -1022,6 +1134,7 @@ body {
 
     transition:
         opacity 0.8s ease;
+
 }
 
 
@@ -1030,9 +1143,11 @@ body {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width: 72px;
+
     height: 72px;
 
     transform:
@@ -1055,13 +1170,16 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
+
 }
 
 
 .rombo-centro {
 
     width: 24px;
+
     height: 24px;
 
     border:
@@ -1073,6 +1191,7 @@ body {
     box-shadow:
         0 0 8px
         rgba(255,255,255,0.35);
+
 }
 
 
@@ -1080,6 +1199,7 @@ body {
 .centro-porton {
 
     opacity: 0;
+
 }
 
 
@@ -1096,6 +1216,7 @@ body {
     pointer-events: none;
 
     z-index: 70;
+
 }
 
 
@@ -1117,6 +1238,7 @@ body {
         desaparecer-brillo
         ease-out
         forwards;
+
 }
 
 
@@ -1128,6 +1250,7 @@ body {
 
         transform:
             scale(0.3);
+
     }
 
     20% {
@@ -1136,6 +1259,7 @@ body {
 
         transform:
             scale(1);
+
     }
 
     100% {
@@ -1144,6 +1268,7 @@ body {
 
         transform:
             scale(0);
+
     }
 
 }
@@ -1158,6 +1283,7 @@ body {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width:
@@ -1177,7 +1303,9 @@ body {
 
     transition:
         opacity 1.5s ease,
+
         transform 1.5s ease;
+
 }
 
 
@@ -1202,6 +1330,7 @@ body {
     text-shadow:
         0 0 18px
         rgba(255,255,255,0.18);
+
 }
 
 
@@ -1213,6 +1342,7 @@ body {
     transform:
         translate(-50%, -50%)
         translateY(0);
+
 }
 
 
@@ -1224,6 +1354,7 @@ body {
     transform:
         translate(-50%, -50%)
         translateY(-20px);
+
 }
 
 
@@ -1236,9 +1367,11 @@ body {
     position: fixed;
 
     left: 50%;
+
     top: 50%;
 
     width: 90px;
+
     height: 90px;
 
     transform:
@@ -1252,18 +1385,22 @@ body {
         left,
         top,
         transform;
+
 }
 
 
 .mariposa-flotante {
 
     width: 100%;
+
     height: 100%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
+
 }
 
 
@@ -1291,6 +1428,7 @@ body {
     pointer-events: none;
 
     opacity: 0.999;
+
 }
 
 
@@ -1306,6 +1444,7 @@ body {
 
     transition:
         opacity 1.2s ease;
+
 }
 
 
@@ -1323,52 +1462,64 @@ body {
 
         aspect-ratio:
             1000 / 900;
+
     }
 
 
     .mensaje-intro {
 
         width: 88vw;
+
     }
 
 
     .mensaje-linea {
 
         font-size: 20px;
+
     }
 
 
     .centro-porton {
 
         width: 74px;
+
         height: 74px;
+
     }
 
 
     .adorno-centro {
 
         width: 62px;
+
         height: 62px;
+
     }
 
 
     .rombo-centro {
 
         width: 21px;
+
         height: 21px;
+
     }
 
 
     .mariposa-vuelo {
 
         width: 90px;
+
         height: 90px;
+
     }
 
 
     .mariposa-intro {
 
         width: 58px;
+
     }
 
 
@@ -1377,6 +1528,7 @@ body {
         box-shadow:
             0 0 5px
             rgba(255,255,255,0.75);
+
     }
 
 
@@ -1385,6 +1537,7 @@ body {
     .hero-mariposa {
 
         width: 90vw;
+
     }
 
 
@@ -1396,6 +1549,7 @@ body {
                 18vw,
                 100px
             );
+
     }
 
 
@@ -1405,6 +1559,7 @@ body {
 
         letter-spacing:
             0.38em;
+
     }
 
 
@@ -1414,6 +1569,7 @@ body {
 
         letter-spacing:
             0.28em;
+
     }
 
 
@@ -1424,19 +1580,22 @@ body {
         width: 92vw;
 
         padding:
-            30px 15px;
+            11vh 15px 60px;
+
     }
 
 
     .evento-titulo {
 
         font-size: 42px;
+
     }
 
 
     .evento-detalle {
 
         margin-top: 38px;
+
     }
 
 
@@ -1446,21 +1605,25 @@ body {
 
         letter-spacing:
             0.10em;
+
     }
 
 
     .evento-dress {
 
         margin-top: 26px;
+
     }
 
 
     .evento-decoracion {
 
         margin-top: 38px;
+
     }
 
 }
+
 
 /* =========================
    CUENTA REGRESIVA
@@ -1474,6 +1637,7 @@ body {
     margin-top: 50px;
 
     text-align: center;
+
 }
 
 
@@ -1492,6 +1656,7 @@ body {
         0.5em;
 
     color: #858585;
+
 }
 
 
@@ -1504,6 +1669,7 @@ body {
     justify-content: center;
 
     gap: 10px;
+
 }
 
 
@@ -1516,6 +1682,7 @@ body {
     align-items: center;
 
     min-width: 55px;
+
 }
 
 
@@ -1541,6 +1708,7 @@ body {
         0.05em;
 
     line-height: 1;
+
 }
 
 
@@ -1559,6 +1727,7 @@ body {
         0.25em;
 
     color: #777777;
+
 }
 
 
@@ -1571,6 +1740,7 @@ body {
     line-height: 1;
 
     margin-top: 3px;
+
 }
 
 
@@ -1624,3 +1794,448 @@ body {
     }
 
 }
+
+
+/* =========================
+   BOTÓN UBICACIÓN
+========================= */
+
+.boton-ubicacion {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 4px;
+
+    min-width: 165px;
+
+    padding:
+        11px 22px;
+
+    border:
+        1px solid #777;
+
+    color: #dedede;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.28em;
+
+    transition:
+        background 0.3s ease,
+
+        color 0.3s ease,
+
+        border-color 0.3s ease;
+
+}
+
+
+.boton-ubicacion:hover {
+
+    background: #eeeeee;
+
+    color: #080808;
+
+    border-color: #eeeeee;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .boton-ubicacion {
+
+        min-width: 155px;
+
+        padding:
+            10px 20px;
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+/* =========================
+   DATOS PARA REGALO
+========================= */
+
+.datos-regalo {
+
+    width:
+        min(100%, 440px);
+
+    margin-top: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* =========================
+   MENSAJE REGALO
+========================= */
+
+.datos-regalo-mensaje {
+
+    max-width: 390px;
+
+    margin-bottom: 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            14px,
+            2.5vw,
+            17px
+        );
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    letter-spacing:
+        0.02em;
+
+    color: #cfcfcf;
+
+}
+
+
+/* =========================
+   TÍTULO ALIAS
+========================= */
+
+.datos-regalo-titulo {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.45em;
+
+    color: #858585;
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =========================
+   ALIAS
+========================= */
+
+.datos-regalo-alias {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            15px,
+            3vw,
+            20px
+        );
+
+    letter-spacing:
+        0.18em;
+
+    color: #eeeeee;
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =========================
+   BOTÓN COPIAR
+========================= */
+
+.boton-copiar {
+
+    min-width: 165px;
+
+    padding:
+        11px 22px;
+
+    border:
+        1px solid #777;
+
+    background:
+        transparent;
+
+    color: #dedede;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.28em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+
+        color 0.3s ease,
+
+        border-color 0.3s ease;
+
+}
+
+
+.boton-copiar:hover {
+
+    background: #eeeeee;
+
+    color: #080808;
+
+    border-color: #eeeeee;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .datos-regalo {
+
+        margin-top: 42px;
+
+    }
+
+
+    .datos-regalo-mensaje {
+
+        max-width: 310px;
+
+        font-size: 14px;
+
+    }
+
+
+    .datos-regalo-titulo {
+
+        font-size: 8px;
+
+    }
+
+
+    .datos-regalo-alias {
+
+        font-size: 15px;
+
+    }
+
+
+    .boton-copiar {
+
+        min-width: 155px;
+
+        padding:
+            10px 20px;
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+/* =========================
+   CONFIRMAR ASISTENCIA
+========================= */
+
+.confirmar-asistencia {
+
+    width:
+        min(100%, 440px);
+
+    margin-top: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.confirmar-titulo {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.40em;
+
+    color: #858585;
+
+    margin-bottom: 13px;
+
+}
+
+
+/* =========================
+   DESTINATARIO
+========================= */
+
+.confirmar-destinatario {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing:
+        0.18em;
+
+    color: #dedede;
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
+
+.boton-whatsapp {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 205px;
+
+    padding:
+        11px 22px;
+
+    border:
+        1px solid #777;
+
+    background:
+        transparent;
+
+    color: #dedede;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing:
+        0.24em;
+
+    transition:
+        background 0.3s ease,
+
+        color 0.3s ease,
+
+        border-color 0.3s ease;
+
+}
+
+
+.boton-whatsapp:hover {
+
+    background: #eeeeee;
+
+    color: #080808;
+
+    border-color: #eeeeee;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .confirmar-asistencia {
+
+        margin-top: 42px;
+
+    }
+
+
+    .confirmar-titulo {
+
+        font-size: 8px;
+
+        letter-spacing:
+            0.32em;
+
+    }
+
+
+    .confirmar-destinatario {
+
+        font-size: 10px;
+
+    }
+
+
+    .boton-whatsapp {
+
+        min-width: 195px;
+
+        padding:
+            10px 20px;
+
+        font-size: 8px;
+
+    }
+
+}
+

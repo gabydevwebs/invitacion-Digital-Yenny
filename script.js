@@ -1,6 +1,6 @@
 const evento = {
 
-    nombre: "Yenny",
+    nombre: "Jenny",
 
     fecha: "10 de Octubre de 2026",
 
@@ -8,7 +8,15 @@ const evento = {
 
     dressCode: "Elegante Sport",
 
-    alias: "yyyyyyyy"
+    hora: "21:00",
+
+    alias: "yyyyyyyy",
+
+    ubicacion:
+        "https://maps.app.goo.gl/YVk8WmXcSQ3Zndjo9",
+
+    whatsappMama:
+        "5491125370784"
 
 };
 
@@ -55,7 +63,7 @@ function crearIntro() {
                     </p>
 
                     <h1>
-                        YENNY
+                        JENNY
                     </h1>
 
                     <div class="hero-linea"></div>
@@ -70,7 +78,7 @@ function crearIntro() {
 
 
             <!-- =========================
-                 SEGUNDA SECCIÓN
+                 SECCIÓN EVENTO
             ========================= -->
 
             <section class="seccion-evento">
@@ -101,6 +109,10 @@ function crearIntro() {
                     <div class="evento-linea reveal-evento"></div>
 
 
+                    <!-- =========================
+                         FECHA
+                    ========================= -->
+
                     <div class="evento-fecha reveal-evento">
 
                         <span>
@@ -126,10 +138,18 @@ function crearIntro() {
                     </div>
 
 
+                    <!-- =========================
+                         DÍA
+                    ========================= -->
+
                     <p class="evento-dia-semana reveal-evento">
                         SÁBADO
                     </p>
 
+
+                    <!-- =========================
+                         LUGAR
+                    ========================= -->
 
                     <div class="evento-detalle reveal-evento">
 
@@ -141,8 +161,21 @@ function crearIntro() {
                             SALÓN QUINTA DE LOS TRES HERMANOS
                         </span>
 
+                        <a
+                            class="boton-ubicacion"
+                            href="${evento.ubicacion}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            VER UBICACIÓN
+                        </a>
+
                     </div>
 
+
+                    <!-- =========================
+                         DRESS CODE
+                    ========================= -->
 
                     <div class="evento-detalle evento-dress reveal-evento">
 
@@ -152,6 +185,23 @@ function crearIntro() {
 
                         <span class="detalle-valor">
                             ELEGANTE SPORT
+                        </span>
+
+                    </div>
+
+
+                    <!-- =========================
+                         HORA DE LLEGADA
+                    ========================= -->
+
+                    <div class="evento-detalle reveal-evento">
+
+                        <span class="detalle-etiqueta">
+                            HORA DE LLEGADA
+                        </span>
+
+                        <span class="detalle-valor">
+                            21:00
                         </span>
 
                     </div>
@@ -255,6 +305,75 @@ function crearIntro() {
                     </div>
 
 
+                    <!-- =========================
+                         DATOS PARA REGALO
+                    ========================= -->
+
+                    <div class="datos-regalo reveal-evento">
+
+                        <p class="datos-regalo-mensaje">
+                            Si querés dejarme un detalle,
+                            podés hacerlo a través de mi alias.
+                        </p>
+
+
+                        <p class="datos-regalo-titulo">
+                            DATOS PARA REGALO
+                        </p>
+
+
+                        <p
+                            class="datos-regalo-alias"
+                            id="alias"
+                        >
+                            ${evento.alias}
+                        </p>
+
+
+                        <button
+                            class="boton-copiar"
+                            id="boton-copiar"
+                            type="button"
+                        >
+                            COPIAR ALIAS
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                         CONFIRMAR ASISTENCIA
+                    ========================= -->
+
+                    <div class="confirmar-asistencia reveal-evento">
+
+                        <p class="confirmar-titulo">
+                            POR FAVOR, CONFIRMÁ TU ASISTENCIA
+                        </p>
+
+
+                        <p class="confirmar-destinatario">
+                            MAMÁ DE JENNY
+                        </p>
+
+
+                        <a
+                            class="boton-whatsapp"
+                            id="boton-whatsapp"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            CONFIRMAR POR WHATSAPP
+                        </a>
+
+                    </div>
+
+
+                    <!-- =========================
+                         DECORACIÓN
+                    ========================= -->
+
                     <div class="evento-decoracion reveal-evento">
 
                         <span></span>
@@ -311,6 +430,7 @@ function crearIntro() {
                         "
                     />
 
+
                     <path
                         class="hierro medio"
                         d="
@@ -324,15 +444,23 @@ function crearIntro() {
 
                     <g class="barrotes">
 
-                        <line x1="45" y1="215" x2="45" y2="850"/>
-                        <line x1="95" y1="180" x2="95" y2="850"/>
-                        <line x1="145" y1="150" x2="145" y2="850"/>
-                        <line x1="195" y1="120" x2="195" y2="850"/>
-                        <line x1="245" y1="100" x2="245" y2="850"/>
-                        <line x1="295" y1="90" x2="295" y2="850"/>
-                        <line x1="345" y1="95" x2="345" y2="850"/>
-                        <line x1="395" y1="115" x2="395" y2="850"/>
-                        <line x1="445" y1="155" x2="445" y2="850"/>
+                        <line x1="45" y1="215" x2="45" y2="850" />
+
+                        <line x1="95" y1="180" x2="95" y2="850" />
+
+                        <line x1="145" y1="150" x2="145" y2="850" />
+
+                        <line x1="195" y1="120" x2="195" y2="850" />
+
+                        <line x1="245" y1="100" x2="245" y2="850" />
+
+                        <line x1="295" y1="90" x2="295" y2="850" />
+
+                        <line x1="345" y1="95" x2="345" y2="850" />
+
+                        <line x1="395" y1="115" x2="395" y2="850" />
+
+                        <line x1="445" y1="155" x2="445" y2="850" />
 
                     </g>
 
@@ -349,6 +477,7 @@ function crearIntro() {
                             "
                         />
 
+
                         <path
                             d="
                                 M 90 210
@@ -364,15 +493,23 @@ function crearIntro() {
 
                     <g class="decoracion">
 
-                        <circle cx="45" cy="215" r="8"/>
-                        <circle cx="95" cy="180" r="8"/>
-                        <circle cx="145" cy="150" r="8"/>
-                        <circle cx="195" cy="120" r="8"/>
-                        <circle cx="245" cy="100" r="8"/>
-                        <circle cx="295" cy="90" r="8"/>
-                        <circle cx="345" cy="95" r="8"/>
-                        <circle cx="395" cy="115" r="8"/>
-                        <circle cx="445" cy="155" r="8"/>
+                        <circle cx="45" cy="215" r="8" />
+
+                        <circle cx="95" cy="180" r="8" />
+
+                        <circle cx="145" cy="150" r="8" />
+
+                        <circle cx="195" cy="120" r="8" />
+
+                        <circle cx="245" cy="100" r="8" />
+
+                        <circle cx="295" cy="90" r="8" />
+
+                        <circle cx="345" cy="95" r="8" />
+
+                        <circle cx="395" cy="115" r="8" />
+
+                        <circle cx="445" cy="155" r="8" />
 
                     </g>
 
@@ -398,6 +535,7 @@ function crearIntro() {
                         "
                     />
 
+
                     <path
                         class="hierro medio"
                         d="
@@ -411,15 +549,23 @@ function crearIntro() {
 
                     <g class="barrotes">
 
-                        <line x1="55" y1="155" x2="55" y2="850"/>
-                        <line x1="105" y1="115" x2="105" y2="850"/>
-                        <line x1="155" y1="95" x2="155" y2="850"/>
-                        <line x1="205" y1="90" x2="205" y2="850"/>
-                        <line x1="255" y1="100" x2="255" y2="850"/>
-                        <line x1="305" y1="120" x2="305" y2="850"/>
-                        <line x1="355" y1="150" x2="355" y2="850"/>
-                        <line x1="405" y1="180" x2="405" y2="850"/>
-                        <line x1="455" y1="215" x2="455" y2="850"/>
+                        <line x1="55" y1="155" x2="55" y2="850" />
+
+                        <line x1="105" y1="115" x2="105" y2="850" />
+
+                        <line x1="155" y1="95" x2="155" y2="850" />
+
+                        <line x1="205" y1="90" x2="205" y2="850" />
+
+                        <line x1="255" y1="100" x2="255" y2="850" />
+
+                        <line x1="305" y1="120" x2="305" y2="850" />
+
+                        <line x1="355" y1="150" x2="355" y2="850" />
+
+                        <line x1="405" y1="180" x2="405" y2="850" />
+
+                        <line x1="455" y1="215" x2="455" y2="850" />
 
                     </g>
 
@@ -436,6 +582,7 @@ function crearIntro() {
                             "
                         />
 
+
                         <path
                             d="
                                 M 90 210
@@ -451,15 +598,23 @@ function crearIntro() {
 
                     <g class="decoracion">
 
-                        <circle cx="55" cy="155" r="8"/>
-                        <circle cx="105" cy="115" r="8"/>
-                        <circle cx="155" cy="95" r="8"/>
-                        <circle cx="205" cy="90" r="8"/>
-                        <circle cx="255" cy="100" r="8"/>
-                        <circle cx="305" cy="120" r="8"/>
-                        <circle cx="355" cy="150" r="8"/>
-                        <circle cx="405" cy="180" r="8"/>
-                        <circle cx="455" cy="215" r="8"/>
+                        <circle cx="55" cy="155" r="8" />
+
+                        <circle cx="105" cy="115" r="8" />
+
+                        <circle cx="155" cy="95" r="8" />
+
+                        <circle cx="205" cy="90" r="8" />
+
+                        <circle cx="255" cy="100" r="8" />
+
+                        <circle cx="305" cy="120" r="8" />
+
+                        <circle cx="355" cy="150" r="8" />
+
+                        <circle cx="405" cy="180" r="8" />
+
+                        <circle cx="455" cy="215" r="8" />
 
                     </g>
 
@@ -538,6 +693,7 @@ function crearIntro() {
 
 }
 
+
 crearIntro();
 
 
@@ -588,10 +744,30 @@ const segundos =
 
 
 /* =========================
+   REFERENCIAS ALIAS
+========================= */
+
+const alias =
+    document.getElementById("alias");
+
+const botonCopiar =
+    document.getElementById("boton-copiar");
+
+
+/* =========================
+   REFERENCIA WHATSAPP
+========================= */
+
+const botonWhatsapp =
+    document.getElementById("boton-whatsapp");
+
+
+/* =========================
    CARGA DE MARIPOSA
 ========================= */
 
 mariposa.style.opacity = "0";
+
 
 if (mariposa.complete) {
 
@@ -639,7 +815,7 @@ function esperar(ms) {
 ========================= */
 
 const fechaEvento =
-    new Date("2026-10-10T21:00:00");
+    new Date("2026-10-10T00:00:00");
 
 
 function actualizarTemporizador() {
@@ -706,11 +882,14 @@ function actualizarTemporizador() {
     dias.textContent =
         String(cantidadDias).padStart(2, "0");
 
+
     horas.textContent =
         String(cantidadHoras).padStart(2, "0");
 
+
     minutos.textContent =
         String(cantidadMinutos).padStart(2, "0");
+
 
     segundos.textContent =
         String(cantidadSegundos).padStart(2, "0");
@@ -728,6 +907,63 @@ setInterval(
 
 
 /* =========================
+   COPIAR ALIAS
+========================= */
+
+botonCopiar.addEventListener(
+    "click",
+    async () => {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                evento.alias
+            );
+
+
+            botonCopiar.textContent =
+                "ALIAS COPIADO";
+
+
+            setTimeout(
+                () => {
+
+                    botonCopiar.textContent =
+                        "COPIAR ALIAS";
+
+                },
+                2000
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "No se pudo copiar el alias:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+const mensajeWhatsapp =
+    "Hola, quiero confirmar mi asistencia a los XV de Jenny.";
+
+
+botonWhatsapp.href =
+    `https://wa.me/${evento.whatsappMama}?text=${encodeURIComponent(
+        mensajeWhatsapp
+    )}`;
+
+
+/* =========================
    CREAR BRILLITO
 ========================= */
 
@@ -736,6 +972,7 @@ function crearBrillito(x, y) {
     const brillo =
         document.createElement("span");
 
+
     brillo.className =
         "brillito";
 
@@ -743,12 +980,14 @@ function crearBrillito(x, y) {
     const variacionX =
         (Math.random() - 0.5) * 24;
 
+
     const variacionY =
         (Math.random() - 0.5) * 24;
 
 
     brillo.style.left =
         `${x + variacionX}px`;
+
 
     brillo.style.top =
         `${y + variacionY}px`;
@@ -760,6 +999,7 @@ function crearBrillito(x, y) {
 
     brillo.style.width =
         `${tamanio}px`;
+
 
     brillo.style.height =
         `${tamanio}px`;
@@ -867,7 +1107,7 @@ async function iniciarSecuencia() {
 
     /* =========================
        2. ABRIR PORTÓN
-          + VUELO AL MISMO TIEMPO
+          + VUELO
     ========================= */
 
     intro.classList.add(
@@ -1118,13 +1358,14 @@ async function iniciarSecuencia() {
 
     await esperar(250);
 
+
     pagina.classList.add(
         "pagina-visible"
     );
 
 
     /* =========================
-       13. MOSTRAR YENNY
+       13. MOSTRAR JENNY
     ========================= */
 
     await esperar(2500);
