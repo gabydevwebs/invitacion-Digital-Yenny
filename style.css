@@ -1,2090 +1,1461 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 html,
 body {
-    width: 100%;
-    min-height: 100%;
-    background: #000;
+  width: 100%;
+  min-height: 100%;
+  background: #000;
 }
-
 
 body {
-    overflow-x: hidden;
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+  overflow-x: hidden;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
+/* =========================
+   MARIPOSAS DECORATIVAS FIJAS
+========================= */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 24px;
+    width: 48px;
+    height: 48px;
+
+    background-image: url("img/mariposa.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,255,255,0.22)
+        );
+
+    pointer-events: none;
+    z-index: 9000;
+
+    transform: translateY(-18px);
+
+    transition:
+        opacity 1.1s cubic-bezier(0.45, 0, 0.25, 1),
+        transform 1.1s cubic-bezier(0.45, 0, 0.25, 1);
+}
+
+
+body::before {
+    left: 18px;
+}
+
+
+body::after {
+    right: 18px;
+    transform:
+        translateY(-18px)
+        scaleX(-1);
+}
+
+
+/* =========================
+   ENTRA CON JENNY
+========================= */
+
+body.mariposas-hero::before,
+body.mariposas-hero::after {
+    opacity: 0.72;
+    transform: translateY(0);
+}
+
+
+body.mariposas-hero::after {
+    transform:
+        translateY(0)
+        scaleX(-1);
+}
+
+
+/* =========================
+   SALE JUNTO CON JENNY
+========================= */
+
+body.mariposas-saliendo::before,
+body.mariposas-saliendo::after {
+    opacity: 0;
+    transform: translateY(-18px);
+}
+
+
+body.mariposas-saliendo::after {
+    transform:
+        translateY(-18px)
+        scaleX(-1);
+}
+
+
+/* =========================
+   VUELVEN CON LA INFORMACIÓN
+========================= */
+
+body.mariposas-evento::before,
+body.mariposas-evento::after {
+    opacity: 0.72;
+    transform: translateY(0);
+}
+
+
+body.mariposas-evento::after {
+    transform:
+        translateY(0)
+        scaleX(-1);
+}
+
+
+@media (max-width: 600px) {
+
+    body::before,
+    body::after {
+        top: 18px;
+        width: 38px;
+        height: 38px;
+
+        transform:
+            translateY(-14px);
+    }
+
+
+    body::before {
+        left: 12px;
+    }
+
+
+    body::after {
+        right: 12px;
+
+        transform:
+            translateY(-14px)
+            scaleX(-1);
+    }
+
+
+    body.mariposas-hero::before,
+    body.mariposas-hero::after {
+        opacity: 0.68;
+        transform:
+            translateY(0);
+    }
+
+
+    body.mariposas-hero::after {
+        transform:
+            translateY(0)
+            scaleX(-1);
+    }
+
+
+    body.mariposas-saliendo::before,
+    body.mariposas-saliendo::after {
+        opacity: 0;
+        transform:
+            translateY(-14px);
+    }
+
+
+    body.mariposas-saliendo::after {
+        transform:
+            translateY(-14px)
+            scaleX(-1);
+    }
+
+
+    body.mariposas-evento::before,
+    body.mariposas-evento::after {
+        opacity: 0.68;
+        transform:
+            translateY(0);
+    }
+
+
+    body.mariposas-evento::after {
+        transform:
+            translateY(0)
+            scaleX(-1);
+    }
+
+}
 
 /* =========================
    PÁGINA DE INVITACIÓN
 ========================= */
 
 .pagina-invitacion {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #181818 0%,
-            #080808 48%,
-            #000 100%
-        );
-
-    color: #fff;
-
-    overflow: hidden;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 1.2s ease;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    #181818 0%,
+    #080808 48%,
+    #000 100%
+  );
+  color: #fff;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease;
 }
-
 
 .pagina-visible {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
-
 
 .pagina-invitacion:has(.evento-activo) {
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
 
 /* =========================
    HERO JENNY
 ========================= */
 
 .hero-invitacion {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #181818 0%,
-            #080808 48%,
-            #000 100%
-        );
-
-    z-index: 5;
-
-    transition:
-        opacity 1.4s cubic-bezier(0.65, 0, 0.2, 1),
-        transform 1.4s cubic-bezier(0.65, 0, 0.2, 1);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    #181818 0%,
+    #080808 48%,
+    #000 100%
+  );
+  z-index: 5;
+  transition:
+    opacity 1.4s cubic-bezier(0.65, 0, 0.2, 1),
+    transform 1.4s cubic-bezier(0.65, 0, 0.2, 1);
 }
-
 
 /* =========================
    MARIPOSA HERO
 ========================= */
 
 .hero-mariposa {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width:
-        min(85vw, 520px);
-
-    transform:
-        translate(-50%, -50%);
-
-    opacity: 0;
-
-    filter:
-        blur(0.2px)
-        drop-shadow(
-            0 0 30px
-            rgba(255, 255, 255, 0.12)
-        );
-
-    pointer-events: none;
-
-    transition:
-        opacity 1.4s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(85vw, 520px);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  filter: blur(0.2px) drop-shadow(0 0 30px rgba(255, 255, 255, 0.12));
+  pointer-events: none;
+  transition: opacity 1.4s ease;
 }
-
 
 .hero-mariposa img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
 
 /* =========================
    CONTENIDO HERO
 ========================= */
 
 .hero-contenido {
-    position: relative;
-
-    z-index: 5;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform:
-        translateY(35px);
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(35px);
 }
-
 
 /* =========================
    MIS XV
 ========================= */
 
 .hero-superior {
-    margin-bottom: 14px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            13px,
-            2vw,
-            18px
-        );
-
-    font-weight: 400;
-
-    letter-spacing:
-        0.45em;
-
-    color: #d6d6d6;
+  margin-bottom: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(13px, 2vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  color: #d6d6d6;
 }
-
 
 /* =========================
    JENNY
 ========================= */
 
 .hero-contenido h1 {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(
-            62px,
-            13vw,
-            150px
-        );
-
-    line-height: 0.95;
-
-    font-weight: 400;
-
-    letter-spacing:
-        0.08em;
-
-    color: #f4f4f4;
-
-    text-shadow:
-        0 0 25px
-        rgba(255, 255, 255, 0.12),
-
-        0 0 70px
-        rgba(255, 255, 255, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(62px, 13vw, 150px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #f4f4f4;
+  text-shadow:
+    0 0 25px rgba(255, 255, 255, 0.12),
+    0 0 70px rgba(255, 255, 255, 0.08);
 }
-
 
 /* =========================
    LÍNEA HERO
 ========================= */
 
 .hero-linea {
-    width:
-        clamp(
-            55px,
-            12vw,
-            110px
-        );
-
-    height: 1px;
-
-    margin:
-        25px 0 20px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #cfcfcf,
-            transparent
-        );
-
-    transform:
-        scaleX(0);
+  width: clamp(55px, 12vw, 110px);
+  height: 1px;
+  margin: 25px 0 20px;
+  background: linear-gradient(to right, transparent, #cfcfcf, transparent);
+  transform: scaleX(0);
 }
-
 
 /* =========================
    FECHA HERO
 ========================= */
 
 .hero-fecha {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            13px,
-            2vw,
-            18px
-        );
-
-    letter-spacing:
-        0.35em;
-
-    color: #c9c9c9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(13px, 2vw, 18px);
+  letter-spacing: 0.35em;
+  color: #c9c9c9;
 }
-
 
 /* =========================
    ENTRADA HERO
 ========================= */
 
 .pagina-visible .hero-mariposa {
-    animation:
-        aparecer-mariposa
-        2.2s
-        cubic-bezier(
-            0.2,
-            0.7,
-            0.2,
-            1
-        )
-        forwards;
+  animation: aparecer-mariposa 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
-
 
 .pagina-visible .hero-contenido {
-    animation:
-        aparecer-contenido
-        1.5s
-        cubic-bezier(
-            0.2,
-            0.7,
-            0.2,
-            1
-        )
-        0.65s
-        forwards;
+  animation: aparecer-contenido 1.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.65s
+    forwards;
 }
-
 
 .pagina-visible .hero-linea {
-    animation:
-        aparecer-linea
-        1.2s
-        ease
-        1.15s
-        forwards;
+  animation: aparecer-linea 1.2s ease 1.15s forwards;
 }
-
 
 @keyframes aparecer-mariposa {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+  }
 
-    0% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0.75);
-    }
-
-    100% {
-        opacity: 0.10;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-    }
+  100% {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
-
 
 @keyframes aparecer-contenido {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
 
-    0% {
-        opacity: 0;
-
-        transform:
-            translateY(35px);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 @keyframes aparecer-linea {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
 
-    0% {
-        transform:
-            scaleX(0);
-
-        opacity: 0;
-    }
-
-    100% {
-        transform:
-            scaleX(1);
-
-        opacity: 1;
-    }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
-
 
 /* =========================
    TRANSICIÓN HERO → EVENTO
 ========================= */
 
-.pagina-invitacion.pasar-a-evento
-.hero-invitacion {
-
-    opacity: 0;
-
-    transform:
-        scale(1.035)
-        translateY(-25px);
-
-    pointer-events: none;
+.pagina-invitacion.pasar-a-evento .hero-invitacion {
+  opacity: 0;
+  transform: scale(1.035) translateY(-25px);
+  pointer-events: none;
 }
-
 
 /* =========================
    SECCIÓN EVENTO
 ========================= */
 
 .seccion-evento {
-    position: relative;
-
-    width: 100%;
-    min-height: 100vh;
-
-    margin-top: -100vh;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    overflow: visible;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #151515 0%,
-            #070707 52%,
-            #000 100%
-        );
-
-    opacity: 0;
-
-    transform:
-        scale(0.985)
-        translateY(25px);
-
-    pointer-events: none;
-
-    transition:
-        opacity 1.5s cubic-bezier(0.2, 0.7, 0.2, 1),
-        transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
-
-    z-index: 4;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: -100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;
+  background: radial-gradient(
+    circle at center,
+    #151515 0%,
+    #070707 52%,
+    #000 100%
+  );
+  opacity: 0;
+  transform: scale(0.985) translateY(25px);
+  pointer-events: none;
+  transition:
+    opacity 1.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  z-index: 4;
 }
-
 
 .seccion-evento.evento-activo {
-    opacity: 1;
-
-    transform:
-        scale(1)
-        translateY(0);
-
-    pointer-events: auto;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
 }
-
 
 /* =========================
    MARIPOSA DE FONDO
 ========================= */
 
 .evento-fondo-mariposa {
-    position: fixed;
-
-    left: 50%;
-    top: 50%;
-
-    width:
-        min(100vw, 650px);
-
-    transform:
-        translate(-50%, -50%);
-
-    opacity: 0.035;
-
-    filter:
-        blur(0.5px);
-
-    pointer-events: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(100vw, 650px);
+  transform: translate(-50%, -50%);
+  opacity: 0.035;
+  filter: blur(0.5px);
+  pointer-events: none;
 }
-
 
 .evento-fondo-mariposa img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
 
 /* =========================
    CONTENIDO EVENTO
 ========================= */
 
 .evento-contenido {
-    position: relative;
-
-    z-index: 5;
-
-    width:
-        min(88vw, 620px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-
-    padding:
-        13vh 20px 70px;
+  position: relative;
+  z-index: 5;
+  width: min(88vw, 620px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 13vh 20px 70px;
 }
-
 
 /* =========================
    ETIQUETA
 ========================= */
 
 .evento-etiqueta {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            11px,
-            1.8vw,
-            15px
-        );
-
-    letter-spacing:
-        0.45em;
-
-    color: #bdbdbd;
-
-    margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(11px, 1.8vw, 15px);
+  letter-spacing: 0.45em;
+  color: #bdbdbd;
+  margin-bottom: 10px;
 }
-
 
 /* =========================
    TÍTULO
 ========================= */
 
 .evento-titulo {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(
-            40px,
-            8vw,
-            78px
-        );
-
-    font-weight: 400;
-    font-style: italic;
-
-    line-height: 1;
-
-    color: #f2f2f2;
-
-    letter-spacing:
-        0.015em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 8vw, 78px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  color: #f2f2f2;
+  letter-spacing: 0.015em;
 }
-
 
 /* =========================
    LÍNEA
 ========================= */
 
 .evento-linea {
-    width:
-        clamp(
-            60px,
-            12vw,
-            100px
-        );
-
-    height: 1px;
-
-    margin:
-        28px 0 25px;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #cfcfcf,
-            transparent
-        );
+  width: clamp(60px, 12vw, 100px);
+  height: 1px;
+  margin: 28px 0 25px;
+  background: linear-gradient(to right, transparent, #cfcfcf, transparent);
 }
-
 
 /* =========================
    FECHA
 ========================= */
 
 .evento-fecha {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            17px,
-            3vw,
-            24px
-        );
-
-    letter-spacing:
-        0.18em;
-
-    color: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(17px, 3vw, 24px);
+  letter-spacing: 0.18em;
+  color: #e4e4e4;
 }
-
 
 .evento-separador {
-    color: #777;
-
-    font-size:
-        16px;
+  color: #777;
+  font-size: 16px;
 }
-
 
 /* =========================
    DÍA
 ========================= */
 
 .evento-dia-semana {
-    margin-top: 12px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing:
-        0.5em;
-
-    color: #999;
+  margin-top: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: #999;
 }
-
 
 /* =========================
    DETALLES
 ========================= */
 
 .evento-detalle {
-    width:
-        min(100%, 440px);
-
-    margin-top: 45px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 9px;
+  width: min(100%, 440px);
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
 }
-
 
 .detalle-etiqueta {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.45em;
-
-    color: #858585;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.45em;
+  color: #858585;
 }
-
 
 .detalle-valor {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            12px,
-            2vw,
-            15px
-        );
-
-    line-height: 1.5;
-
-    letter-spacing:
-        0.12em;
-
-    color: #dedede;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 2vw, 15px);
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  color: #dedede;
 }
-
 
 /* =========================
    DRESS CODE
 ========================= */
 
 .evento-dress {
-    margin-top: 30px;
+  margin-top: 30px;
 }
-
 
 /* =========================
    DECORACIÓN
 ========================= */
 
 .evento-decoracion {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 45px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 45px;
 }
-
 
 .evento-decoracion span {
-    display: block;
-
-    width: 24px;
-    height: 1px;
-
-    background: #777;
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #777;
 }
-
 
 .evento-decoracion i {
-    display: block;
-
-    width: 5px;
-    height: 5px;
-
-    border:
-        1px solid #aaa;
-
-    transform:
-        rotate(45deg);
+  display: block;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #aaa;
+  transform: rotate(45deg);
 }
-
 
 /* =========================
    REVEAL DATOS
 ========================= */
 
 .reveal-evento {
-    opacity: 0;
-
-    transform:
-        translateY(25px);
-
-    transition:
-        opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
-        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-
 
 .reveal-evento.evento-visible {
-    opacity: 1;
-
-    transform:
-        translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
-
 
 /* =========================
    INTRO
 ========================= */
 
 .intro {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #171717 0%,
-            #080808 48%,
-            #000 100%
-        );
-
-    overflow: hidden;
-
-    z-index: 9999;
-
-    opacity: 1;
-
-    transition:
-        opacity 1.2s ease;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    #171717 0%,
+    #080808 48%,
+    #000 100%
+  );
+  overflow: hidden;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1.2s ease;
 }
-
 
 .luz-central {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 45vw;
-    height: 45vw;
-
-    max-width: 500px;
-    max-height: 500px;
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.10) 0%,
-            rgba(255,255,255,0.04) 30%,
-            transparent 70%
-        );
-
-    filter:
-        blur(20px);
-
-    pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 45vw;
+  height: 45vw;
+  max-width: 500px;
+  max-height: 500px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.04) 30%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  pointer-events: none;
 }
-
 
 /* =========================
    PORTÓN
 ========================= */
 
 .porton {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width:
-        min(96vw, 1000px);
-
-    height:
-        min(94vh, 900px);
-
-    transform:
-        translate(-50%, -50%);
-
-    display: flex;
-
-    overflow: visible;
-
-    z-index: 20;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(96vw, 1000px);
+  height: min(94vh, 900px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  overflow: visible;
+  z-index: 20;
 }
-
 
 .hoja {
-    width: 50%;
-    height: 100%;
-
-    overflow: visible;
-
-    transform-style:
-        preserve-3d;
-
-    transition:
-        transform 2.8s
-        cubic-bezier(
-            0.65,
-            0,
-            0.2,
-            1
-        );
+  width: 50%;
+  height: 100%;
+  overflow: visible;
+  transform-style: preserve-3d;
+  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
 }
-
 
 .hierro {
-    fill: none;
-
-    stroke-linejoin:
-        round;
-
-    stroke-linecap:
-        round;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
-
 
 .hierro.grueso {
-    fill: #080808;
-
-    stroke: #999;
-
-    stroke-width: 6;
+  fill: #080808;
+  stroke: #999;
+  stroke-width: 6;
 }
-
 
 .hierro.medio {
-    stroke: #999;
-
-    stroke-width: 3;
+  stroke: #999;
+  stroke-width: 3;
 }
-
 
 .barrotes line {
-    stroke: #bdbdbd;
-
-    stroke-width: 4;
-
-    stroke-linecap:
-        round;
+  stroke: #bdbdbd;
+  stroke-width: 4;
+  stroke-linecap: round;
 }
-
 
 .ornamento path {
-    fill: none;
-
-    stroke: #cfcfcf;
-
-    stroke-width: 4;
-
-    stroke-linecap:
-        round;
+  fill: none;
+  stroke: #cfcfcf;
+  stroke-width: 4;
+  stroke-linecap: round;
 }
-
 
 .decoracion circle {
-    fill: #d8d8d8;
+  fill: #d8d8d8;
 }
 
-
-.intro.abriendo
-.hoja-izquierda {
-
-    transform:
-        perspective(1800px)
-        rotateY(-75deg)
-        translateX(-35px);
-
-    transition:
-        transform 2.8s
-        cubic-bezier(
-            0.65,
-            0,
-            0.2,
-            1
-        );
+.intro.abriendo .hoja-izquierda {
+  transform: perspective(1800px) rotateY(-75deg) translateX(-35px);
+  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
 }
 
-
-.intro.abriendo
-.hoja-derecha {
-
-    transform:
-        perspective(1800px)
-        rotateY(75deg)
-        translateX(35px);
-
-    transition:
-        transform 2.8s
-        cubic-bezier(
-            0.65,
-            0,
-            0.2,
-            1
-        );
+.intro.abriendo .hoja-derecha {
+  transform: perspective(1800px) rotateY(75deg) translateX(35px);
+  transition: transform 2.8s cubic-bezier(0.65, 0, 0.2, 1);
 }
-
 
 /* =========================
    CENTRO PORTÓN
 ========================= */
 
 .centro-porton {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 86px;
-    height: 86px;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 40;
-
-    transition:
-        opacity 0.8s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 86px;
+  height: 86px;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  transition: opacity 0.8s ease;
 }
-
 
 .adorno-centro {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 72px;
-    height: 72px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #080808;
-
-    border:
-        2px solid #d8d8d8;
-
-    box-shadow:
-        0 0 16px
-        rgba(255,255,255,0.35),
-
-        inset 0 0 18px
-        rgba(255,255,255,0.12);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #080808;
+  border: 2px solid #d8d8d8;
+  box-shadow:
+    0 0 16px rgba(255, 255, 255, 0.35),
+    inset 0 0 18px rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .rombo-centro {
-    width: 24px;
-    height: 24px;
-
-    border:
-        2px solid #e2e2e2;
-
-    transform:
-        rotate(45deg);
-
-    box-shadow:
-        0 0 8px
-        rgba(255,255,255,0.35);
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e2e2e2;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-
-.intro.abriendo
-.centro-porton {
-    opacity: 0;
+.intro.abriendo .centro-porton {
+  opacity: 0;
 }
-
 
 /* =========================
    PARTÍCULAS
 ========================= */
 
 .particulas {
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 70;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 70;
 }
-
 
 .brillito {
-    position: fixed;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    box-shadow:
-        0 0 8px
-        rgba(255,255,255,0.9);
-
-    pointer-events: none;
-
-    animation:
-        desaparecer-brillo
-        ease-out
-        forwards;
+  position: fixed;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  animation: desaparecer-brillo ease-out forwards;
 }
-
 
 @keyframes desaparecer-brillo {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
 
-    0% {
-        opacity: 0;
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-        transform:
-            scale(0.3);
-    }
-
-    20% {
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            scale(0);
-    }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
 }
-
 
 /* =========================
    MENSAJE
 ========================= */
 
 .mensaje-intro {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width:
-        min(90vw, 700px);
-
-    transform:
-        translate(-50%, -50%)
-        translateY(30px);
-
-    text-align: center;
-
-    z-index: 80;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 1.5s ease,
-        transform 1.5s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(90vw, 700px);
+  transform: translate(-50%, -50%) translateY(30px);
+  text-align: center;
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
 }
-
 
 .mensaje-linea {
-    color: #f4f4f4;
-
-    font-size:
-        clamp(
-            21px,
-            3vw,
-            34px
-        );
-
-    line-height: 1.5;
-
-    font-weight: 400;
-
-    letter-spacing:
-        0.04em;
-
-    text-shadow:
-        0 0 18px
-        rgba(255,255,255,0.18);
+  color: #f4f4f4;
+  font-size: clamp(21px, 3vw, 34px);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
 }
 
-
-.intro.mostrar-mensaje
-.mensaje-intro {
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(0);
+.intro.mostrar-mensaje .mensaje-intro {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
 }
 
-
-.intro.ocultar-mensaje
-.mensaje-intro {
-
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(-20px);
+.intro.ocultar-mensaje .mensaje-intro {
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(-20px);
 }
-
 
 /* =========================
    MARIPOSA INTRO
 ========================= */
 
 .mariposa-vuelo {
-    position: fixed;
-
-    left: 50%;
-    top: 50%;
-
-    width: 90px;
-    height: 90px;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 100;
-
-    pointer-events: none;
-
-    will-change:
-        left,
-        top,
-        transform;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  will-change: left, top, transform;
 }
-
 
 .mariposa-flotante {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .mariposa-intro {
-    width:
-        clamp(
-            55px,
-            9vw,
-            105px
-        );
-
-    height: auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(255,255,255,0.5)
-        );
-
-    display: block;
-
-    pointer-events: none;
-
-    opacity: 0.999;
+  width: clamp(55px, 9vw, 105px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  display: block;
+  pointer-events: none;
+  opacity: 0.999;
 }
-
 
 /* =========================
    TRANSICIÓN FINAL
 ========================= */
 
 .intro.transicion-final {
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 1.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
 }
-
 
 /* =========================
    CUENTA REGRESIVA
 ========================= */
 
 .temporizador {
-    width:
-        min(100%, 500px);
-
-    margin-top: 50px;
-
-    text-align: center;
+  width: min(100%, 500px);
+  margin-top: 50px;
+  text-align: center;
 }
-
 
 .temporizador-titulo {
-    margin-bottom: 20px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing:
-        0.5em;
-
-    color: #858585;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: #858585;
 }
-
 
 .temporizador-valores {
-    display: flex;
-
-    align-items: flex-start;
-    justify-content: center;
-
-    gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
 }
-
 
 .temporizador-unidad {
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-
-    min-width: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 55px;
 }
-
 
 .temporizador-numero {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            25px,
-            6vw,
-            42px
-        );
-
-    font-weight: 300;
-
-    color: #eeeeee;
-
-    letter-spacing:
-        0.05em;
-
-    line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(25px, 6vw, 42px);
+  font-weight: 300;
+  color: #eeeeee;
+  letter-spacing: 0.05em;
+  line-height: 1;
 }
-
 
 .temporizador-label {
-    margin-top: 8px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing:
-        0.25em;
-
-    color: #777777;
+  margin-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  color: #777777;
 }
-
 
 .temporizador-separador {
-    color: #777777;
-
-    font-size: 22px;
-
-    line-height: 1;
-
-    margin-top: 3px;
+  color: #777777;
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 3px;
 }
-
 
 /* =========================
    BOTÓN UBICACIÓN
 ========================= */
 
 .boton-ubicacion {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 4px;
-
-    min-width: 165px;
-
-    padding:
-        11px 22px;
-
-    border:
-        1px solid #777;
-
-    color: #dedede;
-
-    text-decoration: none;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.28em;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  min-width: 165px;
+  padding: 11px 22px;
+  border: 1px solid #777;
+  color: #dedede;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .boton-ubicacion:hover {
-    background: #eeeeee;
-
-    color: #080808;
-
-    border-color: #eeeeee;
+  background: #eeeeee;
+  color: #080808;
+  border-color: #eeeeee;
 }
-
 
 /* =========================
    MI ALIAS
 ========================= */
 
 .datos-regalo {
-    width:
-        min(100%, 440px);
-
-    margin-top: 50px;
-
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
+  width: min(100%, 440px);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
 
 .datos-regalo-titulo {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.45em;
-
-    color: #858585;
-
-    margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.45em;
+  color: #858585;
+  margin-bottom: 16px;
 }
-
 
 .datos-regalo-alias {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size:
-        clamp(
-            15px,
-            3vw,
-            20px
-        );
-
-    letter-spacing:
-        0.18em;
-
-    color: #eeeeee;
-
-    margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 3vw, 20px);
+  letter-spacing: 0.18em;
+  color: #eeeeee;
+  margin-bottom: 16px;
 }
-
 
 /* =========================
    BOTÓN COPIAR
 ========================= */
 
 .boton-copiar {
-    min-width: 165px;
-
-    padding:
-        11px 22px;
-
-    border:
-        1px solid #777;
-
-    background:
-        transparent;
-
-    color: #dedede;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.28em;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+  min-width: 165px;
+  padding: 11px 22px;
+  border: 1px solid #777;
+  background: transparent;
+  color: #dedede;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .boton-copiar:hover {
-    background: #eeeeee;
-
-    color: #080808;
-
-    border-color: #eeeeee;
+  background: #eeeeee;
+  color: #080808;
+  border-color: #eeeeee;
 }
-
 
 /* =========================
    CONFIRMAR ASISTENCIA
 ========================= */
 
 .confirmar-asistencia {
-    width:
-        min(100%, 440px);
-
-    margin-top: 50px;
-
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
+  width: min(100%, 440px);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
 
 .confirmar-titulo {
-    width:
-        min(100%, 320px);
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    line-height: 1.6;
-
-    letter-spacing:
-        0.28em;
-
-    color: #858585;
-
-    margin-bottom: 13px;
+  width: min(100%, 320px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.28em;
+  color: #858585;
+  margin-bottom: 13px;
 }
-
 
 .confirmar-destinatario {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing:
-        0.18em;
-
-    color: #dedede;
-
-    margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #dedede;
+  margin-bottom: 16px;
 }
-
 
 /* =========================
    BOTÓN WHATSAPP
 ========================= */
 
 .boton-whatsapp {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-width: 205px;
-
-    padding:
-        11px 22px;
-
-    border:
-        1px solid #777;
-
-    background:
-        transparent;
-
-    color: #dedede;
-
-    text-decoration: none;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing:
-        0.24em;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 205px;
+  padding: 11px 22px;
+  border: 1px solid #777;
+  background: transparent;
+  color: #dedede;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .boton-whatsapp:hover {
-    background: #eeeeee;
-
-    color: #080808;
-
-    border-color: #eeeeee;
+  background: #eeeeee;
+  color: #080808;
+  border-color: #eeeeee;
 }
-
 
 /* =========================
    GALERÍA · MOMENTOS
 ========================= */
 
 .galeria-momentos {
-    width: 100%;
-
-    margin-top: 65px;
-
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .galeria-etiqueta {
-    position: relative;
-
-    margin-bottom: 28px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing:
-        0.5em;
-
-    color: #a7a7a7;
+  position: relative;
+  margin-bottom: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: #a7a7a7;
 }
-
 
 /* Pequeña línea decorativa debajo de MOMENTOS */
 
 .galeria-etiqueta::after {
-    content: "";
-
-    display: block;
-
-    width: 32px;
-    height: 1px;
-
-    margin:
-        13px auto 0;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #999,
-            transparent
-        );
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  margin: 13px auto 0;
+  background: linear-gradient(to right, transparent, #999, transparent);
 }
-
 
 /* =========================
    CARRUSEL
 ========================= */
 
 .galeria-carrusel {
-    width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-
-    touch-action: pan-x;
-
-    overscroll-behavior-x: contain;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
 }
 
 .galeria-carrusel:focus {
-    outline: none;
+  outline: none;
 }
 
+.galeria-indicadores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.indicador-foto {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #666;
+  opacity: 0.65;
+  transition:
+    width 0.35s ease,
+    opacity 0.35s ease,
+    background 0.35s ease;
+}
+
+.indicador-foto.indicador-activo {
+  width: 7px;
+  height: 7px;
+  background: #e5e5e5;
+  opacity: 1;
+}
 
 .galeria-carrusel::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 /* =========================
    PISTA
 ========================= */
 
 .galeria-pista {
-    display: flex;
-
-    gap: 18px;
-
-    width: max-content;
-
-    padding:
-        4px 6vw 12px;
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  padding: 4px 6vw 12px;
 }
-
 
 /* =========================
    FOTOS PREMIUM
 ========================= */
 
 .galeria-pista img {
-    display: block;
-
-    width:
-        min(78vw, 430px);
-
-    height:
-        min(105vw, 570px);
-
-    object-fit: cover;
-
-    flex-shrink: 0;
-
-    scroll-snap-align: center;
-
-    border:
-        1px solid rgba(210, 210, 210, 0.55);
-
-    border-radius: 14px;
-
-    background: #111;
-
-    box-shadow:
-        0 18px 50px
-        rgba(0, 0, 0, 0.65),
-
-        0 0 0 1px
-        rgba(255, 255, 255, 0.035),
-
-        0 0 30px
-        rgba(255, 255, 255, 0.035);
-
-    transition:
-        transform 0.5s ease,
-        border-color 0.5s ease,
-        box-shadow 0.5s ease;
+  display: block;
+  width: min(78vw, 430px);
+  height: min(105vw, 570px);
+  object-fit: cover;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border: 1px solid rgba(210, 210, 210, 0.55);
+  border-radius: 14px;
+  background: #111;
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.035),
+    0 0 30px rgba(255, 255, 255, 0.035);
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
 }
-
 
 /* =========================
    EFECTO PREMIUM EN PC
 ========================= */
 
 @media (hover: hover) and (pointer: fine) {
-
-    .galeria-pista img:hover {
-
-        transform:
-            scale(1.015);
-
-        border-color:
-            rgba(235, 235, 235, 0.85);
-
-        box-shadow:
-            0 22px 60px
-            rgba(0, 0, 0, 0.75),
-
-            0 0 35px
-            rgba(255, 255, 255, 0.07);
-    }
-
+  .galeria-pista img:hover {
+    transform: scale(1.015);
+    border-color: rgba(235, 235, 235, 0.85);
+    box-shadow:
+      0 22px 60px rgba(0, 0, 0, 0.75),
+      0 0 35px rgba(255, 255, 255, 0.07);
+  }
 }
-
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 600px) {
-
-    .porton {
-        width: 100vw;
-
-        height: auto;
-
-        aspect-ratio:
-            1000 / 900;
-    }
-
-
-    .mensaje-intro {
-        width: 88vw;
-    }
-
-
-    .mensaje-linea {
-        font-size: 20px;
-    }
-
-
-    .centro-porton {
-        width: 74px;
-        height: 74px;
-    }
-
-
-    .adorno-centro {
-        width: 62px;
-        height: 62px;
-    }
-
-
-    .rombo-centro {
-        width: 21px;
-        height: 21px;
-    }
-
-
-    .mariposa-vuelo {
-        width: 90px;
-        height: 90px;
-    }
-
-
-    .mariposa-intro {
-        width: 58px;
-    }
-
-
-    .brillito {
-        box-shadow:
-            0 0 5px
-            rgba(255,255,255,0.75);
-    }
-
-
-    /* HERO */
-
-    .hero-mariposa {
-        width: 90vw;
-    }
-
-
-    .hero-contenido h1 {
-        font-size:
-            clamp(
-                58px,
-                18vw,
-                100px
-            );
-    }
-
-
-    .hero-superior {
-        font-size: 12px;
-
-        letter-spacing:
-            0.38em;
-    }
-
-
-    .hero-fecha {
-        font-size: 12px;
-
-        letter-spacing:
-            0.28em;
-    }
-
-
-    /* EVENTO */
-
-    .evento-contenido {
-        width: 92vw;
-
-        padding:
-            11vh 15px 60px;
-    }
-
-
-    .evento-titulo {
-        font-size: 42px;
-    }
-
-
-    .evento-detalle {
-        margin-top: 38px;
-    }
-
-
-    .detalle-valor {
-        font-size: 11px;
-
-        letter-spacing:
-            0.10em;
-    }
-
-
-    .evento-dress {
-        margin-top: 26px;
-    }
-
-
-    .evento-decoracion {
-        margin-top: 38px;
-    }
-
-
-    /* CUENTA REGRESIVA */
-
-    .temporizador {
-        margin-top: 42px;
-    }
-
-
-    .temporizador-valores {
-        gap: 6px;
-    }
-
-
-    .temporizador-unidad {
-        min-width: 48px;
-    }
-
-
-    .temporizador-numero {
-        font-size: 27px;
-    }
-
-
-    .temporizador-label {
-        font-size: 7px;
-    }
-
-
-    .temporizador-separador {
-        font-size: 18px;
-
-        margin-top: 2px;
-    }
-
-
-    /* UBICACIÓN */
-
-    .boton-ubicacion {
-        min-width: 155px;
-
-        padding:
-            10px 20px;
-
-        font-size: 8px;
-    }
-
-
-    /* ALIAS */
-
-    .datos-regalo {
-        margin-top: 42px;
-    }
-
-
-    .datos-regalo-titulo {
-        font-size: 8px;
-    }
-
-
-    .datos-regalo-alias {
-        font-size: 15px;
-    }
-
-
-    .boton-copiar {
-        min-width: 155px;
-
-        padding:
-            10px 20px;
-
-        font-size: 8px;
-    }
-
-
-    /* WHATSAPP */
-
-    .confirmar-asistencia {
-        margin-top: 42px;
-    }
-
-
-    .confirmar-titulo {
-        width:
-            min(100%, 300px);
-
-        font-size: 8px;
-
-        line-height: 1.6;
-
-        letter-spacing:
-            0.26em;
-    }
-
-
-    .confirmar-destinatario {
-        font-size: 10px;
-    }
-
-
-    .boton-whatsapp {
-        min-width: 195px;
-
-        padding:
-            10px 20px;
-
-        font-size: 8px;
-    }
-
-
-    /* GALERÍA */
-
-    .galeria-momentos {
-        margin-top: 52px;
-    }
-
-
-    .galeria-etiqueta {
-        margin-bottom: 24px;
-
-        font-size: 8px;
-
-        letter-spacing:
-            0.45em;
-    }
-
-
-    .galeria-etiqueta::after {
-        width: 26px;
-
-        margin-top: 11px;
-    }
-
-
-    .galeria-pista {
-        gap: 13px;
-
-        padding:
-            4px 7vw 12px;
-    }
-
-
-    .galeria-pista img {
-        width: 78vw;
-
-        height: 105vw;
-
-        max-height: 520px;
-
-        border-radius: 12px;
-
-        box-shadow:
-            0 16px 42px
-            rgba(0, 0, 0, 0.7),
-
-            0 0 25px
-            rgba(255, 255, 255, 0.035);
-    }
+  /* MARIPOSAS DECORATIVAS */
+
+  body::before,
+  body::after {
+    top: 18px;
+    width: 38px;
+    height: 38px;
+    opacity: 0.68;
+  }
+
+  body::before {
+    left: 12px;
+  }
+
+  body::after {
+    right: 12px;
+  }
+
+  .porton {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 1000 / 900;
+  }
+
+  .mensaje-intro {
+    width: 88vw;
+  }
+
+  .mensaje-linea {
+    font-size: 20px;
+  }
+
+  .centro-porton {
+    width: 74px;
+    height: 74px;
+  }
+
+  .adorno-centro {
+    width: 62px;
+    height: 62px;
+  }
+
+  .rombo-centro {
+    width: 21px;
+    height: 21px;
+  }
+
+  .mariposa-vuelo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .mariposa-intro {
+    width: 58px;
+  }
+
+  .brillito {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.75);
+  }
+
+  /* HERO */
+
+  .hero-mariposa {
+    width: 90vw;
+  }
+
+  .hero-contenido h1 {
+    font-size: clamp(58px, 18vw, 100px);
+  }
+
+  .hero-superior {
+    font-size: 12px;
+    letter-spacing: 0.38em;
+  }
+
+  .hero-fecha {
+    font-size: 12px;
+    letter-spacing: 0.28em;
+  }
+
+  /* EVENTO */
+
+  .evento-contenido {
+    width: 92vw;
+    padding: 11vh 15px 60px;
+  }
+
+  .evento-titulo {
+    font-size: 42px;
+  }
+
+  .evento-detalle {
+    margin-top: 38px;
+  }
+
+  .detalle-valor {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .evento-dress {
+    margin-top: 26px;
+  }
+
+  .evento-decoracion {
+    margin-top: 38px;
+  }
+
+  /* CUENTA REGRESIVA */
+
+  .temporizador {
+    margin-top: 42px;
+  }
+
+  .temporizador-valores {
+    gap: 6px;
+  }
+
+  .temporizador-unidad {
+    min-width: 48px;
+  }
+
+  .temporizador-numero {
+    font-size: 27px;
+  }
+
+  .temporizador-label {
+    font-size: 7px;
+  }
+
+  .temporizador-separador {
+    font-size: 18px;
+    margin-top: 2px;
+  }
+
+  /* UBICACIÓN */
+
+  .boton-ubicacion {
+    min-width: 155px;
+    padding: 10px 20px;
+    font-size: 8px;
+  }
+
+  /* ALIAS */
+
+  .datos-regalo {
+    margin-top: 42px;
+  }
+
+  .datos-regalo-titulo {
+    font-size: 8px;
+  }
+
+  .datos-regalo-alias {
+    font-size: 15px;
+  }
+
+  .boton-copiar {
+    min-width: 155px;
+    padding: 10px 20px;
+    font-size: 8px;
+  }
+
+  /* WHATSAPP */
+
+  .confirmar-asistencia {
+    margin-top: 42px;
+  }
+
+  .confirmar-titulo {
+    width: min(100%, 300px);
+    font-size: 8px;
+    line-height: 1.6;
+    letter-spacing: 0.26em;
+  }
+
+  .confirmar-destinatario {
+    font-size: 10px;
+  }
+
+  .boton-whatsapp {
+    min-width: 195px;
+    padding: 10px 20px;
+    font-size: 8px;
+  }
+
+  /* GALERÍA */
+
+  .galeria-momentos {
+    margin-top: 52px;
+  }
+
+  .galeria-etiqueta {
+    margin-bottom: 24px;
+    font-size: 8px;
+    letter-spacing: 0.45em;
+  }
+
+  .galeria-etiqueta::after {
+    width: 26px;
+    margin-top: 11px;
+  }
+
+  .galeria-pista {
+    gap: 13px;
+    padding: 4px 7vw 12px;
+  }
+
+  .galeria-pista img {
+    width: 78vw;
+    height: 105vw;
+    max-height: 520px;
+    border-radius: 12px;
+    box-shadow:
+      0 16px 42px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(255, 255, 255, 0.035);
+  }
+
+  .galeria-indicadores {
+    gap: 6px;
+    margin-top: 13px;
+  }
+
+  .indicador-foto {
+    width: 4px;
+    height: 4px;
+  }
+
+  .indicador-foto.indicador-activo {
+    width: 6px;
+    height: 6px;
+  }
 }

@@ -29,8 +29,6 @@ function crearIntro() {
             id="pagina-invitacion"
         >
 
-            <!-- HERO -->
-
             <section class="hero-invitacion">
 
                 <div class="hero-mariposa">
@@ -63,10 +61,6 @@ function crearIntro() {
             </section>
 
 
-            <!-- =========================
-                 SECCIÓN EVENTO
-            ========================= -->
-
             <section class="seccion-evento">
 
                 <div class="evento-fondo-mariposa">
@@ -95,8 +89,6 @@ function crearIntro() {
                     <div class="evento-linea reveal-evento"></div>
 
 
-                    <!-- FECHA -->
-
                     <div class="evento-fecha reveal-evento">
 
                         <span>10</span>
@@ -116,14 +108,10 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- DÍA -->
-
                     <p class="evento-dia-semana reveal-evento">
                         SÁBADO
                     </p>
 
-
-                    <!-- LUGAR -->
 
                     <div class="evento-detalle reveal-evento">
 
@@ -147,8 +135,6 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- DRESS CODE -->
-
                     <div
                         class="evento-detalle evento-dress reveal-evento"
                     >
@@ -164,8 +150,6 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- HORA -->
-
                     <div class="evento-detalle reveal-evento">
 
                         <span class="detalle-etiqueta">
@@ -179,8 +163,6 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- CUENTA REGRESIVA -->
-
                     <div class="temporizador reveal-evento">
 
                         <p class="temporizador-titulo">
@@ -189,7 +171,6 @@ function crearIntro() {
 
 
                         <div class="temporizador-valores">
-
 
                             <div class="temporizador-unidad">
 
@@ -269,15 +250,10 @@ function crearIntro() {
 
                             </div>
 
-
                         </div>
 
                     </div>
 
-
-                    <!-- =========================
-                         MI ALIAS
-                    ========================= -->
 
                     <div class="datos-regalo reveal-evento">
 
@@ -303,10 +279,6 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- =========================
-                         CONFIRMAR ASISTENCIA
-                    ========================= -->
-
                     <div class="confirmar-asistencia reveal-evento">
 
                         <p class="confirmar-titulo">
@@ -329,10 +301,6 @@ function crearIntro() {
 
                     </div>
 
-
-                    <!-- =========================
-                         MOMENTOS
-                    ========================= -->
 
                     <div class="galeria-momentos reveal-evento">
 
@@ -377,10 +345,36 @@ function crearIntro() {
 
                         </div>
 
+
+                        <div
+                            class="galeria-indicadores"
+                            aria-hidden="true"
+                        >
+
+                            <span
+                                class="indicador-foto indicador-activo"
+                            ></span>
+
+                            <span
+                                class="indicador-foto"
+                            ></span>
+
+                            <span
+                                class="indicador-foto"
+                            ></span>
+
+                            <span
+                                class="indicador-foto"
+                            ></span>
+
+                            <span
+                                class="indicador-foto"
+                            ></span>
+
+                        </div>
+
                     </div>
 
-
-                    <!-- DECORACIÓN -->
 
                     <div class="evento-decoracion reveal-evento">
 
@@ -398,10 +392,6 @@ function crearIntro() {
         </main>
 
 
-        <!-- =========================
-             INTRO
-        ========================= -->
-
         <section
             class="intro"
             id="intro"
@@ -410,12 +400,7 @@ function crearIntro() {
             <div class="luz-central"></div>
 
 
-            <!-- PORTÓN -->
-
             <div class="porton">
-
-
-                <!-- PUERTA IZQUIERDA -->
 
                 <svg
                     class="hoja hoja-izquierda"
@@ -444,7 +429,6 @@ function crearIntro() {
                         "
                     />
 
-
                     <g class="barrotes">
 
                         <line x1="45" y1="215" x2="45" y2="850" />
@@ -458,7 +442,6 @@ function crearIntro() {
                         <line x1="445" y1="155" x2="445" y2="850" />
 
                     </g>
-
 
                     <g class="ornamento">
 
@@ -484,7 +467,6 @@ function crearIntro() {
 
                     </g>
 
-
                     <g class="decoracion">
 
                         <circle cx="45" cy="215" r="8" />
@@ -501,8 +483,6 @@ function crearIntro() {
 
                 </svg>
 
-
-                <!-- PUERTA DERECHA -->
 
                 <svg
                     class="hoja hoja-derecha"
@@ -531,7 +511,6 @@ function crearIntro() {
                         "
                     />
 
-
                     <g class="barrotes">
 
                         <line x1="55" y1="155" x2="55" y2="850" />
@@ -545,7 +524,6 @@ function crearIntro() {
                         <line x1="455" y1="215" x2="455" y2="850" />
 
                     </g>
-
 
                     <g class="ornamento">
 
@@ -571,7 +549,6 @@ function crearIntro() {
 
                     </g>
 
-
                     <g class="decoracion">
 
                         <circle cx="55" cy="155" r="8" />
@@ -588,11 +565,8 @@ function crearIntro() {
 
                 </svg>
 
-
             </div>
 
-
-            <!-- CENTRO -->
 
             <div class="centro-porton">
 
@@ -605,15 +579,11 @@ function crearIntro() {
             </div>
 
 
-            <!-- PARTÍCULAS -->
-
             <div
                 class="particulas"
                 id="particulas"
             ></div>
 
-
-            <!-- MENSAJE -->
 
             <div class="mensaje-intro">
 
@@ -627,8 +597,6 @@ function crearIntro() {
 
             </div>
 
-
-            <!-- MARIPOSA -->
 
             <div
                 class="mariposa-vuelo"
@@ -647,7 +615,6 @@ function crearIntro() {
                 </div>
 
             </div>
-
 
         </section>
 
@@ -851,18 +818,20 @@ botonWhatsapp.href =
 
 
 // =========================
-// CARRUSEL AUTOMÁTICO
+// CARRUSEL
 // =========================
 
 const galeriaCarrusel =
     document.querySelector(".galeria-carrusel");
 
-const galeriaPista =
-    document.querySelector(".galeria-pista");
-
 const fotosGaleria =
     document.querySelectorAll(
         ".galeria-pista img"
+    );
+
+const indicadoresGaleria =
+    document.querySelectorAll(
+        ".indicador-foto"
     );
 
 
@@ -875,9 +844,20 @@ let animacionGaleria = null;
 let indiceGaleria = 0;
 
 
-// =========================
-// ACTUALIZAR ÍNDICE
-// =========================
+function actualizarIndicadoresGaleria() {
+
+    indicadoresGaleria.forEach(
+        (indicador, indice) => {
+
+            indicador.classList.toggle(
+                "indicador-activo",
+                indice === indiceGaleria
+            );
+
+        }
+    );
+}
+
 
 function actualizarIndiceGaleria() {
 
@@ -931,12 +911,11 @@ function actualizarIndiceGaleria() {
 
     indiceGaleria =
         fotoMasCercana;
+
+
+    actualizarIndicadoresGaleria();
 }
 
-
-// =========================
-// SUAVIZADO
-// =========================
 
 function suavizarMovimiento(progreso) {
 
@@ -949,10 +928,6 @@ function suavizarMovimiento(progreso) {
     );
 }
 
-
-// =========================
-// MOVER GALERÍA SUAVEMENTE
-// =========================
 
 function moverGaleriaSuavemente(
     posicionFinal
@@ -1045,10 +1020,6 @@ function moverGaleriaSuavemente(
 }
 
 
-// =========================
-// AVANZAR GALERÍA
-// =========================
-
 function avanzarGaleria() {
 
     if (!galeriaCarrusel) {
@@ -1059,17 +1030,14 @@ function avanzarGaleria() {
     actualizarIndiceGaleria();
 
 
-    /*
-     * Si estamos en la última foto,
-     * volvemos DIRECTAMENTE a la primera.
-     */
-
     if (
         indiceGaleria >=
         fotosGaleria.length - 1
     ) {
 
         indiceGaleria = 0;
+
+        actualizarIndicadoresGaleria();
 
 
         if (animacionGaleria) {
@@ -1092,12 +1060,9 @@ function avanzarGaleria() {
     }
 
 
-    /*
-     * Movimiento normal:
-     * avanzamos exactamente una foto.
-     */
-
     indiceGaleria++;
+
+    actualizarIndicadoresGaleria();
 
 
     const foto =
@@ -1123,10 +1088,6 @@ function avanzarGaleria() {
 }
 
 
-// =========================
-// COMENZAR AUTOMÁTICO
-// =========================
-
 function comenzarGaleriaAutomatica() {
 
     clearInterval(
@@ -1145,10 +1106,6 @@ function comenzarGaleriaAutomatica() {
         );
 }
 
-
-// =========================
-// REINICIAR AUTOMÁTICO
-// =========================
 
 function reiniciarGaleriaAutomatica() {
 
@@ -1186,12 +1143,7 @@ function reiniciarGaleriaAutomatica() {
 }
 
 
-// =========================
-// INTERACCIÓN MANUAL
-// =========================
-
 if (galeriaCarrusel) {
-
 
     galeriaCarrusel.addEventListener(
         "touchstart",
@@ -1230,11 +1182,6 @@ if (galeriaCarrusel) {
     );
 
 
-    /*
-     * Flechas del teclado cuando
-     * el carrusel tiene el foco.
-     */
-
     galeriaCarrusel.addEventListener(
         "keydown",
         (event) => {
@@ -1251,11 +1198,6 @@ if (galeriaCarrusel) {
         }
     );
 
-
-    /*
-     * También detectamos las flechas
-     * cuando el mouse está sobre la galería.
-     */
 
     document.addEventListener(
         "keydown",
@@ -1291,7 +1233,7 @@ if (galeriaCarrusel) {
 
 
 // =========================
-// CREAR BRILLITO
+// BRILLITOS
 // =========================
 
 function crearBrillito(x, y) {
@@ -1354,10 +1296,6 @@ function crearBrillito(x, y) {
     );
 }
 
-
-// =========================
-// BRILLITOS CONTINUOS
-// =========================
 
 let intervaloBrillos = null;
 
@@ -1423,7 +1361,7 @@ function detenerBrillos() {
 
 
 // =========================
-// VOLVER AL PRINCIPIO
+// VOLVER AL INICIO
 // =========================
 
 function volverAlInicio() {
@@ -1448,7 +1386,6 @@ function volverAlInicio() {
 // =========================
 
 async function iniciarSecuencia() {
-
 
     await esperar(
         3000
@@ -1556,10 +1493,8 @@ async function iniciarSecuencia() {
             ],
             {
                 duration: 9000,
-
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
-
                 fill: "forwards"
             }
         );
@@ -1644,10 +1579,8 @@ async function iniciarSecuencia() {
             ],
             {
                 duration: 3000,
-
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
-
                 fill: "forwards"
             }
         );
@@ -1666,16 +1599,16 @@ async function iniciarSecuencia() {
     );
 
 
-    // =========================
-    // ASEGURAR QUE JENNY
-    // SIEMPRE ARRANQUE ARRIBA
-    // =========================
-
     volverAlInicio();
 
 
+    // ENTRA JENNY + MARIPOSAS
     pagina.classList.add(
         "pagina-visible"
+    );
+
+    document.body.classList.add(
+        "mariposas-hero"
     );
 
 
@@ -1684,8 +1617,17 @@ async function iniciarSecuencia() {
     );
 
 
+    // SALE JENNY + MARIPOSAS
     pagina.classList.add(
         "pasar-a-evento"
+    );
+
+    document.body.classList.add(
+        "mariposas-saliendo"
+    );
+
+    document.body.classList.remove(
+        "mariposas-hero"
     );
 
 
@@ -1694,27 +1636,26 @@ async function iniciarSecuencia() {
     );
 
 
-    /*
-     * Volvemos a asegurar el inicio
-     * justo antes de habilitar el scroll.
-     */
-
     volverAlInicio();
 
 
+    // ENTRA INFORMACIÓN + MARIPOSAS
     seccionEvento.classList.add(
         "evento-activo"
+    );
+
+    document.body.classList.remove(
+        "mariposas-saliendo"
+    );
+
+    document.body.classList.add(
+        "mariposas-evento"
     );
 
 
     document.body.style.overflowY =
         "auto";
 
-
-    /*
-     * Última comprobación después
-     * de habilitar el scroll.
-     */
 
     volverAlInicio();
 
@@ -1737,17 +1678,12 @@ async function iniciarSecuencia() {
     );
 
 
-    /*
-     * Iniciamos la galería automática
-     * cuando la invitación ya está visible.
-     */
-
     comenzarGaleriaAutomatica();
 }
 
 
 // =========================
-// FUNCIÓN ESPERAR
+// ESPERAR
 // =========================
 
 function esperar(ms) {
