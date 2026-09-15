@@ -1,12 +1,20 @@
 const evento = {
+
     nombre: "Jenny",
+
     fecha: "10 de Octubre de 2026",
+
     lugar: "Salón Quinta de los Tres Hermanos",
+
     dressCode: "Elegante Sport",
+
     hora: "21:00",
+
     alias: "yyyyyyyy",
+
     ubicacion:
         "https://maps.app.goo.gl/YVk8WmXcSQ3Zndjo9",
+
     whatsappMama:
         "5491125370784"
 };
@@ -16,13 +24,160 @@ const app = document.getElementById("app");
 document.body.style.overflow = "hidden";
 
 
-// =========================
-// CREAR INTRO + PÁGINA
-// =========================
+
+// *=========================*
+// *CREAR INTRO + PÁGINA*
+// *=========================*
 
 function crearIntro() {
 
     app.innerHTML = `
+
+        <style>
+
+            .mensaje-mariposa {
+
+                position: absolute;
+
+                left: 50%;
+
+                top: calc(50% + 105px);
+
+                transform: translateX(-50%);
+
+                z-index: 30;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 5px;
+
+                text-align: center;
+
+                pointer-events: none;
+
+                opacity: 1;
+
+                transition:
+                    opacity 0.8s ease,
+                    transform 0.8s ease;
+
+            }
+
+            .mensaje-mariposa-principal {
+
+                margin: 0;
+
+                font-family:
+                    Arial,
+                    sans-serif;
+
+                font-size: 10px;
+
+                font-weight: 500;
+
+                letter-spacing: 3px;
+
+                color: rgba(
+                    235,
+                    235,
+                    235,
+                    0.88
+                );
+
+                text-transform: uppercase;
+
+                white-space: nowrap;
+
+            }
+
+            .mensaje-mariposa-secundario {
+
+                margin: 0;
+
+                font-family:
+                    Arial,
+                    sans-serif;
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+
+                color: rgba(
+                    190,
+                    190,
+                    190,
+                    0.62
+                );
+
+            }
+
+            .mensaje-mariposa.oculto {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(-10px);
+
+            }
+
+            .mariposa-vuelo {
+
+                pointer-events: auto;
+
+            }
+
+            .mariposa-flotante {
+
+                pointer-events: auto;
+
+            }
+
+            .mariposa-intro {
+
+                cursor: pointer;
+
+                pointer-events: auto;
+
+                -webkit-tap-highlight-color:
+                    transparent;
+
+                touch-action: manipulation;
+
+            }
+
+            @media (max-width: 600px) {
+
+                .mensaje-mariposa {
+
+                    top: calc(50% + 92px);
+
+                }
+
+                .mensaje-mariposa-principal {
+
+                    font-size: 9px;
+
+                    letter-spacing: 2.5px;
+
+                }
+
+                .mensaje-mariposa-secundario {
+
+                    font-size: 7px;
+
+                    letter-spacing: 1.3px;
+
+                }
+
+            }
+
+        </style>
+
 
         <main
             class="pagina-invitacion"
@@ -32,10 +187,12 @@ function crearIntro() {
             <section class="hero-invitacion">
 
                 <div class="hero-mariposa">
+
                     <img
                         src="img/mariposa.png"
                         alt=""
                     >
+
                 </div>
 
                 <div class="hero-contenido">
@@ -588,6 +745,22 @@ function crearIntro() {
             ></div>
 
 
+            <div
+                class="mensaje-mariposa"
+                id="mensaje-mariposa"
+            >
+
+                <p class="mensaje-mariposa-principal">
+                    TOCÁ LA MARIPOSA
+                </p>
+
+                <p class="mensaje-mariposa-secundario">
+                    para comenzar
+                </p>
+
+            </div>
+
+
             <div class="mensaje-intro">
 
                 <p class="mensaje-linea">
@@ -636,38 +809,59 @@ function crearIntro() {
 crearIntro();
 
 
-// =========================
-// REFERENCIAS
-// =========================
+
+// *=========================*
+// *REFERENCIAS*
+// *=========================*
 
 const intro =
     document.getElementById("intro");
 
 const mariposaVuelo =
-    document.getElementById("mariposa-vuelo");
+    document.getElementById(
+        "mariposa-vuelo"
+    );
 
 const mariposa =
-    document.getElementById("mariposa");
+    document.getElementById(
+        "mariposa"
+    );
+
+const mensajeMariposa =
+    document.getElementById(
+        "mensaje-mariposa"
+    );
 
 const particulas =
-    document.getElementById("particulas");
+    document.getElementById(
+        "particulas"
+    );
 
 const pagina =
-    document.getElementById("pagina-invitacion");
+    document.getElementById(
+        "pagina-invitacion"
+    );
 
 const seccionEvento =
-    document.querySelector(".seccion-evento");
+    document.querySelector(
+        ".seccion-evento"
+    );
 
 const elementosEvento =
-    document.querySelectorAll(".reveal-evento");
+    document.querySelectorAll(
+        ".reveal-evento"
+    );
 
 
-// =========================
-// MÚSICA
-// =========================
+
+// *=========================*
+// *MÚSICA*
+// *=========================*
 
 const musicaFondo =
-    document.getElementById("musica-fondo");
+    document.getElementById(
+        "musica-fondo"
+    );
 
 let musicaIniciada =
     false;
@@ -679,21 +873,27 @@ function reproducirMusica() {
         return;
     }
 
+
     if (musicaIniciada) {
         return;
     }
 
-    // Empieza directamente desde el principio
-    musicaFondo.currentTime = 0;
 
-    // Volumen final
-    musicaFondo.volume = 0.20;
+    musicaFondo.currentTime =
+        0;
+
+
+    musicaFondo.volume =
+        0.20;
+
 
     const reproduccion =
         musicaFondo.play();
 
+
     if (
-        reproduccion !== undefined
+        reproduccion !==
+        undefined
     ) {
 
         reproduccion
@@ -709,35 +909,47 @@ function reproducirMusica() {
                 () => {
 
                     console.log(
-                        "El navegador bloqueó el autoplay de la música."
+                        "No se pudo iniciar la música."
                     );
 
                 }
             );
 
     }
+
 }
 
 
-// =========================
-// CUENTA REGRESIVA
-// =========================
+
+// *=========================*
+// *CUENTA REGRESIVA*
+// *=========================*
 
 const dias =
-    document.getElementById("dias");
+    document.getElementById(
+        "dias"
+    );
 
 const horas =
-    document.getElementById("horas");
+    document.getElementById(
+        "horas"
+    );
 
 const minutos =
-    document.getElementById("minutos");
+    document.getElementById(
+        "minutos"
+    );
 
 const segundos =
-    document.getElementById("segundos");
+    document.getElementById(
+        "segundos"
+    );
 
 
 const fechaEvento =
-    new Date("2026-10-10T00:00:00");
+    new Date(
+        "2026-10-10T00:00:00"
+    );
 
 
 function actualizarTemporizador() {
@@ -745,25 +957,43 @@ function actualizarTemporizador() {
     const ahora =
         new Date();
 
+
     const diferencia =
-        fechaEvento - ahora;
+        fechaEvento -
+        ahora;
 
 
-    if (diferencia <= 0) {
+    if (
+        diferencia <=
+        0
+    ) {
 
-        dias.textContent = "00";
-        horas.textContent = "00";
-        minutos.textContent = "00";
-        segundos.textContent = "00";
+        dias.textContent =
+            "00";
+
+        horas.textContent =
+            "00";
+
+        minutos.textContent =
+            "00";
+
+        segundos.textContent =
+            "00";
 
         return;
+
     }
 
 
     const cantidadDias =
         Math.floor(
             diferencia /
-            (1000 * 60 * 60 * 24)
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
         );
 
 
@@ -771,9 +1001,18 @@ function actualizarTemporizador() {
         Math.floor(
             (
                 diferencia %
-                (1000 * 60 * 60 * 24)
+                (
+                    1000 *
+                    60 *
+                    60 *
+                    24
+                )
             ) /
-            (1000 * 60 * 60)
+            (
+                1000 *
+                60 *
+                60
+            )
         );
 
 
@@ -781,9 +1020,16 @@ function actualizarTemporizador() {
         Math.floor(
             (
                 diferencia %
-                (1000 * 60 * 60)
+                (
+                    1000 *
+                    60 *
+                    60
+                )
             ) /
-            (1000 * 60)
+            (
+                1000 *
+                60
+            )
         );
 
 
@@ -791,23 +1037,50 @@ function actualizarTemporizador() {
         Math.floor(
             (
                 diferencia %
-                (1000 * 60)
+                (
+                    1000 *
+                    60
+                )
             ) /
             1000
         );
 
 
     dias.textContent =
-        String(cantidadDias).padStart(2, "0");
+        String(
+            cantidadDias
+        ).padStart(
+            2,
+            "0"
+        );
+
 
     horas.textContent =
-        String(cantidadHoras).padStart(2, "0");
+        String(
+            cantidadHoras
+        ).padStart(
+            2,
+            "0"
+        );
+
 
     minutos.textContent =
-        String(cantidadMinutos).padStart(2, "0");
+        String(
+            cantidadMinutos
+        ).padStart(
+            2,
+            "0"
+        );
+
 
     segundos.textContent =
-        String(cantidadSegundos).padStart(2, "0");
+        String(
+            cantidadSegundos
+        ).padStart(
+            2,
+            "0"
+        );
+
 }
 
 
@@ -820,12 +1093,15 @@ setInterval(
 );
 
 
-// =========================
-// COPIAR ALIAS
-// =========================
+
+// *=========================*
+// *COPIAR ALIAS*
+// *=========================*
 
 const botonCopiar =
-    document.getElementById("boton-copiar");
+    document.getElementById(
+        "boton-copiar"
+    );
 
 
 botonCopiar.addEventListener(
@@ -867,12 +1143,15 @@ botonCopiar.addEventListener(
 );
 
 
-// =========================
-// WHATSAPP
-// =========================
+
+// *=========================*
+// *WHATSAPP*
+// *=========================*
 
 const botonWhatsapp =
-    document.getElementById("boton-whatsapp");
+    document.getElementById(
+        "boton-whatsapp"
+    );
 
 
 const mensajeWhatsapp =
@@ -885,12 +1164,15 @@ botonWhatsapp.href =
     )}`;
 
 
-// =========================
-// CARRUSEL
-// =========================
+
+// *=========================*
+// *CARRUSEL*
+// *=========================*
 
 const galeriaCarrusel =
-    document.querySelector(".galeria-carrusel");
+    document.querySelector(
+        ".galeria-carrusel"
+    );
 
 const fotosGaleria =
     document.querySelectorAll(
@@ -903,23 +1185,31 @@ const indicadoresGaleria =
     );
 
 
-let intervaloGaleria = null;
+let intervaloGaleria =
+    null;
 
-let pausaGaleria = null;
+let pausaGaleria =
+    null;
 
-let animacionGaleria = null;
+let animacionGaleria =
+    null;
 
-let indiceGaleria = 0;
+let indiceGaleria =
+    0;
 
 
 function actualizarIndicadoresGaleria() {
 
     indicadoresGaleria.forEach(
-        (indicador, indice) => {
+        (
+            indicador,
+            indice
+        ) => {
 
             indicador.classList.toggle(
                 "indicador-activo",
-                indice === indiceGaleria
+                indice ===
+                indiceGaleria
             );
 
         }
@@ -930,28 +1220,39 @@ function actualizarIndicadoresGaleria() {
 
 function actualizarIndiceGaleria() {
 
-    if (!fotosGaleria.length) {
+    if (
+        !fotosGaleria.length
+    ) {
+
         return;
+
     }
 
 
     const centroCarrusel =
         galeriaCarrusel.scrollLeft +
-        galeriaCarrusel.clientWidth / 2;
+        galeriaCarrusel.clientWidth /
+        2;
 
 
-    let fotoMasCercana = 0;
+    let fotoMasCercana =
+        0;
+
 
     let distanciaMinima =
         Infinity;
 
 
     fotosGaleria.forEach(
-        (foto, indice) => {
+        (
+            foto,
+            indice
+        ) => {
 
             const centroFoto =
                 foto.offsetLeft +
-                foto.offsetWidth / 2;
+                foto.offsetWidth /
+                2;
 
 
             const distancia =
@@ -1006,12 +1307,18 @@ function moverGaleriaSuavemente(
     posicionFinal
 ) {
 
-    if (!galeriaCarrusel) {
+    if (
+        !galeriaCarrusel
+    ) {
+
         return;
+
     }
 
 
-    if (animacionGaleria) {
+    if (
+        animacionGaleria
+    ) {
 
         cancelAnimationFrame(
             animacionGaleria
@@ -1098,8 +1405,12 @@ function moverGaleriaSuavemente(
 
 function avanzarGaleria() {
 
-    if (!galeriaCarrusel) {
+    if (
+        !galeriaCarrusel
+    ) {
+
         return;
+
     }
 
 
@@ -1111,12 +1422,16 @@ function avanzarGaleria() {
         fotosGaleria.length - 1
     ) {
 
-        indiceGaleria = 0;
+        indiceGaleria =
+            0;
+
 
         actualizarIndicadoresGaleria();
 
 
-        if (animacionGaleria) {
+        if (
+            animacionGaleria
+        ) {
 
             cancelAnimationFrame(
                 animacionGaleria
@@ -1133,20 +1448,26 @@ function avanzarGaleria() {
 
 
         return;
+
     }
 
 
     indiceGaleria++;
 
+
     actualizarIndicadoresGaleria();
 
 
     const foto =
-        fotosGaleria[indiceGaleria];
+        fotosGaleria[
+            indiceGaleria
+        ];
 
 
     if (!foto) {
+
         return;
+
     }
 
 
@@ -1155,7 +1476,8 @@ function avanzarGaleria() {
         (
             galeriaCarrusel.clientWidth -
             foto.offsetWidth
-        ) / 2;
+        ) /
+        2;
 
 
     moverGaleriaSuavemente(
@@ -1197,7 +1519,9 @@ function reiniciarGaleriaAutomatica() {
     );
 
 
-    if (animacionGaleria) {
+    if (
+        animacionGaleria
+    ) {
 
         cancelAnimationFrame(
             animacionGaleria
@@ -1222,7 +1546,9 @@ function reiniciarGaleriaAutomatica() {
 }
 
 
-if (galeriaCarrusel) {
+if (
+    galeriaCarrusel
+) {
 
     galeriaCarrusel.addEventListener(
         "touchstart",
@@ -1266,8 +1592,10 @@ if (galeriaCarrusel) {
         (event) => {
 
             if (
-                event.key === "ArrowLeft" ||
-                event.key === "ArrowRight"
+                event.key ===
+                    "ArrowLeft" ||
+                event.key ===
+                    "ArrowRight"
             ) {
 
                 reiniciarGaleriaAutomatica();
@@ -1283,8 +1611,10 @@ if (galeriaCarrusel) {
         (event) => {
 
             if (
-                event.key !== "ArrowLeft" &&
-                event.key !== "ArrowRight"
+                event.key !==
+                    "ArrowLeft" &&
+                event.key !==
+                    "ArrowRight"
             ) {
 
                 return;
@@ -1293,7 +1623,9 @@ if (galeriaCarrusel) {
 
 
             const estaEnGaleria =
-                galeriaCarrusel.matches(":hover") ||
+                galeriaCarrusel.matches(
+                    ":hover"
+                ) ||
                 document.activeElement ===
                     galeriaCarrusel ||
                 galeriaCarrusel.contains(
@@ -1301,7 +1633,9 @@ if (galeriaCarrusel) {
                 );
 
 
-            if (estaEnGaleria) {
+            if (
+                estaEnGaleria
+            ) {
 
                 reiniciarGaleriaAutomatica();
 
@@ -1313,9 +1647,10 @@ if (galeriaCarrusel) {
 }
 
 
-// =========================
-// BRILLITOS
-// =========================
+
+// *=========================*
+// *BRILLITOS*
+// *=========================*
 
 function crearBrillito(
     x,
@@ -1333,12 +1668,18 @@ function crearBrillito(
 
 
     const variacionX =
-        (Math.random() - 0.5) *
+        (
+            Math.random() -
+            0.5
+        ) *
         24;
 
 
     const variacionY =
-        (Math.random() - 0.5) *
+        (
+            Math.random() -
+            0.5
+        ) *
         24;
 
 
@@ -1352,7 +1693,8 @@ function crearBrillito(
 
     const tamanio =
         2 +
-        Math.random() * 4;
+        Math.random() *
+        4;
 
 
     brillo.style.width =
@@ -1384,7 +1726,8 @@ function crearBrillito(
 }
 
 
-let intervaloBrillos = null;
+let intervaloBrillos =
+    null;
 
 
 function comenzarBrillos() {
@@ -1399,12 +1742,14 @@ function comenzarBrillos() {
 
                 const x =
                     rect.left +
-                    rect.width / 2;
+                    rect.width /
+                    2;
 
 
                 const y =
                     rect.top +
-                    rect.height / 2;
+                    rect.height /
+                    2;
 
 
                 crearBrillito(
@@ -1420,11 +1765,17 @@ function comenzarBrillos() {
 
                     crearBrillito(
                         x +
-                        (Math.random() - 0.5) *
+                        (
+                            Math.random() -
+                            0.5
+                        ) *
                         40,
 
                         y +
-                        (Math.random() - 0.5) *
+                        (
+                            Math.random() -
+                            0.5
+                        ) *
                         40
                     );
 
@@ -1443,15 +1794,17 @@ function detenerBrillos() {
         intervaloBrillos
     );
 
+
     intervaloBrillos =
         null;
 
 }
 
 
-// =========================
-// VOLVER AL INICIO
-// =========================
+
+// *=========================*
+// *VOLVER AL INICIO*
+// *=========================*
 
 function volverAlInicio() {
 
@@ -1471,20 +1824,63 @@ function volverAlInicio() {
 }
 
 
-// =========================
-// SECUENCIA PRINCIPAL
-// =========================
+
+// *=========================*
+// *SECUENCIA PRINCIPAL*
+// *=========================*
 
 async function iniciarSecuencia() {
 
-    // La música empieza cuando aparece el portón
+    await esperar(
+        500
+    );
+
+}
+
+
+
+// *=========================*
+// *INICIAR LA MAGIA*
+// *=========================*
+
+let secuenciaIniciada =
+    false;
+
+
+async function iniciarMagia() {
+
+    if (
+        secuenciaIniciada
+    ) {
+
+        return;
+
+    }
+
+
+    secuenciaIniciada =
+        true;
+
+
+    // La música comienza directamente
+    // desde el toque del usuario.
+
     reproducirMusica();
 
 
-    await esperar(
-        2200
+    // Desaparece la indicación.
+
+    mensajeMariposa.classList.add(
+        "oculto"
     );
 
+
+    await esperar(
+        500
+    );
+
+
+    // Comienza la apertura del portón.
 
     intro.classList.add(
         "abriendo"
@@ -1500,91 +1896,123 @@ async function iniciarSecuencia() {
 
                 {
                     left: "50%",
+
                     top: "50%",
+
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1)"
                 },
 
                 {
                     left: "65%",
+
                     top: "39%",
+
                     transform:
                         "translate(-50%, -50%) rotate(9deg) scale(1.05)",
+
                     offset: 0.10
                 },
 
                 {
                     left: "77%",
+
                     top: "28%",
+
                     transform:
                         "translate(-50%, -50%) rotate(16deg) scale(1.08)",
+
                     offset: 0.20
                 },
 
                 {
                     left: "63%",
+
                     top: "24%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.11)",
+
                     offset: 0.30
                 },
 
                 {
                     left: "35%",
+
                     top: "31%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-14deg) scale(1.15)",
+
                     offset: 0.42
                 },
 
                 {
                     left: "21%",
+
                     top: "46%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-19deg) scale(1.18)",
+
                     offset: 0.52
                 },
 
                 {
                     left: "34%",
+
                     top: "66%",
+
                     transform:
                         "translate(-50%, -50%) rotate(13deg) scale(1.23)",
+
                     offset: 0.63
                 },
 
                 {
                     left: "67%",
+
                     top: "72%",
+
                     transform:
                         "translate(-50%, -50%) rotate(17deg) scale(1.28)",
+
                     offset: 0.75
                 },
 
                 {
                     left: "78%",
+
                     top: "55%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-7deg) scale(1.34)",
+
                     offset: 0.84
                 },
 
                 {
                     left: "65%",
+
                     top: "43%",
+
                     transform:
                         "translate(-50%, -50%) rotate(-3deg) scale(1.45)",
+
                     offset: 0.91
                 },
 
                 {
                     left: "50%",
+
                     top: "50%",
+
                     transform:
                         "translate(-50%, -50%) rotate(0deg) scale(1.65)"
                 }
 
             ],
+
             {
 
                 duration: 9000,
@@ -1636,36 +2064,42 @@ async function iniciarSecuencia() {
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.0)",
+
                     offset: 0.15
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(2.5)",
+
                     offset: 0.30
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(3.2)",
+
                     offset: 0.45
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(4.1)",
+
                     offset: 0.60
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(5.2)",
+
                     offset: 0.75
                 },
 
                 {
                     transform:
                         "translate(-50%, -50%) scale(6.5)",
+
                     offset: 0.88
                 },
 
@@ -1675,6 +2109,7 @@ async function iniciarSecuencia() {
                 }
 
             ],
+
             {
 
                 duration: 3000,
@@ -1765,7 +2200,10 @@ async function iniciarSecuencia() {
 
 
     elementosEvento.forEach(
-        (elemento, indice) => {
+        (
+            elemento,
+            indice
+        ) => {
 
             setTimeout(
                 () => {
@@ -1775,7 +2213,8 @@ async function iniciarSecuencia() {
                     );
 
                 },
-                indice * 120
+                indice *
+                120
             );
 
         }
@@ -1787,9 +2226,10 @@ async function iniciarSecuencia() {
 }
 
 
-// =========================
-// ESPERAR
-// =========================
+
+// *=========================*
+// *ESPERAR*
+// *=========================*
 
 function esperar(ms) {
 
@@ -1807,8 +2247,41 @@ function esperar(ms) {
 }
 
 
-// =========================
-// INICIAR
-// =========================
+
+// *=========================*
+// *TOQUE / CLICK EN LA MARIPOSA*
+// *=========================*
+
+mariposaVuelo.addEventListener(
+    "click",
+    iniciarMagia
+);
+
+
+mariposa.addEventListener(
+    "click",
+    iniciarMagia
+);
+
+
+mariposa.addEventListener(
+    "touchend",
+    (event) => {
+
+        event.preventDefault();
+
+        iniciarMagia();
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+
+// *=========================*
+// *INICIAR*
+// *=========================*
 
 iniciarSecuencia();
