@@ -1482,7 +1482,7 @@ async function iniciarSecuencia() {
 
 
     await esperar(
-        3000
+        2200
     );
 
 
