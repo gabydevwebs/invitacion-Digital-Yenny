@@ -1,23 +1,14 @@
 const evento = {
-
     nombre: "Jenny",
-
     fecha: "10 de Octubre de 2026",
-
     lugar: "Salón Quinta de los Tres Hermanos",
-
     dressCode: "Elegante Sport",
-
     hora: "21:00",
-
     alias: "yyyyyyyy",
-
     ubicacion:
         "https://maps.app.goo.gl/YVk8WmXcSQ3Zndjo9",
-
     whatsappMama:
         "5491125370784"
-
 };
 
 const app = document.getElementById("app");
@@ -25,26 +16,20 @@ const app = document.getElementById("app");
 document.body.style.overflow = "hidden";
 
 
-/* =========================
-   CREAR INTRO + PÁGINA
-========================= */
+// =========================
+// CREAR INTRO + PÁGINA
+// =========================
 
 function crearIntro() {
 
     app.innerHTML = `
-
-        <!-- =========================
-             PÁGINA DE LA INVITACIÓN
-        ========================= -->
 
         <main
             class="pagina-invitacion"
             id="pagina-invitacion"
         >
 
-            <!-- =========================
-                 HERO
-            ========================= -->
+            <!-- HERO -->
 
             <section class="hero-invitacion">
 
@@ -56,7 +41,6 @@ function crearIntro() {
                     >
 
                 </div>
-
 
                 <div class="hero-contenido">
 
@@ -111,47 +95,35 @@ function crearIntro() {
                     <div class="evento-linea reveal-evento"></div>
 
 
-                    <!-- =========================
-                         FECHA
-                    ========================= -->
+                    <!-- FECHA -->
 
                     <div class="evento-fecha reveal-evento">
 
-                        <span>
-                            10
-                        </span>
+                        <span>10</span>
 
                         <span class="evento-separador">
                             ·
                         </span>
 
-                        <span>
-                            10
-                        </span>
+                        <span>10</span>
 
                         <span class="evento-separador">
                             ·
                         </span>
 
-                        <span>
-                            2026
-                        </span>
+                        <span>2026</span>
 
                     </div>
 
 
-                    <!-- =========================
-                         DÍA
-                    ========================= -->
+                    <!-- DÍA -->
 
                     <p class="evento-dia-semana reveal-evento">
                         SÁBADO
                     </p>
 
 
-                    <!-- =========================
-                         LUGAR
-                    ========================= -->
+                    <!-- LUGAR -->
 
                     <div class="evento-detalle reveal-evento">
 
@@ -175,11 +147,11 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- =========================
-                         DRESS CODE
-                    ========================= -->
+                    <!-- DRESS CODE -->
 
-                    <div class="evento-detalle evento-dress reveal-evento">
+                    <div
+                        class="evento-detalle evento-dress reveal-evento"
+                    >
 
                         <span class="detalle-etiqueta">
                             DRESS CODE
@@ -192,9 +164,7 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- =========================
-                         HORA DE LLEGADA
-                    ========================= -->
+                    <!-- HORA -->
 
                     <div class="evento-detalle reveal-evento">
 
@@ -209,9 +179,7 @@ function crearIntro() {
                     </div>
 
 
-                    <!-- =========================
-                         CUENTA REGRESIVA
-                    ========================= -->
+                    <!-- CUENTA REGRESIVA -->
 
                     <div class="temporizador reveal-evento">
 
@@ -308,21 +276,14 @@ function crearIntro() {
 
 
                     <!-- =========================
-                         DATOS PARA REGALO
+                         MI ALIAS
                     ========================= -->
 
                     <div class="datos-regalo reveal-evento">
 
-                        <p class="datos-regalo-mensaje">
-                            Si querés dejarme un detalle,
-                            podés hacerlo a través de mi alias.
-                        </p>
-
-
                         <p class="datos-regalo-titulo">
-                            MI ALIAS: 
+                            MI ALIAS:
                         </p>
-
 
                         <p
                             class="datos-regalo-alias"
@@ -330,7 +291,6 @@ function crearIntro() {
                         >
                             ${evento.alias}
                         </p>
-
 
                         <button
                             class="boton-copiar"
@@ -353,11 +313,9 @@ function crearIntro() {
                             POR FAVOR, CONFIRMÁ TU ASISTENCIA
                         </p>
 
-
                         <p class="confirmar-destinatario">
                             MAMÁ DE JENNY
                         </p>
-
 
                         <a
                             class="boton-whatsapp"
@@ -373,15 +331,61 @@ function crearIntro() {
 
 
                     <!-- =========================
-                         DECORACIÓN
+                         MOMENTOS
                     ========================= -->
+
+                    <div class="galeria-momentos reveal-evento">
+
+                        <p class="galeria-etiqueta">
+                            MOMENTOS
+                        </p>
+
+
+                        <div
+                            class="galeria-carrusel"
+                            tabindex="0"
+                        >
+
+                            <div class="galeria-pista">
+
+                                <img
+                                    src="img/foto1.jpeg"
+                                    alt="Foto de Jenny"
+                                >
+
+                                <img
+                                    src="img/foto2.jpeg"
+                                    alt="Foto de Jenny"
+                                >
+
+                                <img
+                                    src="img/foto3.jpeg"
+                                    alt="Foto de Jenny"
+                                >
+
+                                <img
+                                    src="img/foto4.jpeg"
+                                    alt="Foto de Jenny"
+                                >
+
+                                <img
+                                    src="img/foto5.jpeg"
+                                    alt="Foto de Jenny"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DECORACIÓN -->
 
                     <div class="evento-decoracion reveal-evento">
 
                         <span></span>
-
                         <i></i>
-
                         <span></span>
 
                     </div>
@@ -406,9 +410,7 @@ function crearIntro() {
             <div class="luz-central"></div>
 
 
-            <!-- =========================
-                 PORTÓN
-            ========================= -->
+            <!-- PORTÓN -->
 
             <div class="porton">
 
@@ -432,7 +434,6 @@ function crearIntro() {
                         "
                     />
 
-
                     <path
                         class="hierro medio"
                         d="
@@ -447,21 +448,13 @@ function crearIntro() {
                     <g class="barrotes">
 
                         <line x1="45" y1="215" x2="45" y2="850" />
-
                         <line x1="95" y1="180" x2="95" y2="850" />
-
                         <line x1="145" y1="150" x2="145" y2="850" />
-
                         <line x1="195" y1="120" x2="195" y2="850" />
-
                         <line x1="245" y1="100" x2="245" y2="850" />
-
                         <line x1="295" y1="90" x2="295" y2="850" />
-
                         <line x1="345" y1="95" x2="345" y2="850" />
-
                         <line x1="395" y1="115" x2="395" y2="850" />
-
                         <line x1="445" y1="155" x2="445" y2="850" />
 
                     </g>
@@ -479,7 +472,6 @@ function crearIntro() {
                             "
                         />
 
-
                         <path
                             d="
                                 M 90 210
@@ -496,21 +488,13 @@ function crearIntro() {
                     <g class="decoracion">
 
                         <circle cx="45" cy="215" r="8" />
-
                         <circle cx="95" cy="180" r="8" />
-
                         <circle cx="145" cy="150" r="8" />
-
                         <circle cx="195" cy="120" r="8" />
-
                         <circle cx="245" cy="100" r="8" />
-
                         <circle cx="295" cy="90" r="8" />
-
                         <circle cx="345" cy="95" r="8" />
-
                         <circle cx="395" cy="115" r="8" />
-
                         <circle cx="445" cy="155" r="8" />
 
                     </g>
@@ -537,7 +521,6 @@ function crearIntro() {
                         "
                     />
 
-
                     <path
                         class="hierro medio"
                         d="
@@ -552,21 +535,13 @@ function crearIntro() {
                     <g class="barrotes">
 
                         <line x1="55" y1="155" x2="55" y2="850" />
-
                         <line x1="105" y1="115" x2="105" y2="850" />
-
                         <line x1="155" y1="95" x2="155" y2="850" />
-
                         <line x1="205" y1="90" x2="205" y2="850" />
-
                         <line x1="255" y1="100" x2="255" y2="850" />
-
                         <line x1="305" y1="120" x2="305" y2="850" />
-
                         <line x1="355" y1="150" x2="355" y2="850" />
-
                         <line x1="405" y1="180" x2="405" y2="850" />
-
                         <line x1="455" y1="215" x2="455" y2="850" />
 
                     </g>
@@ -584,7 +559,6 @@ function crearIntro() {
                             "
                         />
 
-
                         <path
                             d="
                                 M 90 210
@@ -601,33 +575,24 @@ function crearIntro() {
                     <g class="decoracion">
 
                         <circle cx="55" cy="155" r="8" />
-
                         <circle cx="105" cy="115" r="8" />
-
                         <circle cx="155" cy="95" r="8" />
-
                         <circle cx="205" cy="90" r="8" />
-
                         <circle cx="255" cy="100" r="8" />
-
                         <circle cx="305" cy="120" r="8" />
-
                         <circle cx="355" cy="150" r="8" />
-
                         <circle cx="405" cy="180" r="8" />
-
                         <circle cx="455" cy="215" r="8" />
 
                     </g>
 
                 </svg>
 
+
             </div>
 
 
-            <!-- =========================
-                 CENTRO DEL PORTÓN
-            ========================= -->
+            <!-- CENTRO -->
 
             <div class="centro-porton">
 
@@ -640,9 +605,7 @@ function crearIntro() {
             </div>
 
 
-            <!-- =========================
-                 PARTÍCULAS
-            ========================= -->
+            <!-- PARTÍCULAS -->
 
             <div
                 class="particulas"
@@ -650,9 +613,7 @@ function crearIntro() {
             ></div>
 
 
-            <!-- =========================
-                 MENSAJE
-            ========================= -->
+            <!-- MENSAJE -->
 
             <div class="mensaje-intro">
 
@@ -667,9 +628,7 @@ function crearIntro() {
             </div>
 
 
-            <!-- =========================
-                 MARIPOSA
-            ========================= -->
+            <!-- MARIPOSA -->
 
             <div
                 class="mariposa-vuelo"
@@ -689,19 +648,19 @@ function crearIntro() {
 
             </div>
 
+
         </section>
 
     `;
-
 }
 
 
 crearIntro();
 
 
-/* =========================
-   REFERENCIAS
-========================= */
+// =========================
+// REFERENCIAS
+// =========================
 
 const intro =
     document.getElementById("intro");
@@ -718,9 +677,6 @@ const particulas =
 const pagina =
     document.getElementById("pagina-invitacion");
 
-const hero =
-    document.querySelector(".hero-invitacion");
-
 const seccionEvento =
     document.querySelector(".seccion-evento");
 
@@ -728,9 +684,9 @@ const elementosEvento =
     document.querySelectorAll(".reveal-evento");
 
 
-/* =========================
-   REFERENCIAS CUENTA REGRESIVA
-========================= */
+// =========================
+// CUENTA REGRESIVA
+// =========================
 
 const dias =
     document.getElementById("dias");
@@ -744,77 +700,6 @@ const minutos =
 const segundos =
     document.getElementById("segundos");
 
-
-/* =========================
-   REFERENCIAS ALIAS
-========================= */
-
-const alias =
-    document.getElementById("alias");
-
-const botonCopiar =
-    document.getElementById("boton-copiar");
-
-
-/* =========================
-   REFERENCIA WHATSAPP
-========================= */
-
-const botonWhatsapp =
-    document.getElementById("boton-whatsapp");
-
-
-/* =========================
-   CARGA DE MARIPOSA
-========================= */
-
-mariposa.style.opacity = "0";
-
-
-if (mariposa.complete) {
-
-    mariposa.style.opacity = "1";
-
-} else {
-
-    mariposa.addEventListener(
-        "load",
-        () => {
-
-            mariposa.style.opacity = "1";
-
-        },
-        {
-            once: true
-        }
-    );
-
-}
-
-
-/* =========================
-   ESPERAR
-========================= */
-
-function esperar(ms) {
-
-    return new Promise(
-        resolve => {
-
-            setTimeout(
-                resolve,
-                ms
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================
-   CUENTA REGRESIVA
-========================= */
 
 const fechaEvento =
     new Date("2026-10-10T00:00:00");
@@ -832,15 +717,11 @@ function actualizarTemporizador() {
     if (diferencia <= 0) {
 
         dias.textContent = "00";
-
         horas.textContent = "00";
-
         minutos.textContent = "00";
-
         segundos.textContent = "00";
 
         return;
-
     }
 
 
@@ -884,18 +765,14 @@ function actualizarTemporizador() {
     dias.textContent =
         String(cantidadDias).padStart(2, "0");
 
-
     horas.textContent =
         String(cantidadHoras).padStart(2, "0");
-
 
     minutos.textContent =
         String(cantidadMinutos).padStart(2, "0");
 
-
     segundos.textContent =
         String(cantidadSegundos).padStart(2, "0");
-
 }
 
 
@@ -908,9 +785,13 @@ setInterval(
 );
 
 
-/* =========================
-   COPIAR ALIAS
-========================= */
+// =========================
+// COPIAR ALIAS
+// =========================
+
+const botonCopiar =
+    document.getElementById("boton-copiar");
+
 
 botonCopiar.addEventListener(
     "click",
@@ -951,9 +832,13 @@ botonCopiar.addEventListener(
 );
 
 
-/* =========================
-   WHATSAPP
-========================= */
+// =========================
+// WHATSAPP
+// =========================
+
+const botonWhatsapp =
+    document.getElementById("boton-whatsapp");
+
 
 const mensajeWhatsapp =
     "Hola, quiero confirmar mi asistencia a los XV de Jenny.";
@@ -965,9 +850,449 @@ botonWhatsapp.href =
     )}`;
 
 
-/* =========================
-   CREAR BRILLITO
-========================= */
+// =========================
+// CARRUSEL AUTOMÁTICO
+// =========================
+
+const galeriaCarrusel =
+    document.querySelector(".galeria-carrusel");
+
+const galeriaPista =
+    document.querySelector(".galeria-pista");
+
+const fotosGaleria =
+    document.querySelectorAll(
+        ".galeria-pista img"
+    );
+
+
+let intervaloGaleria = null;
+
+let pausaGaleria = null;
+
+let animacionGaleria = null;
+
+let indiceGaleria = 0;
+
+
+// =========================
+// ACTUALIZAR ÍNDICE
+// =========================
+
+function actualizarIndiceGaleria() {
+
+    if (!fotosGaleria.length) {
+        return;
+    }
+
+
+    const centroCarrusel =
+        galeriaCarrusel.scrollLeft +
+        galeriaCarrusel.clientWidth / 2;
+
+
+    let fotoMasCercana = 0;
+
+    let distanciaMinima =
+        Infinity;
+
+
+    fotosGaleria.forEach(
+        (foto, indice) => {
+
+            const centroFoto =
+                foto.offsetLeft +
+                foto.offsetWidth / 2;
+
+
+            const distancia =
+                Math.abs(
+                    centroFoto -
+                    centroCarrusel
+                );
+
+
+            if (
+                distancia <
+                distanciaMinima
+            ) {
+
+                distanciaMinima =
+                    distancia;
+
+                fotoMasCercana =
+                    indice;
+
+            }
+
+        }
+    );
+
+
+    indiceGaleria =
+        fotoMasCercana;
+}
+
+
+// =========================
+// SUAVIZADO
+// =========================
+
+function suavizarMovimiento(progreso) {
+
+    return (
+        1 -
+        Math.pow(
+            1 - progreso,
+            3
+        )
+    );
+}
+
+
+// =========================
+// MOVER GALERÍA SUAVEMENTE
+// =========================
+
+function moverGaleriaSuavemente(
+    posicionFinal
+) {
+
+    if (!galeriaCarrusel) {
+        return;
+    }
+
+
+    if (animacionGaleria) {
+
+        cancelAnimationFrame(
+            animacionGaleria
+        );
+
+    }
+
+
+    const posicionInicial =
+        galeriaCarrusel.scrollLeft;
+
+
+    const distancia =
+        posicionFinal -
+        posicionInicial;
+
+
+    const duracion =
+        1000;
+
+
+    const tiempoInicio =
+        performance.now();
+
+
+    function animar(tiempoActual) {
+
+        const tiempoTranscurrido =
+            tiempoActual -
+            tiempoInicio;
+
+
+        const progreso =
+            Math.min(
+                tiempoTranscurrido /
+                duracion,
+                1
+            );
+
+
+        const progresoSuavizado =
+            suavizarMovimiento(
+                progreso
+            );
+
+
+        galeriaCarrusel.scrollLeft =
+            posicionInicial +
+            (
+                distancia *
+                progresoSuavizado
+            );
+
+
+        if (
+            progreso <
+            1
+        ) {
+
+            animacionGaleria =
+                requestAnimationFrame(
+                    animar
+                );
+
+        } else {
+
+            animacionGaleria =
+                null;
+
+        }
+
+    }
+
+
+    animacionGaleria =
+        requestAnimationFrame(
+            animar
+        );
+}
+
+
+// =========================
+// AVANZAR GALERÍA
+// =========================
+
+function avanzarGaleria() {
+
+    if (!galeriaCarrusel) {
+        return;
+    }
+
+
+    actualizarIndiceGaleria();
+
+
+    /*
+     * Si estamos en la última foto,
+     * volvemos DIRECTAMENTE a la primera.
+     */
+
+    if (
+        indiceGaleria >=
+        fotosGaleria.length - 1
+    ) {
+
+        indiceGaleria = 0;
+
+
+        if (animacionGaleria) {
+
+            cancelAnimationFrame(
+                animacionGaleria
+            );
+
+            animacionGaleria =
+                null;
+
+        }
+
+
+        galeriaCarrusel.scrollLeft =
+            0;
+
+
+        return;
+    }
+
+
+    /*
+     * Movimiento normal:
+     * avanzamos exactamente una foto.
+     */
+
+    indiceGaleria++;
+
+
+    const foto =
+        fotosGaleria[indiceGaleria];
+
+
+    if (!foto) {
+        return;
+    }
+
+
+    const posicion =
+        foto.offsetLeft -
+        (
+            galeriaCarrusel.clientWidth -
+            foto.offsetWidth
+        ) / 2;
+
+
+    moverGaleriaSuavemente(
+        posicion
+    );
+}
+
+
+// =========================
+// COMENZAR AUTOMÁTICO
+// =========================
+
+function comenzarGaleriaAutomatica() {
+
+    clearInterval(
+        intervaloGaleria
+    );
+
+
+    intervaloGaleria =
+        setInterval(
+            () => {
+
+                avanzarGaleria();
+
+            },
+            3000
+        );
+}
+
+
+// =========================
+// REINICIAR AUTOMÁTICO
+// =========================
+
+function reiniciarGaleriaAutomatica() {
+
+    clearTimeout(
+        pausaGaleria
+    );
+
+
+    clearInterval(
+        intervaloGaleria
+    );
+
+
+    if (animacionGaleria) {
+
+        cancelAnimationFrame(
+            animacionGaleria
+        );
+
+        animacionGaleria =
+            null;
+
+    }
+
+
+    pausaGaleria =
+        setTimeout(
+            () => {
+
+                comenzarGaleriaAutomatica();
+
+            },
+            4500
+        );
+}
+
+
+// =========================
+// INTERACCIÓN MANUAL
+// =========================
+
+if (galeriaCarrusel) {
+
+
+    galeriaCarrusel.addEventListener(
+        "touchstart",
+        reiniciarGaleriaAutomatica,
+        {
+            passive: true
+        }
+    );
+
+
+    galeriaCarrusel.addEventListener(
+        "pointerdown",
+        reiniciarGaleriaAutomatica
+    );
+
+
+    galeriaCarrusel.addEventListener(
+        "wheel",
+        reiniciarGaleriaAutomatica,
+        {
+            passive: true
+        }
+    );
+
+
+    galeriaCarrusel.addEventListener(
+        "scroll",
+        () => {
+
+            actualizarIndiceGaleria();
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /*
+     * Flechas del teclado cuando
+     * el carrusel tiene el foco.
+     */
+
+    galeriaCarrusel.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "ArrowLeft" ||
+                event.key === "ArrowRight"
+            ) {
+
+                reiniciarGaleriaAutomatica();
+
+            }
+
+        }
+    );
+
+
+    /*
+     * También detectamos las flechas
+     * cuando el mouse está sobre la galería.
+     */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key !== "ArrowLeft" &&
+                event.key !== "ArrowRight"
+            ) {
+                return;
+            }
+
+
+            const estaEnGaleria =
+                galeriaCarrusel.matches(":hover") ||
+                document.activeElement ===
+                    galeriaCarrusel ||
+                galeriaCarrusel.contains(
+                    document.activeElement
+                );
+
+
+            if (estaEnGaleria) {
+
+                reiniciarGaleriaAutomatica();
+
+            }
+
+        }
+    );
+
+}
+
+
+// =========================
+// CREAR BRILLITO
+// =========================
 
 function crearBrillito(x, y) {
 
@@ -980,11 +1305,13 @@ function crearBrillito(x, y) {
 
 
     const variacionX =
-        (Math.random() - 0.5) * 24;
+        (Math.random() - 0.5) *
+        24;
 
 
     const variacionY =
-        (Math.random() - 0.5) * 24;
+        (Math.random() - 0.5) *
+        24;
 
 
     brillo.style.left =
@@ -996,7 +1323,8 @@ function crearBrillito(x, y) {
 
 
     const tamanio =
-        2 + Math.random() * 4;
+        2 +
+        Math.random() * 4;
 
 
     brillo.style.width =
@@ -1024,13 +1352,12 @@ function crearBrillito(x, y) {
         },
         2600
     );
-
 }
 
 
-/* =========================
-   BRILLITOS CONTINUOS
-========================= */
+// =========================
+// BRILLITOS CONTINUOS
+// =========================
 
 let intervaloBrillos = null;
 
@@ -1062,15 +1389,18 @@ function comenzarBrillos() {
 
 
                 if (
-                    Math.random() > 0.65
+                    Math.random() >
+                    0.65
                 ) {
 
                     crearBrillito(
                         x +
-                        (Math.random() - 0.5) * 40,
+                        (Math.random() - 0.5) *
+                        40,
 
                         y +
-                        (Math.random() - 0.5) * 40
+                        (Math.random() - 0.5) *
+                        40
                     );
 
                 }
@@ -1078,7 +1408,6 @@ function comenzarBrillos() {
             },
             130
         );
-
 }
 
 
@@ -1088,38 +1417,48 @@ function detenerBrillos() {
         intervaloBrillos
     );
 
-    intervaloBrillos = null;
-
+    intervaloBrillos =
+        null;
 }
 
 
-/* =========================
-   SECUENCIA PRINCIPAL
-========================= */
+// =========================
+// VOLVER AL PRINCIPIO
+// =========================
+
+function volverAlInicio() {
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+
+    document.documentElement.scrollTop =
+        0;
+
+
+    document.body.scrollTop =
+        0;
+}
+
+
+// =========================
+// SECUENCIA PRINCIPAL
+// =========================
 
 async function iniciarSecuencia() {
 
 
-    /* =========================
-       1. PORTÓN CERRADO
-    ========================= */
+    await esperar(
+        3000
+    );
 
-    await esperar(3000);
-
-
-    /* =========================
-       2. ABRIR PORTÓN
-          + VUELO
-    ========================= */
 
     intro.classList.add(
         "abriendo"
     );
 
-
-    /* =========================
-       3. VUELO
-    ========================= */
 
     comenzarBrillos();
 
@@ -1216,67 +1555,41 @@ async function iniciarSecuencia() {
 
             ],
             {
-
                 duration: 9000,
 
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
 
                 fill: "forwards"
-
             }
         );
 
 
-    /* =========================
-       4. ESPERAR APERTURA
-    ========================= */
+    await esperar(
+        2800
+    );
 
-    await esperar(2800);
-
-
-    /* =========================
-       5. MOSTRAR MENSAJE
-    ========================= */
 
     intro.classList.add(
         "mostrar-mensaje"
     );
 
 
-    /* =========================
-       6. DEJAR FRASE
-    ========================= */
+    await esperar(
+        4200
+    );
 
-    await esperar(4200);
-
-
-    /* =========================
-       7. OCULTAR MENSAJE
-    ========================= */
 
     intro.classList.add(
         "ocultar-mensaje"
     );
 
 
-    /* =========================
-       8. ESPERAR FIN DEL VUELO
-    ========================= */
-
     await vuelo.finished;
 
 
-    /* =========================
-       9. DETENER BRILLITOS
-    ========================= */
-
     detenerBrillos();
 
-
-    /* =========================
-       10. ACERCAMIENTO FINAL
-    ========================= */
 
     const acercamiento =
         mariposaVuelo.animate(
@@ -1330,14 +1643,12 @@ async function iniciarSecuencia() {
 
             ],
             {
-
                 duration: 3000,
 
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
 
                 fill: "forwards"
-
             }
         );
 
@@ -1345,20 +1656,22 @@ async function iniciarSecuencia() {
     await acercamiento.finished;
 
 
-    /* =========================
-       11. TRANSICIÓN FINAL
-    ========================= */
-
     intro.classList.add(
         "transicion-final"
     );
 
 
-    /* =========================
-       12. APARECER PÁGINA
-    ========================= */
+    await esperar(
+        250
+    );
 
-    await esperar(250);
+
+    // =========================
+    // ASEGURAR QUE JENNY
+    // SIEMPRE ARRANQUE ARRIBA
+    // =========================
+
+    volverAlInicio();
 
 
     pagina.classList.add(
@@ -1366,44 +1679,44 @@ async function iniciarSecuencia() {
     );
 
 
-    /* =========================
-       13. MOSTRAR JENNY
-    ========================= */
+    await esperar(
+        2500
+    );
 
-    await esperar(2500);
-
-
-    /* =========================
-       14. TRANSICIÓN
-           HERO → DATOS
-    ========================= */
 
     pagina.classList.add(
         "pasar-a-evento"
     );
 
 
-    /* =========================
-       15. ESPERAR TRANSICIÓN
-    ========================= */
-
-    await esperar(1400);
+    await esperar(
+        1400
+    );
 
 
-    /* =========================
-       16. ACTIVAR DATOS
-    ========================= */
+    /*
+     * Volvemos a asegurar el inicio
+     * justo antes de habilitar el scroll.
+     */
+
+    volverAlInicio();
+
 
     seccionEvento.classList.add(
         "evento-activo"
     );
 
 
-    /* =========================
-       17. HABILITAR SCROLL
-    ========================= */
+    document.body.style.overflowY =
+        "auto";
 
-    document.body.style.overflowY = "auto";
+
+    /*
+     * Última comprobación después
+     * de habilitar el scroll.
+     */
+
+    volverAlInicio();
 
 
     elementosEvento.forEach(
@@ -1423,11 +1736,37 @@ async function iniciarSecuencia() {
         }
     );
 
+
+    /*
+     * Iniciamos la galería automática
+     * cuando la invitación ya está visible.
+     */
+
+    comenzarGaleriaAutomatica();
 }
 
 
-/* =========================
-   INICIAR
-========================= */
+// =========================
+// FUNCIÓN ESPERAR
+// =========================
+
+function esperar(ms) {
+
+    return new Promise(
+        resolve => {
+
+            setTimeout(
+                resolve,
+                ms
+            );
+
+        }
+    );
+}
+
+
+// =========================
+// INICIAR
+// =========================
 
 iniciarSecuencia();

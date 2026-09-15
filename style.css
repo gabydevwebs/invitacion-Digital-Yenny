@@ -57,11 +57,6 @@ body {
 }
 
 
-/*
-   CUANDO EL EVENTO ESTÁ ACTIVO
-   SE HABILITA EL SCROLL
-*/
-
 .pagina-invitacion:has(.evento-activo) {
     overflow-x: hidden;
     overflow-y: auto;
@@ -1265,140 +1260,6 @@ body {
 
 
 /* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .porton {
-        width: 100vw;
-
-        height: auto;
-
-        aspect-ratio:
-            1000 / 900;
-    }
-
-
-    .mensaje-intro {
-        width: 88vw;
-    }
-
-
-    .mensaje-linea {
-        font-size: 20px;
-    }
-
-
-    .centro-porton {
-        width: 74px;
-        height: 74px;
-    }
-
-
-    .adorno-centro {
-        width: 62px;
-        height: 62px;
-    }
-
-
-    .rombo-centro {
-        width: 21px;
-        height: 21px;
-    }
-
-
-    .mariposa-vuelo {
-        width: 90px;
-        height: 90px;
-    }
-
-
-    .mariposa-intro {
-        width: 58px;
-    }
-
-
-    .brillito {
-        box-shadow:
-            0 0 5px
-            rgba(255,255,255,0.75);
-    }
-
-
-    /* HERO MOBILE */
-
-    .hero-mariposa {
-        width: 90vw;
-    }
-
-
-    .hero-contenido h1 {
-        font-size:
-            clamp(
-                58px,
-                18vw,
-                100px
-            );
-    }
-
-
-    .hero-superior {
-        font-size: 12px;
-
-        letter-spacing:
-            0.38em;
-    }
-
-
-    .hero-fecha {
-        font-size: 12px;
-
-        letter-spacing:
-            0.28em;
-    }
-
-
-    /* EVENTO MOBILE */
-
-    .evento-contenido {
-        width: 92vw;
-
-        padding:
-            11vh 15px 60px;
-    }
-
-
-    .evento-titulo {
-        font-size: 42px;
-    }
-
-
-    .evento-detalle {
-        margin-top: 38px;
-    }
-
-
-    .detalle-valor {
-        font-size: 11px;
-
-        letter-spacing:
-            0.10em;
-    }
-
-
-    .evento-dress {
-        margin-top: 26px;
-    }
-
-
-    .evento-decoracion {
-        margin-top: 38px;
-    }
-}
-
-
-/* =========================
    CUENTA REGRESIVA
 ========================= */
 
@@ -1502,45 +1363,6 @@ body {
 
 
 /* =========================
-   CUENTA REGRESIVA MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .temporizador {
-        margin-top: 42px;
-    }
-
-
-    .temporizador-valores {
-        gap: 6px;
-    }
-
-
-    .temporizador-unidad {
-        min-width: 48px;
-    }
-
-
-    .temporizador-numero {
-        font-size: 27px;
-    }
-
-
-    .temporizador-label {
-        font-size: 7px;
-    }
-
-
-    .temporizador-separador {
-        font-size: 18px;
-
-        margin-top: 2px;
-    }
-}
-
-
-/* =========================
    BOTÓN UBICACIÓN
 ========================= */
 
@@ -1590,21 +1412,8 @@ body {
 }
 
 
-@media (max-width: 600px) {
-
-    .boton-ubicacion {
-        min-width: 155px;
-
-        padding:
-            10px 20px;
-
-        font-size: 8px;
-    }
-}
-
-
 /* =========================
-   DATOS PARA REGALO
+   MI ALIAS
 ========================= */
 
 .datos-regalo {
@@ -1622,42 +1431,6 @@ body {
 }
 
 
-/* =========================
-   MENSAJE REGALO
-========================= */
-
-.datos-regalo-mensaje {
-    max-width: 390px;
-
-    margin-bottom: 18px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(
-            14px,
-            2.5vw,
-            17px
-        );
-
-    line-height: 1.6;
-
-    font-style: italic;
-
-    letter-spacing:
-        0.02em;
-
-    color: #cfcfcf;
-}
-
-
-/* =========================
-   TÍTULO ALIAS
-========================= */
-
 .datos-regalo-titulo {
     font-family:
         Arial,
@@ -1674,10 +1447,6 @@ body {
     margin-bottom: 16px;
 }
 
-
-/* =========================
-   ALIAS
-========================= */
 
 .datos-regalo-alias {
     font-family:
@@ -1747,41 +1516,6 @@ body {
 }
 
 
-@media (max-width: 600px) {
-
-    .datos-regalo {
-        margin-top: 42px;
-    }
-
-
-    .datos-regalo-mensaje {
-        max-width: 310px;
-
-        font-size: 14px;
-    }
-
-
-    .datos-regalo-titulo {
-        font-size: 8px;
-    }
-
-
-    .datos-regalo-alias {
-        font-size: 15px;
-    }
-
-
-    .boton-copiar {
-        min-width: 155px;
-
-        padding:
-            10px 20px;
-
-        font-size: 8px;
-    }
-}
-
-
 /* =========================
    CONFIRMAR ASISTENCIA
 ========================= */
@@ -1800,10 +1534,6 @@ body {
     text-align: center;
 }
 
-
-/* =========================
-   TÍTULO CONFIRMACIÓN
-========================= */
 
 .confirmar-titulo {
     width:
@@ -1826,10 +1556,6 @@ body {
     margin-bottom: 13px;
 }
 
-
-/* =========================
-   DESTINATARIO
-========================= */
 
 .confirmar-destinatario {
     font-family:
@@ -1899,7 +1625,386 @@ body {
 }
 
 
+/* =========================
+   GALERÍA · MOMENTOS
+========================= */
+
+.galeria-momentos {
+    width: 100%;
+
+    margin-top: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.galeria-etiqueta {
+    position: relative;
+
+    margin-bottom: 28px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing:
+        0.5em;
+
+    color: #a7a7a7;
+}
+
+
+/* Pequeña línea decorativa debajo de MOMENTOS */
+
+.galeria-etiqueta::after {
+    content: "";
+
+    display: block;
+
+    width: 32px;
+    height: 1px;
+
+    margin:
+        13px auto 0;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #999,
+            transparent
+        );
+}
+
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.galeria-carrusel {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    touch-action: pan-x;
+
+    overscroll-behavior-x: contain;
+}
+
+.galeria-carrusel:focus {
+    outline: none;
+}
+
+
+.galeria-carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   PISTA
+========================= */
+
+.galeria-pista {
+    display: flex;
+
+    gap: 18px;
+
+    width: max-content;
+
+    padding:
+        4px 6vw 12px;
+}
+
+
+/* =========================
+   FOTOS PREMIUM
+========================= */
+
+.galeria-pista img {
+    display: block;
+
+    width:
+        min(78vw, 430px);
+
+    height:
+        min(105vw, 570px);
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    scroll-snap-align: center;
+
+    border:
+        1px solid rgba(210, 210, 210, 0.55);
+
+    border-radius: 14px;
+
+    background: #111;
+
+    box-shadow:
+        0 18px 50px
+        rgba(0, 0, 0, 0.65),
+
+        0 0 0 1px
+        rgba(255, 255, 255, 0.035),
+
+        0 0 30px
+        rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================
+   EFECTO PREMIUM EN PC
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .galeria-pista img:hover {
+
+        transform:
+            scale(1.015);
+
+        border-color:
+            rgba(235, 235, 235, 0.85);
+
+        box-shadow:
+            0 22px 60px
+            rgba(0, 0, 0, 0.75),
+
+            0 0 35px
+            rgba(255, 255, 255, 0.07);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
+    .porton {
+        width: 100vw;
+
+        height: auto;
+
+        aspect-ratio:
+            1000 / 900;
+    }
+
+
+    .mensaje-intro {
+        width: 88vw;
+    }
+
+
+    .mensaje-linea {
+        font-size: 20px;
+    }
+
+
+    .centro-porton {
+        width: 74px;
+        height: 74px;
+    }
+
+
+    .adorno-centro {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .rombo-centro {
+        width: 21px;
+        height: 21px;
+    }
+
+
+    .mariposa-vuelo {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .mariposa-intro {
+        width: 58px;
+    }
+
+
+    .brillito {
+        box-shadow:
+            0 0 5px
+            rgba(255,255,255,0.75);
+    }
+
+
+    /* HERO */
+
+    .hero-mariposa {
+        width: 90vw;
+    }
+
+
+    .hero-contenido h1 {
+        font-size:
+            clamp(
+                58px,
+                18vw,
+                100px
+            );
+    }
+
+
+    .hero-superior {
+        font-size: 12px;
+
+        letter-spacing:
+            0.38em;
+    }
+
+
+    .hero-fecha {
+        font-size: 12px;
+
+        letter-spacing:
+            0.28em;
+    }
+
+
+    /* EVENTO */
+
+    .evento-contenido {
+        width: 92vw;
+
+        padding:
+            11vh 15px 60px;
+    }
+
+
+    .evento-titulo {
+        font-size: 42px;
+    }
+
+
+    .evento-detalle {
+        margin-top: 38px;
+    }
+
+
+    .detalle-valor {
+        font-size: 11px;
+
+        letter-spacing:
+            0.10em;
+    }
+
+
+    .evento-dress {
+        margin-top: 26px;
+    }
+
+
+    .evento-decoracion {
+        margin-top: 38px;
+    }
+
+
+    /* CUENTA REGRESIVA */
+
+    .temporizador {
+        margin-top: 42px;
+    }
+
+
+    .temporizador-valores {
+        gap: 6px;
+    }
+
+
+    .temporizador-unidad {
+        min-width: 48px;
+    }
+
+
+    .temporizador-numero {
+        font-size: 27px;
+    }
+
+
+    .temporizador-label {
+        font-size: 7px;
+    }
+
+
+    .temporizador-separador {
+        font-size: 18px;
+
+        margin-top: 2px;
+    }
+
+
+    /* UBICACIÓN */
+
+    .boton-ubicacion {
+        min-width: 155px;
+
+        padding:
+            10px 20px;
+
+        font-size: 8px;
+    }
+
+
+    /* ALIAS */
+
+    .datos-regalo {
+        margin-top: 42px;
+    }
+
+
+    .datos-regalo-titulo {
+        font-size: 8px;
+    }
+
+
+    .datos-regalo-alias {
+        font-size: 15px;
+    }
+
+
+    .boton-copiar {
+        min-width: 155px;
+
+        padding:
+            10px 20px;
+
+        font-size: 8px;
+    }
+
+
+    /* WHATSAPP */
 
     .confirmar-asistencia {
         margin-top: 42px;
@@ -1931,5 +2036,55 @@ body {
             10px 20px;
 
         font-size: 8px;
+    }
+
+
+    /* GALERÍA */
+
+    .galeria-momentos {
+        margin-top: 52px;
+    }
+
+
+    .galeria-etiqueta {
+        margin-bottom: 24px;
+
+        font-size: 8px;
+
+        letter-spacing:
+            0.45em;
+    }
+
+
+    .galeria-etiqueta::after {
+        width: 26px;
+
+        margin-top: 11px;
+    }
+
+
+    .galeria-pista {
+        gap: 13px;
+
+        padding:
+            4px 7vw 12px;
+    }
+
+
+    .galeria-pista img {
+        width: 78vw;
+
+        height: 105vw;
+
+        max-height: 520px;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 16px 42px
+            rgba(0, 0, 0, 0.7),
+
+            0 0 25px
+            rgba(255, 255, 255, 0.035);
     }
 }
