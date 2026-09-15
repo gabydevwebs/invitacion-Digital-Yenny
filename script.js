@@ -32,12 +32,10 @@ function crearIntro() {
             <section class="hero-invitacion">
 
                 <div class="hero-mariposa">
-
                     <img
                         src="img/mariposa.png"
                         alt=""
                     >
-
                 </div>
 
                 <div class="hero-contenido">
@@ -74,7 +72,6 @@ function crearIntro() {
 
 
                 <div class="evento-contenido">
-
 
                     <p class="evento-etiqueta reveal-evento">
                         UNA NOCHE
@@ -379,11 +376,12 @@ function crearIntro() {
                     <div class="evento-decoracion reveal-evento">
 
                         <span></span>
+
                         <i></i>
+
                         <span></span>
 
                     </div>
-
 
                 </div>
 
@@ -443,6 +441,7 @@ function crearIntro() {
 
                     </g>
 
+
                     <g class="ornamento">
 
                         <path
@@ -466,6 +465,7 @@ function crearIntro() {
                         />
 
                     </g>
+
 
                     <g class="decoracion">
 
@@ -511,6 +511,7 @@ function crearIntro() {
                         "
                     />
 
+
                     <g class="barrotes">
 
                         <line x1="55" y1="155" x2="55" y2="850" />
@@ -524,6 +525,7 @@ function crearIntro() {
                         <line x1="455" y1="215" x2="455" y2="850" />
 
                     </g>
+
 
                     <g class="ornamento">
 
@@ -548,6 +550,7 @@ function crearIntro() {
                         />
 
                     </g>
+
 
                     <g class="decoracion">
 
@@ -618,6 +621,14 @@ function crearIntro() {
 
         </section>
 
+
+        <audio
+            id="musica-fondo"
+            src="audio/musica.mp3"
+            loop
+            preload="auto"
+        ></audio>
+
     `;
 }
 
@@ -649,6 +660,63 @@ const seccionEvento =
 
 const elementosEvento =
     document.querySelectorAll(".reveal-evento");
+
+
+// =========================
+// MÚSICA
+// =========================
+
+const musicaFondo =
+    document.getElementById("musica-fondo");
+
+let musicaIniciada =
+    false;
+
+
+function reproducirMusica() {
+
+    if (!musicaFondo) {
+        return;
+    }
+
+    if (musicaIniciada) {
+        return;
+    }
+
+    // Empieza directamente desde el principio
+    musicaFondo.currentTime = 0;
+
+    // Volumen final
+    musicaFondo.volume = 0.20;
+
+    const reproduccion =
+        musicaFondo.play();
+
+    if (
+        reproduccion !== undefined
+    ) {
+
+        reproduccion
+            .then(
+                () => {
+
+                    musicaIniciada =
+                        true;
+
+                }
+            )
+            .catch(
+                () => {
+
+                    console.log(
+                        "El navegador bloqueó el autoplay de la música."
+                    );
+
+                }
+            );
+
+    }
+}
 
 
 // =========================
@@ -856,6 +924,7 @@ function actualizarIndicadoresGaleria() {
 
         }
     );
+
 }
 
 
@@ -914,10 +983,13 @@ function actualizarIndiceGaleria() {
 
 
     actualizarIndicadoresGaleria();
+
 }
 
 
-function suavizarMovimiento(progreso) {
+function suavizarMovimiento(
+    progreso
+) {
 
     return (
         1 -
@@ -926,6 +998,7 @@ function suavizarMovimiento(progreso) {
             3
         )
     );
+
 }
 
 
@@ -964,7 +1037,9 @@ function moverGaleriaSuavemente(
         performance.now();
 
 
-    function animar(tiempoActual) {
+    function animar(
+        tiempoActual
+    ) {
 
         const tiempoTranscurrido =
             tiempoActual -
@@ -1017,6 +1092,7 @@ function moverGaleriaSuavemente(
         requestAnimationFrame(
             animar
         );
+
 }
 
 
@@ -1085,6 +1161,7 @@ function avanzarGaleria() {
     moverGaleriaSuavemente(
         posicion
     );
+
 }
 
 
@@ -1104,6 +1181,7 @@ function comenzarGaleriaAutomatica() {
             },
             3000
         );
+
 }
 
 
@@ -1140,6 +1218,7 @@ function reiniciarGaleriaAutomatica() {
             },
             4500
         );
+
 }
 
 
@@ -1207,7 +1286,9 @@ if (galeriaCarrusel) {
                 event.key !== "ArrowLeft" &&
                 event.key !== "ArrowRight"
             ) {
+
                 return;
+
             }
 
 
@@ -1236,10 +1317,15 @@ if (galeriaCarrusel) {
 // BRILLITOS
 // =========================
 
-function crearBrillito(x, y) {
+function crearBrillito(
+    x,
+    y
+) {
 
     const brillo =
-        document.createElement("span");
+        document.createElement(
+            "span"
+        );
 
 
     brillo.className =
@@ -1294,6 +1380,7 @@ function crearBrillito(x, y) {
         },
         2600
     );
+
 }
 
 
@@ -1346,6 +1433,7 @@ function comenzarBrillos() {
             },
             130
         );
+
 }
 
 
@@ -1357,6 +1445,7 @@ function detenerBrillos() {
 
     intervaloBrillos =
         null;
+
 }
 
 
@@ -1378,6 +1467,7 @@ function volverAlInicio() {
 
     document.body.scrollTop =
         0;
+
 }
 
 
@@ -1386,6 +1476,10 @@ function volverAlInicio() {
 // =========================
 
 async function iniciarSecuencia() {
+
+    // La música empieza cuando aparece el portón
+    reproducirMusica();
+
 
     await esperar(
         3000
@@ -1492,10 +1586,14 @@ async function iniciarSecuencia() {
 
             ],
             {
+
                 duration: 9000,
+
                 easing:
                     "cubic-bezier(0.45, 0, 0.25, 1)",
+
                 fill: "forwards"
+
             }
         );
 
@@ -1578,10 +1676,14 @@ async function iniciarSecuencia() {
 
             ],
             {
+
                 duration: 3000,
+
                 easing:
                     "cubic-bezier(0.7, 0, 0.12, 1)",
+
                 fill: "forwards"
+
             }
         );
 
@@ -1602,10 +1704,10 @@ async function iniciarSecuencia() {
     volverAlInicio();
 
 
-    // ENTRA JENNY + MARIPOSAS
     pagina.classList.add(
         "pagina-visible"
     );
+
 
     document.body.classList.add(
         "mariposas-hero"
@@ -1617,14 +1719,15 @@ async function iniciarSecuencia() {
     );
 
 
-    // SALE JENNY + MARIPOSAS
     pagina.classList.add(
         "pasar-a-evento"
     );
 
+
     document.body.classList.add(
         "mariposas-saliendo"
     );
+
 
     document.body.classList.remove(
         "mariposas-hero"
@@ -1639,14 +1742,15 @@ async function iniciarSecuencia() {
     volverAlInicio();
 
 
-    // ENTRA INFORMACIÓN + MARIPOSAS
     seccionEvento.classList.add(
         "evento-activo"
     );
 
+
     document.body.classList.remove(
         "mariposas-saliendo"
     );
+
 
     document.body.classList.add(
         "mariposas-evento"
@@ -1679,6 +1783,7 @@ async function iniciarSecuencia() {
 
 
     comenzarGaleriaAutomatica();
+
 }
 
 
@@ -1698,6 +1803,7 @@ function esperar(ms) {
 
         }
     );
+
 }
 
 
