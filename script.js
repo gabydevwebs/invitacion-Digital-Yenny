@@ -797,7 +797,7 @@ function crearIntro() {
 
         <audio
             id="musica-fondo"
-            src="audio/musica.mp3"
+            src="audio/musica2.mp3"
             loop
             preload="auto"
         ></audio>
